@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseURI: "http://172.104.175.74:8180/iconnect",
+  path: {
+    corporate_api: "/api/registration/corporate",
+    college_api: "/api/registration/college",
+    state_list: "/api/iconnect/state",
+    country_list: "/api/iconnect/country",
+    pendingapproval_list: "/api/iconnect/pendingapproval",
+    loginService: "/api/login",
+    signUpService: "/api/signUP",
+    forgotPasswordService: "/api/forgetpassword"
+  }
 };
 
 /*

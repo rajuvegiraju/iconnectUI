@@ -1,0 +1,64 @@
+<div>
+    <div class="card add-college-content">
+        <form [formGroup]="createCollegeForm">
+            <div class="row">
+                <div class="form-group col-sm-6 col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="{{dashMessage}} Name" formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-sm-6 col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contact Person" formControlName="contactPerName">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Mobile Number" formControlName="mobileNumber">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Address 1" formControlName="address1">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Address 2" formControlName="address2">
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="Country" formControlName="country">
+                            <mat-option *ngFor="let country of countryList" [value]="country">
+                                {{country.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="State" formControlName="state">
+                            <mat-option *ngFor="let state of stateList" [value]="state">
+                                {{state.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="form-group col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Pincode" formControlName="collegename" value="560076">
+                </mat-form-field>
+            </div> -->
+            </div>
+            <div class="align-center">
+                <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>

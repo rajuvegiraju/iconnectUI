@@ -1,0 +1,52 @@
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form validate-form">
+					<span class="login100-form-title p-b-34" style="padding-top: 15px;">
+						Sign UP
+					</span>
+					
+					<div class="wrap-input100 validate-input m-b-20" data-validate="Type user name">
+						<select id="signuprole" name="signuprole" class="input100" style="height:55px;" onchange="showCollegeList();">
+						  <option value="" class="input100" >Select User Type</option>
+						  <option value="volvo" class="input100" >Corporate</option>
+						  <option value="saab">College</option>
+						  <option value="mercedes">Student</option>
+						</select>
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-20" data-validate="Type user name">
+						<input id="username" class="input100" type="text" name="username" placeholder="username">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-20" data-validate="Type password">
+						<input class="input100" type="number" id="mobile" name="mobile" placeholder="mobile">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-20" data-validate="Type password">
+						<input class="input100" type="email" id="email" name="email" placeholder="email">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-20" data-validate="Type password">
+						<input class="input100" type="text" id="collegeName" name="collegeName" placeholder="college/corporate name">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-20" data-validate="Type user name" id="college">
+						<select id="collegeid" name="collegeid" class="input100" style="height:55px;">
+						  <option value="" class="input100" >Select College Name</option>
+						</select>
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<input class="login100-form-btn" type="button" class="login100-form-btn" onclick="signUP();" name="Sign UP" value="Sign UP">
+					</div>
+
+				</div>
+
+				<div class="login100-more" style="background-image: url('./assets/images/iconnectLog.jpg');"></div>
+			</div>
+	</div>
+   
