@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Headers, ResponseContentType } from '@angular/http';
-import { environment } from '../environments/environment';
+import { environment } from './environments/environment';
 import 'rxjs';
 
 // const httpOptions = {
@@ -25,6 +25,13 @@ export class IconnectService {
      */
     getStateDetails(): Observable<any> {
         return this._httpService.get(environment.path.state_list);
+    }
+
+    /**
+     * To get the state
+     */
+    getUniversityDetails(): Observable<any> {
+        return this._httpService.get(environment.path.university_list);
     }
     /**
      * To get the college list
@@ -111,7 +118,87 @@ export class IconnectService {
      /**
      * To post user sign in details
      */
-    forgotPasswordService(): Observable<any> {
-        return this._httpService.get(environment.path.forgotPasswordService);
+    forgotPasswordService(requestBody): Observable<any> {
+        return this._httpService.get(environment.path.forgotPasswordService+'?username='+requestBody.username);
+    }
+
+     /**
+     * To get the corporate list by id
+     */
+    pendingApprovalById(data): Observable<any> {
+        return this._httpService.get(environment.path.pendingApprovalByIdService + '/' + data);
+    }
+
+    /**
+     * Add new college
+     */
+    addNewCollege(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.add_college, requestBody);
+    }
+
+    /**
+     * To update college list
+     */
+    updateNewCollege(requestBody): Observable<any> {
+        return this._httpService.put(environment.path.add_college, requestBody);
+    }
+
+     /**
+     * To delete college list
+     */
+    deleteNewCollege(requestBody): Observable<any> {
+        return this._httpService.delete(environment.path.add_college + '/' + requestBody.id);
+    }
+
+    /**
+     * To get the college list
+     */
+    getNewCollegeList(): Observable<any> {
+        return this._httpService.get(environment.path.add_college);
+    }
+
+     /**
+     * To get the college list
+     */
+    getNewcollegeById(data): Observable<any> {
+        return this._httpService.get(environment.path.add_college+'/'+ data);
+    }
+
+    /**
+     * To get the corporate list
+     */
+    getCorporateList(): Observable<any> {
+        return this._httpService.get(environment.path.corporate_api);
+    }
+    /**
+     * To get the corporate list by id
+     */
+    getCorporateListById(data): Observable<any> {
+        return this._httpService.get(environment.path.corporate_api + '/' + data);
+    }
+    /**
+     * To create Corporate
+     */
+    addNewCorporate(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.corporate_api, requestBody);
+    }
+    /**
+     * To update corporate list
+     */
+    updateNewCorporate(requestBody): Observable<any> {
+        return this._httpService.put(environment.path.corporate_api, requestBody);
+    }
+    /**
+     * To delete corporate list
+     */
+    deleteNewCorporate(requestBody): Observable<any> {
+        return this._httpService.delete(environment.path.corporate_api + '/' + requestBody.id);
+    }
+
+    /**
+     * To get the corporate list by id
+     */
+    changePassword(data): Observable<any> {
+        return this._httpService.get(environment.path.changePassword + '/' + data);
     }
 }

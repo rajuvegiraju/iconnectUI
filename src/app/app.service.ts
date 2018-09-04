@@ -33,6 +33,12 @@ export class appService {
         return this._httpService.get(environment.path.college_api);
     }
     /**
+     * To get the college list
+     */
+    collegeListById(data): Observable<any> {
+        return this._httpService.get(environment.path.college_api+'/'+ data);
+    }
+    /**
      * To create college
      */
     createCollege(requestBody): Observable<any> {
@@ -55,6 +61,12 @@ export class appService {
      */
     corporateList(): Observable<any> {
         return this._httpService.get(environment.path.corporate_api);
+    }
+    /**
+     * To get the corporate list by id
+     */
+    corporateListById(data): Observable<any> {
+        return this._httpService.get(environment.path.corporate_api + '/' + data);
     }
     /**
      * To create Corporate
@@ -80,5 +92,33 @@ export class appService {
      */
     pendingApprovalList(): Observable<any> {
         return this._httpService.get(environment.path.pendingapproval_list);
+    }
+
+    /**
+     * To validate login details
+     */
+    loginService(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.loginService, requestBody);
+    }
+
+    /**
+     * To post user sign in details
+     */
+    signUpService(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.signUpService, requestBody);
+    }
+
+     /**
+     * To post user sign in details
+     */
+    forgotPasswordService(requestBody): Observable<any> {
+        return this._httpService.get(environment.path.forgotPasswordService+'?username='+requestBody.username);
+    }
+
+     /**
+     * To get the corporate list by id
+     */
+    pendingApprovalById(data): Observable<any> {
+        return this._httpService.get(environment.path.pendingApprovalByIdService + '/' + data);
     }
 }

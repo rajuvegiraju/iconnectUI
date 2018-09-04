@@ -4,10 +4,10 @@ import { CollegeRegistrationComponent } from './college-registration/college-reg
 import { CorporateRegistrationComponent } from './corporate-registration/corporate-registration.component';
 import { CollegeListComponent } from './college-list/college-list.component';
 import { CorporateListComponent } from './corporate-list/corporate-list.component';
-import { StudentRegistrationComponent } from './student-registration/student-registration.component';
-import { StudentListComponent } from './student-list/student-list.component';
 import { TemplateComponent } from './template/template.component';
 import { PendingApprovalComponent } from './pending-approval/pending-approval.component';
+import { ApproveCollegeComponent } from './approve-college/approve-college.component';
+import { ApproveCorporateComponent } from './approve-corporate/approve-corporate.component';
 
 
 const routes: Routes = [
@@ -17,11 +17,13 @@ const routes: Routes = [
 		children: [
 		  {path: 'collegeReg', component: CollegeRegistrationComponent},
 		  {path: 'corporateReg', component: CorporateRegistrationComponent},
+      {path: 'collegeReg/:id', component: CollegeRegistrationComponent},
+		  {path: 'corporateReg/:id', component: CorporateRegistrationComponent},
 		  {path: 'collegeList', component: CollegeListComponent},
 		  {path: 'corporateList', component: CorporateListComponent},
 		  {path: 'pendingApproval', component: PendingApprovalComponent},
-		  {path: 'studentReg', component: StudentRegistrationComponent},
-		  {path: 'studentList', component: StudentListComponent}
+      {path: 'approveCollege/:id', component: ApproveCollegeComponent},
+      {path: 'approveCorporate/:id', component: ApproveCorporateComponent},
 		]
 	}
 	 

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CollegeAdminModule } from './college-admin/college-admin.module';
+import { CorporateAdminModule } from './corporate-admin/corporate-admin.module';
 import { AdminModule } from './admin/admin.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthModule } from './auth/auth.module';
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
 	  CollegeAdminModule,
+    CorporateAdminModule,
 	  AdminModule,
     AuthModule,
 	  MaterialModule,

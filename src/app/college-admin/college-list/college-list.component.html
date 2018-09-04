@@ -1,0 +1,47 @@
+<div>
+    <div class="btn-add" *ngIf="!createCollege">
+        <button routerLink="../addCollege" (click)="createOrg()" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i> Add {{dashMessage}}</button>
+    </div>
+    <div class="data-table" *ngIf="!createCollege">
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="contactperson">
+                <mat-header-cell *matHeaderCellDef> Contact Person </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.contactPerName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="mobileno">
+                <mat-header-cell *matHeaderCellDef> Mobile No </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.mobileNumber}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="university">
+                <mat-header-cell *matHeaderCellDef> University </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.address1}}, {{element.address2}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="address">
+                <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.address1}}, {{element.address2}} </mat-cell>
+            </ng-container>
+           
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-icon (click)="editRow(element); createCollege=true">border_color</mat-icon>&nbsp;
+                    
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+    <div *ngIf="createCollege">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -7,7 +7,7 @@ export class SnackbarService {
     }
     success(message) {
         this.snackbar.open(message, "", {
-            panelClass: ["snackbar-success"],
+            /*extraClasses: ["snackbar-success"],*/
             duration: 3000,
             verticalPosition: 'top',
             horizontalPosition: 'center'
@@ -15,18 +15,18 @@ export class SnackbarService {
     }
     error(message) {
         this.snackbar.open(message, "", {
-            panelClass: ["snackbar-error"],
+           /* extraClasses: ["snackbar-error"],*/
             duration: 3000,
             verticalPosition: 'top',
             horizontalPosition: 'center'
         })
     }
-    warning(message) {
+   /* warning(message) {
         this.snackbar.open(message, "", {
-            panelClass: ["snackbar-warning"],
+            extraClasses: ["snackbar-warning"],
             duration: 3000,
             verticalPosition: 'top',
             horizontalPosition: 'center'
         })
-    }
+    }*/
 }

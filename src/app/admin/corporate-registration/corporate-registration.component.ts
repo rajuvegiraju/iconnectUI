@@ -36,7 +36,22 @@ export class CorporateRegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.paramId) {
+  alert(this.paramId);
+    if(this.paramId === 'volvo' || this.paramId === 'xyz'){
+
+     this._iconnectService.pendingApprovalById(this.paramId).subscribe(response => {
+        this.selectedData = response.payload.corporate;
+        this.createCorporateForm.setValue({
+          id:this.selectedData.id,
+          name: this.selectedData.organization,
+          contactPerName:this.selectedData.name,
+          mobileNumber:this.selectedData.mobile,
+          email:this.selectedData.email,
+          
+        });
+      })
+
+    }else if (this.paramId) {
       this._iconnectService.corporateListById(this.paramId).subscribe(response => {
         this.selectedData = response.payload.corporate;
         this.createCorporateForm.setValue({
@@ -52,6 +67,8 @@ export class CorporateRegistrationComponent implements OnInit {
         });
       })
     }
+
+
     this._iconnectService.getCountryDetails().subscribe(response => {
       this.countryList = response.payload.countries;
     })

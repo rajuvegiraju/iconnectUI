@@ -4,7 +4,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
-	{ path: '',   redirectTo: '/superAdmin', pathMatch: 'full' }		
+	{ path: '',   redirectTo: '/login', pathMatch: 'full' }		
 ];
 
 @NgModule({

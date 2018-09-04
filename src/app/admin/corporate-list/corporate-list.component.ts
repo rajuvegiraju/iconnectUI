@@ -50,17 +50,10 @@ export class CorporateListComponent implements OnInit {
         this._iService.deleteCollege(row).subscribe(response => {
             console.log(response);
         })
-
-		/*
-		else if (this.dashMessage === 'Corporate') {
-            this._iService.deleteCorporate(row).subscribe(response => {
-                console.log(response);
-            })
-        }*/
     }
 
     editRow(row) {
-        this.router.navigate(['superAdmin/corporateReg', { id: row.id }]);
+        this.router.navigate(['superAdmin/corporateReg/'+row.id]);
     }
 
 }
