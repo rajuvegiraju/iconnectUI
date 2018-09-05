@@ -36,7 +36,6 @@ export class ApproveCorporateComponent implements OnInit {
 
   ngOnInit() {
     if (this.paramId) {
-    debugger;
       this._iconnectService.pendingApprovalById(this.paramId).subscribe(response => {
         this.selectedData = response.payload.pendingApproval;
         this.createCorporateForm.setValue({
