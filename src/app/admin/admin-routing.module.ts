@@ -8,6 +8,8 @@ import { TemplateComponent } from './template/template.component';
 import { PendingApprovalComponent } from './pending-approval/pending-approval.component';
 import { ApproveCollegeComponent } from './approve-college/approve-college.component';
 import { ApproveCorporateComponent } from './approve-corporate/approve-corporate.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
 		  {path: 'corporateList', component: CorporateListComponent},
 		  {path: 'pendingApproval', component: PendingApprovalComponent},
       {path: 'approveCollege/:id', component: ApproveCollegeComponent},
-      {path: 'approveCorporate/:id', component: ApproveCorporateComponent},
+	  {path: 'approveCorporate/:id', component: ApproveCorporateComponent},
+	  {path: 'studentList', component:StudentListComponent},
+	  {path: 'studentReg', component:StudentRegistrationComponent}
 		]
 	}
 	 

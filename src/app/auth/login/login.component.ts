@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
       }
       this._iconnect.loginService(payload).subscribe(response => {
         if (response.resCode == 1) {
-        debugger;
           this.snackServ.success("Logged in Successfully");
           if("iconnect" === response.payload.template){
             this.router.navigate(['superAdmin']);

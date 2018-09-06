@@ -15,6 +15,8 @@ import { SnackbarService } from '../snackbar.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApproveCollegeComponent } from './approve-college/approve-college.component';
 import { ApproveCorporateComponent } from './approve-corporate/approve-corporate.component';
+import { StudentListComponent } from './student-list/student-list.component';
+import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 
 @NgModule({
   imports: [
@@ -25,7 +27,7 @@ import { ApproveCorporateComponent } from './approve-corporate/approve-corporate
 	  ReactiveFormsModule
   ],
   providers:[IconnectService,DataService,SnackbarService],
-  exports: [CollegeRegistrationComponent, CorporateRegistrationComponent, TemplateComponent, PendingApprovalComponent, CollegeListComponent, CorporateListComponent, ApproveCollegeComponent, ApproveCorporateComponent],
-  declarations: [CollegeRegistrationComponent, CorporateRegistrationComponent, TemplateComponent, PendingApprovalComponent, CollegeListComponent, CorporateListComponent, ApproveCollegeComponent, ApproveCorporateComponent]
+  exports: [StudentRegistrationComponent, StudentListComponent, CollegeRegistrationComponent, CorporateRegistrationComponent, TemplateComponent, PendingApprovalComponent, CollegeListComponent, CorporateListComponent, ApproveCollegeComponent, ApproveCorporateComponent],
+  declarations: [StudentRegistrationComponent, StudentListComponent, CollegeRegistrationComponent, CorporateRegistrationComponent, TemplateComponent, PendingApprovalComponent, CollegeListComponent, CorporateListComponent, ApproveCollegeComponent, ApproveCorporateComponent]
 })
 export class AdminModule { }

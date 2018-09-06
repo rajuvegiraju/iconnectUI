@@ -114,11 +114,4 @@ export class appService {
     forgotPasswordService(requestBody): Observable<any> {
         return this._httpService.get(environment.path.forgotPasswordService+'?username='+requestBody.username);
     }
-
-     /**
-     * To get the corporate list by id
-     */
-    pendingApprovalById(data): Observable<any> {
-        return this._httpService.get(environment.path.pendingApprovalByIdService + '/' + data);
-    }
 }
