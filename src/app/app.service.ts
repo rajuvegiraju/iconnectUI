@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Headers, ResponseContentType } from '@angular/http';
-import { environment } from '../environments/environment';
+import { environment } from './environments/environment';
 import 'rxjs/Rx';
 
 // const httpOptions = {

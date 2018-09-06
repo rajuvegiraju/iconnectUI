@@ -5,12 +5,17 @@ import { PlacementOfficerRoutingModule } from './placement-officer-routing.modul
 import { StudentListComponent } from './student-list/student-list.component';
 import { TemplateComponent } from './template/template.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { PendingApprovalComponent } from './pending-approval/pending-approval.component';
+import { IntenshipComponent } from './intenship/intenship.component';
+import { AvailablejobsComponent } from './availablejobs/availablejobs.component';
+import { TrainingsComponent } from './trainings/trainings.component';
+import { InterviewSchedulesComponent } from './interview-schedules/interview-schedules.component';
 
 @NgModule({
   imports: [
     CommonModule,
     PlacementOfficerRoutingModule
   ],
-  declarations: [StudentListComponent, TemplateComponent, AddStudentComponent]
+  declarations: [StudentListComponent, TemplateComponent, AddStudentComponent, PendingApprovalComponent, IntenshipComponent, AvailablejobsComponent, TrainingsComponent, InterviewSchedulesComponent]
 })
 export class PlacementOfficerModule { }
