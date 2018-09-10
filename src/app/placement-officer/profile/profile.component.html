@@ -1,3 +1,126 @@
-<p>
-  profile works!
-</p>
+<div>
+  <div class="card add-college-content">
+    <form [formGroup]="placementForm">
+      <div class="row">
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Officer Name" formControlName="name">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mobile Number" formControlName="mobileNumber">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="University" formControlName="university">
+              <mat-option value="university">
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="College Name" formControlName="collegeName">
+          </mat-form-field>
+        </div>
+        <fieldset class="form-group col-sm-12 col-md-12">
+          <legend>College Location:</legend>
+          <div class="form-group col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Country" formControlName="country">
+                <mat-option value="country">
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="State" formControlName="state">
+                <mat-option value="state">
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="City" formControlName="city">
+            </mat-form-field>
+          </div>
+          <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Area" formControlName="area">
+            </mat-form-field>
+          </div>
+        </fieldset>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="schemeType" formControlName="schemeType">
+              <mat-option value="schemeType">
+                
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <fieldset class="form-group col-sm-12 col-md-12">
+          <legend>Department:</legend>
+          <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Department Name" formControlName="departmentName">
+            </mat-form-field>
+          </div>
+          <div class="form-group col-sm-6 col-md-6">
+            <button mat-button>Add</button>
+          </div>
+        </fieldset>
+
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Course" formControlName="course">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Stream" formControlName="stream">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="College Address" formControlName="collegeAddress">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="College Contact Number" formControlName="collegeContact">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Principal Name" formControlName="principalName">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Principal Contact Number" formControlName="principalContact">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Principal Email Id" formControlName="principalEmail">
+          </mat-form-field>
+        </div>
+                
+      </div>
+      <div class="align-center">
+        <input type="button" class="btn btn-primary" value="Edit">&nbsp;&nbsp;
+        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Save">
+      </div>
+    </form>
+  </div>
+</div>

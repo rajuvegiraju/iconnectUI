@@ -12,11 +12,15 @@ import { TrainingsComponent } from './trainings/trainings.component';
 import { InterviewSchedulesComponent } from './interview-schedules/interview-schedules.component';
 import { ViewStudentsComponent } from './view-students/view-students.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MaterialModule } from '../material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    PlacementOfficerRoutingModule
+    PlacementOfficerRoutingModule,
+    MaterialModule,
+    FormsModule, ReactiveFormsModule
   ],
   declarations: [StudentListComponent, TemplateComponent, AddStudentComponent, PendingApprovalComponent, IntenshipComponent, AvailablejobsComponent, TrainingsComponent, InterviewSchedulesComponent, ViewStudentsComponent, ProfileComponent]
 })
