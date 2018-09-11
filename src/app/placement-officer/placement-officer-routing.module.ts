@@ -8,6 +8,7 @@ import { IntenshipComponent } from './intenship/intenship.component';
 import { InterviewSchedulesComponent } from './interview-schedules/interview-schedules.component';
 import { AvailablejobsComponent } from './availablejobs/availablejobs.component';
 import { TrainingsComponent } from './trainings/trainings.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
 	{
@@ -20,7 +21,8 @@ const routes: Routes = [
       {path: 'intenship', component: IntenshipComponent},
       {path: 'interviewSchedule', component: InterviewSchedulesComponent},
       {path: 'availableJobs', component: AvailablejobsComponent},
-      {path: 'trainings', component: TrainingsComponent}
+      {path: 'trainings', component: TrainingsComponent},
+      {path: 'poProfile', component: ProfileComponent}
 		]
 	}
 	 

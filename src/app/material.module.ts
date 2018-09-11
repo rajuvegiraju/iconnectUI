@@ -5,11 +5,12 @@ import {
     MatInputModule, MatSlideToggleModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
     MatTableModule, MatSnackBarModule, MatCardModule, MatDialogModule, MatFormFieldModule,MatSelectModule
 } from '@angular/material';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 
 @NgModule({
     imports: [
-        CommonModule, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule,
+        MatFileUploadModule, CommonModule, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule,
         MatInputModule, MatSlideToggleModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
         MatTableModule, MatSnackBarModule, MatCardModule, MatDialogModule,MatFormFieldModule,MatSelectModule
     ],

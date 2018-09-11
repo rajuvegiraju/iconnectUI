@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CollegeAdminModule } from './college-admin/college-admin.module';
 import { CorporateAdminModule } from './corporate-admin/corporate-admin.module';
 import { AdminModule } from './admin/admin.module';
+import { PlacementOfficerModule } from './placement-officer/placement-officer.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthModule } from './auth/auth.module';
 import { CorporateModule } from './corporate/corporate.module';
@@ -45,7 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TooltipModule.forRoot(),
     ModalModule.forRoot()
   ],
-  exports: [BsDropdownModule, TooltipModule, ModalModule, AdminModule],
+  exports: [BsDropdownModule, TooltipModule, ModalModule, AdminModule, PlacementOfficerModule],
   providers:[IconnectService,DataService,SnackbarService,{provide: HTTP_INTERCEPTORS,
   useClass: HttpServiceInterceptor,multi: true}],
   bootstrap: [AppComponent]
