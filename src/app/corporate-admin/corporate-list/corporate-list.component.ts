@@ -25,8 +25,8 @@ export class CorporateListComponent implements OnInit {
             this.dashMessage = "College";
             this.createCollege = false;
 
-            this._iService.corporateList().subscribe(response => {
-                let ELEMENT_DATA = response.payload.corporate;
+            this._iService.getCorporateList().subscribe(response => {
+                let ELEMENT_DATA = response.payload.corporateList;
                 this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
             })
             
@@ -46,7 +46,7 @@ export class CorporateListComponent implements OnInit {
     }
 
     editRow(row) {
-        this.router.navigate(['superAdmin/corporateReg/'+row.id]);
+        this.router.navigate(['corporateAdmin/updateCorporate/'+row.id]);
     }
 
 }

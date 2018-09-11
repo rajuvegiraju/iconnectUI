@@ -168,31 +168,31 @@ export class IconnectService {
      * To get the corporate list
      */
     getCorporateList(): Observable<any> {
-        return this._httpService.get(environment.path.corporate_api);
+        return this._httpService.get(environment.path.add_corporate);
     }
     /**
      * To get the corporate list by id
      */
     getCorporateListById(data): Observable<any> {
-        return this._httpService.get(environment.path.corporate_api + '/' + data);
+        return this._httpService.get(environment.path.add_corporate + '/' + data);
     }
     /**
      * To create Corporate
      */
     addNewCorporate(requestBody): Observable<any> {
-        return this._httpService.post(environment.path.corporate_api, requestBody);
+        return this._httpService.post(environment.path.add_corporate, requestBody);
     }
     /**
      * To update corporate list
      */
     updateNewCorporate(requestBody): Observable<any> {
-        return this._httpService.put(environment.path.corporate_api, requestBody);
+        return this._httpService.put(environment.path.add_corporate, requestBody);
     }
     /**
      * To delete corporate list
      */
     deleteNewCorporate(requestBody): Observable<any> {
-        return this._httpService.delete(environment.path.corporate_api + '/' + requestBody.id);
+        return this._httpService.delete(environment.path.add_corporate + '/' + requestBody.id);
     }
 
     /**

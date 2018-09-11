@@ -8,6 +8,9 @@ import { CorporateAdminModule } from './corporate-admin/corporate-admin.module';
 import { AdminModule } from './admin/admin.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthModule } from './auth/auth.module';
+import { CorporateModule } from './corporate/corporate.module';
+import { PlacementOfficerModule } from './placement-officer/placement-officer.module';
+import { StudentModule } from './student/student.module';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -32,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
 	  CollegeAdminModule,
     CorporateAdminModule,
+    PlacementOfficerModule,
 	  AdminModule,
     AuthModule,
 	  MaterialModule,
@@ -43,7 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule, AdminModule],
   providers:[IconnectService,DataService,SnackbarService,{provide: HTTP_INTERCEPTORS,
-useClass: HttpServiceInterceptor,multi: true}],
+  useClass: HttpServiceInterceptor,multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

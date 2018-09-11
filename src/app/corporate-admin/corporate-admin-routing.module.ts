@@ -10,6 +10,7 @@ const routes: Routes = [
 		component: TemplateComponent,
 		children: [
 		  {path: 'addCorporate', component: AddCorporateComponent},
+      {path: 'updateCorporate/:id', component: AddCorporateComponent},
       {path: 'corporateList', component: CorporateListComponent}
 		]
 	},

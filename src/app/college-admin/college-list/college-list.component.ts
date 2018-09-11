@@ -23,9 +23,9 @@ export class CollegeListComponent implements OnInit {
 	  this.dataService.navMessage.subscribe(message => {
             this.dashMessage = "College";
             this.createCollege = false;
-            
+            debugger;
                 this._iService.getNewCollegeList().subscribe(response => {
-                    let ELEMENT_DATA = response.payload.college;
+                    let ELEMENT_DATA = response.payload.collegeList;
                     this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
                 })
            

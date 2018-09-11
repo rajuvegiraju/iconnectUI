@@ -22,11 +22,11 @@ export class AddCollegeComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.addCollegeForm = this._formBuilder.group({
       'name': ['', Validators.required],
-      'contactPerName': ['', Validators.required],
-      'mobileNumber': ['', Validators.required],
-      'email': ['', Validators.required],
+      'placementOfficer': ['', Validators.required],
+      'poMobile': ['', Validators.required],
+      'poEmail': ['', Validators.required],
       'address1': ['', Validators.required],
-      'address2': ['', Validators.required],
+      'location': ['', Validators.required],
       'country': ['', Validators.required],
       'state': ['', Validators.required],
       'university': ['', Validators.required]
@@ -40,11 +40,11 @@ export class AddCollegeComponent implements OnInit {
         this.selectedData = response.payload.college;
         this.addCollegeForm.setValue({
           name: this.selectedData.name,
-          contactPerName:this.selectedData.contactPerName,
-          mobileNumber:this.selectedData.mobileNumber,
-          email:this.selectedData.email,
+          placementOfficer:this.selectedData.placementOfficer,
+          poMobile:this.selectedData.poMobile,
+          poEmail:this.selectedData.poEmail,
           address1:this.selectedData.address1,
-          address2:this.selectedData.address2,
+          location:this.selectedData.location,
           country:this.selectedData.country,
           state:this.selectedData.state,
           university:this.selectedData.university,
@@ -77,7 +77,7 @@ export class AddCollegeComponent implements OnInit {
         }
       })
     } else {
-      this._iconnectService.addNewCollege(this.paramId).subscribe(response => {
+      this._iconnectService.addNewCollege(this.addCollegeForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Created.");
           this.router.navigateByUrl('/collegeAdmin/collegeList');

@@ -22,11 +22,11 @@ export class AddCorporateComponent implements OnInit {
     this.createCorporateForm = this._formBuilder.group({
       'id': [''],
       'name': ['', Validators.required],
-      'contactPerName': ['', Validators.required],
-      'mobileNumber': ['', Validators.required],
-      'email': ['', Validators.required],
+      'hrName': ['', Validators.required],
+      'hrMobile': ['', Validators.required],
+      'hrEmail': ['', Validators.required],
+      'location': ['', Validators.required],
       'address1': ['', Validators.required],
-      'address2': ['', Validators.required],
       'country': ['', Validators.required],
       'state': ['', Validators.required]
     });
@@ -37,16 +37,17 @@ export class AddCorporateComponent implements OnInit {
   ngOnInit() {
 
   if (this.paramId) {
-      this._iconnectService.corporateListById(this.paramId).subscribe(response => {
+      this._iconnectService.getCorporateListById(this.paramId).subscribe(response => {
         this.selectedData = response.payload.corporate;
+        debugger;
         this.createCorporateForm.setValue({
           id:this.selectedData.id,
           name: this.selectedData.name,
-          contactPerName:this.selectedData.contactPerName,
-          mobileNumber:this.selectedData.mobileNumber,
-          email:this.selectedData.email,
+          hrName:this.selectedData.hrName,
+          hrMobile:this.selectedData.hrMobile,
+          hrEmail:this.selectedData.hrEmail,
+          location:this.selectedData.location,
           address1:this.selectedData.address1,
-          address2:this.selectedData.address2,
           country:this.selectedData.country,
           state:this.selectedData.state
         });
@@ -67,7 +68,7 @@ export class AddCorporateComponent implements OnInit {
 
   onSubmit() {
     if (this.paramId) {
-      this._iconnectService.updateCorporate(this.createCorporateForm.value).subscribe(response => {
+      this._iconnectService.updateNewCorporate(this.createCorporateForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
           this.router.navigateByUrl('/superAdmin/corporateList');
@@ -77,10 +78,10 @@ export class AddCorporateComponent implements OnInit {
         }
       })
     } else {
-      this._iconnectService.createCorporate(this.createCorporateForm.value).subscribe(response => {
+      this._iconnectService.addNewCorporate(this.createCorporateForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Registered");
-          this.router.navigateByUrl('/superAdmin/corporateList');
+          this.router.navigateByUrl('/corporateAdmin/corporateList');
           this.dataService.navData("Corporate");
         }else{
           this._snackBar.error(response.mesgStr);

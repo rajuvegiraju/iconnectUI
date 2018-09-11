@@ -11,21 +11,21 @@
 
             <ng-container matColumnDef="contactperson">
                 <mat-header-cell *matHeaderCellDef> Contact Person </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.contactPerName}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.hrName}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="mobileno">
                 <mat-header-cell *matHeaderCellDef> Mobile No </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.mobileNumber}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.hrMobile}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="email">
                 <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.hrEmail}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="address">
                 <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.address1}}, {{element.address2}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.location}}, {{element.address1}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="state">
                 <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
