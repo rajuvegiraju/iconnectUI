@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['collegeAdmin']);
           }else if("corporate" === response.payload.template){
             this.router.navigate(['corporateAdmin']);
+          }else if("po" === response.payload.template){
+            this.router.navigate(['po']);
           }else{
             this.router.navigate(['superAdmin']);
           }

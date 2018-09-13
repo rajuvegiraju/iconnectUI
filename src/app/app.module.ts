@@ -10,9 +10,7 @@ import { PlacementOfficerModule } from './placement-officer/placement-officer.mo
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthModule } from './auth/auth.module';
 import { CorporateModule } from './corporate/corporate.module';
-import { PlacementOfficerModule } from './placement-officer/placement-officer.module';
 import { StudentModule } from './student/student.module';
-
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -38,7 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CorporateAdminModule,
     PlacementOfficerModule,
 	  AdminModule,
+    StudentModule,
     AuthModule,
+    CorporateModule,
 	  MaterialModule,
 	  HttpClientModule,
     BrowserAnimationsModule,
@@ -46,7 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TooltipModule.forRoot(),
     ModalModule.forRoot()
   ],
-  exports: [BsDropdownModule, TooltipModule, ModalModule, AdminModule, PlacementOfficerModule],
+  exports: [BsDropdownModule, TooltipModule, ModalModule, AdminModule, PlacementOfficerModule, CorporateModule],
   providers:[IconnectService,DataService,SnackbarService,{provide: HTTP_INTERCEPTORS,
   useClass: HttpServiceInterceptor,multi: true}],
   bootstrap: [AppComponent]

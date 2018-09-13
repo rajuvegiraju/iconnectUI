@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template',
@@ -8,15 +7,9 @@ import { Router } from '@angular/router';
 })
 export class TemplateComponent implements OnInit {
 
-  navMessage:any;
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit() {
-    this.navMessage = "Dashboard";
-    this.router.navigate(['hr']);
-  }
-  navBar(data){
-    this.navMessage = data;
   }
 
 }

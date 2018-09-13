@@ -11,6 +11,10 @@ import { IconnectService } from '../iconnect.service';
 import { DataService } from '../datachange.service';
 import { SnackbarService } from '../snackbar.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AllJobsComponent } from './all-jobs/all-jobs.component';
+import { InterviewSchedulesComponent } from './interview-schedules/interview-schedules.component';
+import { InternshipComponent } from './internship/internship.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -22,6 +26,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   providers:[IconnectService,DataService,SnackbarService],
   exports: [AddjdComponent, TemplateComponent],
-  declarations: [AddjdComponent, TemplateComponent]
+  declarations: [AddjdComponent, TemplateComponent, AllJobsComponent, InterviewSchedulesComponent, InternshipComponent, ProfileComponent]
 })
 export class CorporateModule { }
