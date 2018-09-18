@@ -15,6 +15,8 @@ import { AllJobsComponent } from './all-jobs/all-jobs.component';
 import { InterviewSchedulesComponent } from './interview-schedules/interview-schedules.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddInternshipComponent } from './add-internship/add-internship.component';
+
 
 @NgModule({
   imports: [
@@ -26,6 +28,6 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   providers:[IconnectService,DataService,SnackbarService],
   exports: [AddjdComponent, TemplateComponent],
-  declarations: [AddjdComponent, TemplateComponent, AllJobsComponent, InterviewSchedulesComponent, InternshipComponent, ProfileComponent]
+  declarations: [AddjdComponent, TemplateComponent, AllJobsComponent, InterviewSchedulesComponent, InternshipComponent, ProfileComponent, AddInternshipComponent]
 })
 export class CorporateModule { }

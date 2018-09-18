@@ -7,6 +7,7 @@ import { OnlineTestComponent } from './online-test/online-test.component';
 import { ScheduledInterviewsComponent } from './scheduled-interviews/scheduled-interviews.component';
 import { TrainingComponent } from './training/training.component';
 import { ViewCompaniesComponent } from './view-companies/view-companies.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
       {path: 'onlinetest', component: OnlineTestComponent},
 		  {path: 'scheduled-interview', component: ScheduledInterviewsComponent},
 		  {path: 'training', component: TrainingComponent},
-		  {path: 'view-companies', component: ViewCompaniesComponent}
+		  {path: 'view-companies', component: ViewCompaniesComponent},
+      {path: 'profile', component: ProfileComponent}
 		]
 	}
 	 

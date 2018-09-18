@@ -1,3 +1,116 @@
-<p>
-  profile works!
-</p>
+<div>
+  <div class="card add-college-content">
+    <form [formGroup]="hrForm">
+      <div class="row">
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Corporate Name" formControlName="corporateName">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Industry" formControlName="industry">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Website" formControlName="corporateWebsite">
+          </mat-form-field>
+        </div>
+        <fieldset class="form-group col-sm-12 col-md-12">
+          <legend>Corporate Location:</legend>
+          
+          <div class="form-group col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Country" formControlName="country">
+                <mat-option value="country">
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="State" formControlName="state">
+                <mat-option value="state">
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6 col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Location" formControlName="location">
+            </mat-form-field>
+          </div>
+          <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Address One" formControlName="addessOne">
+            </mat-form-field>
+          </div>
+        </fieldset>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="HR Name" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="HR Email ID" formControlName="email">
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="HR Mobile Number" formControlName="mobile">
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Designation" formControlName="designation">
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="OfficeNumber" formControlName="officeNumber">
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Extension" formControlName="extension">
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Personal Email" formControlName="persionalEmail">
+            </mat-form-field>
+        </div>
+        <fieldset class="form-group col-sm-12 col-md-12">
+          <legend>Second point of Contact Details:</legend>
+
+          <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Name" formControlName="secoundPCPName">
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" formControlName="secoundPCPEmail">
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Mobil Number" formControlName="secoundPCPMobile">
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Designation" formControlName="secoundPCPDesignation">
+            </mat-form-field>
+          </div>
+        </fieldset>
+    </div>
+      <div class="align-center">
+        <input type="button" class="btn btn-primary" value="Edit">&nbsp;&nbsp;
+        <input type="button" class="btn btn-primary"  value="Save">
+      </div>
+    </form>
+  </div>
+</div>

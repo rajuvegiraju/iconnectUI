@@ -6,6 +6,7 @@ import { AllJobsComponent } from './all-jobs/all-jobs.component';
 import { InternshipComponent } from './internship/internship.component';
 import { InterviewSchedulesComponent } from './interview-schedules/interview-schedules.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddInternshipComponent } from './add-internship/add-internship.component';
 
 const routes: Routes = [
 	{
@@ -15,8 +16,9 @@ const routes: Routes = [
 		  {path: 'addjd', component: AddjdComponent},
       {path: 'all-jobs', component: AllJobsComponent},
       {path: 'internship', component: InternshipComponent},
-      {path: 'interview-schedules', component: InterviewSchedulesComponent}
-      {path: 'profile', component: ProfileComponent}
+      {path: 'interview-schedules', component: InterviewSchedulesComponent},
+      {path: 'profile', component: ProfileComponent},
+      {path: 'add-internship', component: AddInternshipComponent}
 		]
 	}
 	 
