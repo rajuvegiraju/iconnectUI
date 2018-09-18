@@ -15,7 +15,7 @@ const routes: Routes = [
 		  {path: 'addjd', component: AddjdComponent},
       {path: 'all-jobs', component: AllJobsComponent},
       {path: 'internship', component: InternshipComponent},
-      {path: 'interview-schedules', component: InterviewSchedulesComponent}
+      {path: 'interview-schedules', component: InterviewSchedulesComponent},
       {path: 'profile', component: ProfileComponent}
 		]
 	}
