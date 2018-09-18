@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   email:any;
   collegeName:any;
   collegeid:any;
-  isCollege = false;
+  //isCollege:boolean = false;
   constructor(private _iconnect:IconnectService, private router:Router, private snackServ:SnackbarService) { }
 
   ngOnInit() {
