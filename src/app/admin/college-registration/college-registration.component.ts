@@ -47,7 +47,7 @@ export class CollegeRegistrationComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.createCollegeForm = this._formBuilder.group({
       'id': [''],
-      'name': ['', Validators.compose([Validators.required, Validators.maxLength(30)])],
+      'name': ['', Validators.compose([Validators.required, Validators.maxLength(20)])],
       'contactPerName': ['', Validators.required],
       'mobileNumber': ['', Validators.required],
       'email': ['', Validators.required],
