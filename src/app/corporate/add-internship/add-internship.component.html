@@ -1,35 +1,45 @@
 <div>
     <div class="card add-college-content">
-        <form [formGroup]="createJDForm">
+        <form [formGroup]="newInternshipForm">
             <div class="row">
                 <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Job Position" formControlName="jobPosition">
+                        <input matInput placeholder="Project Title" formControlName="projectTitle">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Job Type" formControlName="jobType">
+                        <input matInput placeholder="Description " formControlName="description ">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Cource" formControlName="cource">
+                        <input matInput placeholder="Location " formControlName="location ">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Percentage Criteria" formControlName="percentage">
+                        <input matInput placeholder="Duration " formControlName="duration">
+                    </mat-form-field>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="Course" formControlName="cource">
+                            <mat-option *ngFor="let cource of courceList" [value]="cource">
+                                {{cource.name}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="No. Of Vacancies" formControlName="vacancies">
+                        <input matInput placeholder="Percentage criteria" formControlName="percentage">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Salary" formControlName="salary">
+                        <input matInput placeholder="Stipend " formControlName="stipend ">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
@@ -39,7 +49,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Job Description" formControlName="description">
+                        <input matInput placeholder="Number of Vacancies " formControlName="vacancies">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
@@ -49,28 +59,13 @@
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <mat-select placeholder="Country" formControlName="country">
-                            <mat-option *ngFor="let country of countryList" [value]="country">
-                                {{country.name}}
+                        <mat-select placeholder="Modes of Interview" formControlName="modeOfInterview">
+                            <mat-option *ngFor="let modeOfInterview of modeOfInterviewList" [value]="modeOfInterview">
+                                {{modeOfInterview.name}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
-                <div class="form-group col-md-6">
-                    <mat-form-field class="example-full-width">
-                        <mat-select placeholder="State" formControlName="state">
-                            <mat-option *ngFor="let state of stateList" [value]="state">
-                                {{state.name}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="form-group col-md-6">
-                    <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Location" formControlName="location">
-                    </mat-form-field>
-                </div>
-
             </div>
             <div class="align-center">
                 <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Submit">

@@ -5,35 +5,33 @@ import { DataService } from '../../datachange.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SnackbarService } from '../../snackbar.service';
 
-
 @Component({
-  selector: 'app-addjd',
-  templateUrl: './addjd.component.html',
-  styleUrls: ['./addjd.component.css']
+  selector: 'app-add-internship',
+  templateUrl: './add-internship.component.html',
+  styleUrls: ['./add-internship.component.css']
 })
-export class AddjdComponent implements OnInit {
+export class AddInternshipComponent implements OnInit {
 
-  createJDForm: FormGroup;
+  newInternshipForm: FormGroup;
   countryList: any;
   stateList: any;
   dashMessage: String;
   selectedData: any;
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
-    this.createJDForm = this._formBuilder.group({
+    this.newInternshipForm = this._formBuilder.group({
       'id': [''],
-      'jobPosition': ['', Validators.required],
-      'jobType': ['', Validators.required],
+      'projectTitle': ['', Validators.required],
+      'duration': ['', Validators.required],
+      'description': ['', Validators.required],
+      'location':['', Validators.required],
       'cource': ['', Validators.required],
       'percentage': ['', Validators.required],
-      'vacancies': ['', Validators.required],
-      'salary': ['', Validators.required],
+      'stipend': ['', Validators.required],
       'skill': ['', Validators.required],
-      'roundsOfInterview':['', Validators.required],
-      'description': ['', Validators.required],
-      'location': ['', Validators.required],
-      'country': ['', Validators.required],
-      'state': ['', Validators.required]
+      'vacancies':['', Validators.required],
+      'roundsOfInterview': ['', Validators.required],
+      'modeOfInterview': ['', Validators.required]
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }
@@ -42,19 +40,19 @@ export class AddjdComponent implements OnInit {
     if (this.paramId) {
       this._iconnectService.collegeListById(this.paramId).subscribe(response => {
         this.selectedData = response.payload.college;
-        this.createJDForm.setValue({
+        this.newInternshipForm.setValue({
           id:this.selectedData.id,
-          jobPosition: this.selectedData.jobPosition,
-          jobType:this.selectedData.jobType,
-          cource:this.selectedData.cource,
-          percentage:this.selectedData.percentage,
-          vacancies:this.selectedData.vacancies,
-          salary:this.selectedData.salary,
-          skill:this.selectedData.skill,
+          projectTitle: this.selectedData.projectTitle,
+          duration:this.selectedData.duration,
           description:this.selectedData.description,
           location:this.selectedData.location,
-          country:this.selectedData.country,
-          state:this.selectedData.state
+          cource:this.selectedData.cource,
+          percentage:this.selectedData.percentage,
+          stipend:this.selectedData.stipend,
+          skill:this.selectedData.skill,
+          vacancies:this.selectedData.vacancies,
+          roundsOfInterview:this.selectedData.roundsOfInterview,
+          modeOfInterview:this.selectedData.modeOfInterview
         });
       })
     }
@@ -71,7 +69,7 @@ export class AddjdComponent implements OnInit {
 
   onSubmit() {
     if (this.paramId) {
-      this._iconnectService.updateCollege(this.createJDForm.value).subscribe(response => {
+      this._iconnectService.updateCollege(this.newInternshipForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
           this.router.navigateByUrl('/superAdmin/collegeList');
@@ -81,7 +79,7 @@ export class AddjdComponent implements OnInit {
         }
       })
     } else {
-      this._iconnectService.createCollege(this.createJDForm.value).subscribe(response => {
+      this._iconnectService.createCollege(this.newInternshipForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Registered");
           this.router.navigateByUrl('/superAdmin/collegeList');
@@ -92,6 +90,5 @@ export class AddjdComponent implements OnInit {
       })
     }
   }
-
 
 }

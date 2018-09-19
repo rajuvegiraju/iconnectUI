@@ -9,12 +9,13 @@ import { JobOffersComponent } from './job-offers/job-offers.component';
 import { ViewCompaniesComponent } from './view-companies/view-companies.component';
 import { ScheduledInterviewsComponent } from './scheduled-interviews/scheduled-interviews.component';
 import { OnlineTestComponent } from './online-test/online-test.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
     CommonModule,
     StudentRoutingModule
   ],
-  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent]
+  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent]
 })
 export class StudentModule { }
