@@ -111,7 +111,7 @@ export class CollegeRegistrationComponent implements OnInit {
         })
       }
     }else{
-      console.log("Hello error");
+      this._snackBar.error("Please Fill the mandatory fields");
     }
   }
 
