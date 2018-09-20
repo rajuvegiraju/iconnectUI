@@ -10,11 +10,16 @@ import { ViewCompaniesComponent } from './view-companies/view-companies.componen
 import { ScheduledInterviewsComponent } from './scheduled-interviews/scheduled-interviews.component';
 import { OnlineTestComponent } from './online-test/online-test.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MaterialModule } from '../material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    StudentRoutingModule
+    StudentRoutingModule,
+    MaterialModule,
+	  FormsModule,
+	  ReactiveFormsModule
   ],
   declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent]
 })
