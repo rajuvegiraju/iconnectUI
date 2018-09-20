@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { IconnectService } from '../../iconnect.service';
+import { DataService } from '../../datachange.service';
+import { SnackbarService } from '../../snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,8 +13,11 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class ProfileComponent implements OnInit {
   placementForm: FormGroup;
+  department: any;
+  displayedColumns: string[] = ['number', 'departmentName', 'actions'];
+  dataSource: any = [];
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private _formBuilder: FormBuilder, private _snackBar: SnackbarService) {
     this.placementForm = this._formBuilder.group({
       'name': ['', Validators.required],
       'mobileNumber': ['', Validators.required],
@@ -33,6 +41,17 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  addDept(data) {
+    if (data) {
+      let dataObj = {
+        departmentName: data
+      };
+      
+      this.dataSource.push(dataObj);
+    } else {
+      this._snackBar.error("Department name should not be empty");
+    }
   }
 
 }
