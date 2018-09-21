@@ -15,27 +15,33 @@ export class SignupComponent implements OnInit {
   email:any;
   collegeName:any;
   collegeid:any;
+  collegeList:any;
   //isCollege:boolean = false;
   constructor(private _iconnect:IconnectService, private router:Router, private snackServ:SnackbarService) { }
 
   ngOnInit() {
+
+    this._iconnect.getAllColleges().subscribe(response => {
+      this.collegeList = response.payload.collegeList;
+    })
   }
 
   signUP() {
+  debugger;
     let payload = {
       type: this.signuprole,
       name: this.username,
       mobile: this.mobile,
       email: this.email,
-      organization:this.collegeName
+      organization:this.collegeName,
+      collegeId:this.collegeid
     }
 
-    
     this._iconnect.signUpService(payload).subscribe(response => {
       if (response.resCode == 1) {
         this.snackServ.success("Registered in Successfully");
         this.router.navigate(['signup-success']);
-      }else if(response.resCode == 1){
+      }else{
        this.snackServ.success(response.payload.message);
       }
     })

@@ -2,35 +2,35 @@
     <div class="btn-add">
         <button routerLink="../add-internship" (click)="createOrg()" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i> Add Internship</button>
     </div>
-    <div class="align-center" *ngIf="dataSource.length==0">
+  <!--  <div class="align-center" *ngIf="dataSource.length==0">
         <mat-spinner></mat-spinner>
-    </div>
-    <div class="data-table" *ngIf="dataSource.length!=0">
+    </div> -->
+    <div class="data-table">
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="name">
+            <ng-container matColumnDef="title">
                 <mat-header-cell *matHeaderCellDef> Project Title </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="contactperson">
+            <ng-container matColumnDef="duration">
                 <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.duration }} </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="mobileno">
+            <ng-container matColumnDef="description">
                 <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.description }} </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="email">
+            <ng-container matColumnDef="course">
                 <mat-header-cell *matHeaderCellDef> Course  </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.course }} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="address">
+            <ng-container matColumnDef="stipend">
                 <mat-header-cell *matHeaderCellDef> Stipend  </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.stipend }} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="state">
+            <ng-container matColumnDef="skill">
                 <mat-header-cell *matHeaderCellDef> Skill Required  </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.skill }} </mat-cell>
             </ng-container>

@@ -33,6 +33,14 @@ export class IconnectService {
     getUniversityDetails(): Observable<any> {
         return this._httpService.get(environment.path.university_list);
     }
+
+     /**
+     * To get the state
+     */
+    getAllColleges(): Observable<any> {
+        return this._httpService.get(environment.path.getAllColleges);
+    }
+
     /**
      * To get the college list
      */

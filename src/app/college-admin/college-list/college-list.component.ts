@@ -52,7 +52,7 @@ export class CollegeListComponent implements OnInit {
     }
 
     editRow(row) {
-        this.router.navigate(['collegeAdmin/collegeList', {id:row.id}])
+        this.router.navigate(['collegeAdmin/addCollege', {id:row.id}])
     }
 
 }

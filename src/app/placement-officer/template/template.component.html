@@ -138,15 +138,13 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
 						<li class="nav-label">Home</li>
-                        <li> <a class="nav-label" routerLink="po" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
-                        </li>
-                        <li> <a class="nav-label" routerLink="studentList" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">view Students</span></a>
-                        <li> <a class="nav-label" routerLink="pendingApproval" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Pending Approval</span></a>
-                        <li> <a class="nav-label" routerLink="intenship" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">View Internship</span></a>
-                        <li> <a class="nav-label" routerLink="availableJobs" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Available Jobs</span></a>
-                        <li> <a class="nav-label" routerLink="interviewSchedule" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Interview Schedules</span></a>
-                        <li> <a class="nav-label" routerLink="trainings" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Trainings</span></a>
-                        <li> <a class="nav-label" routerLink="poProfile" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
+                        <li> <a class="nav-label" routerLink="po" (click)="navBar('Dashboard')" [ngClass]="{'sidenav-active':navMessage === 'Dashboard'}" aria-expanded="false"><i class="fa fa-tachometer" [ngClass]="{'sidenav-active':navMessage === 'Dashboard'}"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="nav-label" routerLink="studentList" (click)="navBar('view Students')" [ngClass]="{'sidenav-active':navMessage === 'view Students'}" aria-expanded="false"><i class="ffa fa-users" [ngClass]="{'sidenav-active':navMessage === 'view Students'}" aria-hidden="true"></i><span class="hide-menu">view Students</span></a></li>
+                        <li> <a class="nav-label" routerLink="pendingApproval" (click)="navBar('Pending Approval')" [ngClass]="{'sidenav-active':navMessage === 'Pending Approval'}" aria-expanded="false"><i class="fa fa-users" [ngClass]="{'sidenav-active':navMessage === 'Pending Approval'}" aria-hidden="true"></i><span class="hide-menu">Pending Approval</span></a></li>
+                        <li> <a class="nav-label" routerLink="intenship" (click)="navBar('View Internship')" [ngClass]="{'sidenav-active':navMessage === 'View Internship'}" aria-expanded="false"><i class="fa-list-alt " [ngClass]="{'sidenav-active':navMessage === 'View Internship'}" aria-hidden="true"></i><span class="hide-menu">View Internship</span></a></li>
+                        <li> <a class="nav-label" routerLink="availableJobs" (click)="navBar('Available Jobs')" [ngClass]="{'sidenav-active':navMessage === 'Available Jobs'}" aria-expanded="false"><i class="fa fa-list" [ngClass]="{'sidenav-active':navMessage === 'Available Jobs'}" aria-hidden="true"></i><span class="hide-menu">Available Jobs</span></a></li>
+                        <li> <a class="nav-label" routerLink="interviewSchedule" (click)="navBar('Interview Schedules')" [ngClass]="{'sidenav-active':navMessage === 'Interview Schedules'}" aria-expanded="false"><i class="fa-clock-o " [ngClass]="{'sidenav-active':navMessage === 'Interview Schedules'}" aria-hidden="true"></i><span class="hide-menu">Interview Schedules</span></a></li>
+                        <li> <a class="nav-label" routerLink="trainings" (click)="navBar('Trainings')" [ngClass]="{'sidenav-active':navMessage === 'Trainings'}" aria-expanded="false"><i class="fa-book" [ngClass]="{'sidenav-active':navMessage === 'Trainings'}" aria-hidden="true"></i><span class="hide-menu">Trainings</span></a>
                         </li>
                         
                     </ul>
@@ -161,11 +159,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                    <h3 class="text-primary">{{navMessage}}</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active">{{navMessage}}</li>
                     </ol>
                 </div>
             </div>
