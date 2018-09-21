@@ -30,56 +30,82 @@
             <input matInput placeholder="College Name" formControlName="collegeName">
           </mat-form-field>
         </div>
-        <fieldset class="form-group col-sm-12 col-md-12">
-          <legend>College Location:</legend>
-          <div class="form-group col-md-6 col-sm-6">
-            <mat-form-field class="example-full-width">
-              <mat-select placeholder="Country" formControlName="country">
-                <mat-option value="country">
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="form-group col-md-6 col-sm-6">
-            <mat-form-field class="example-full-width">
-              <mat-select placeholder="State" formControlName="state">
-                <mat-option value="state">
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="form-group col-sm-6 col-md-6">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="City" formControlName="city">
-            </mat-form-field>
-          </div>
-          <div class="form-group col-sm-6 col-md-6">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Area" formControlName="area">
-            </mat-form-field>
-          </div>
-        </fieldset>
-        <div class="form-group col-md-6">
+      </div>
+      <div class="row">
+        <legend>College Location:</legend>
+        <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="schemeType" formControlName="schemeType">
-              <mat-option value="schemeType">
-                
+            <mat-select placeholder="Country" formControlName="country">
+              <mat-option value="country">
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <fieldset class="form-group col-sm-12 col-md-12">
-          <legend>Department:</legend>
-          <div class="form-group col-sm-6 col-md-6">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Department Name" formControlName="departmentName">
-            </mat-form-field>
-          </div>
-          <div class="form-group col-sm-6 col-md-6">
-            <button mat-button>Add</button>
-          </div>
-        </fieldset>
+        <div class="form-group col-md-6 col-sm-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="State" formControlName="state">
+              <mat-option value="state">
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="City" formControlName="city">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Area" formControlName="area">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="schemeType" formControlName="schemeType">
+              <mat-option value="schemeType">
 
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <legend>Department:</legend>
+        <hr>
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Department Name" [(ngModel)]="department" formControlName="departmentName">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+          <input type="button" class="btn btn-primary" value="Add" (click)="addDept(department)">
+        </div>
+      </div>
+      <div class="row" *ngIf="dataSource.length!=0">
+        <table mat-table [dataSource]="dataSource" class="deptTable mat-elevation-z8 col-sm-6 col-md-6">
+        
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.no + 1}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="departmentName">
+            <th mat-header-cell *matHeaderCellDef> Department </th>
+            <td mat-cell *matCellDef="let element"> {{element.departmentName}} </td>
+          </ng-container>
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-icon>border_color</mat-icon>&nbsp;
+              <mat-icon>delete</mat-icon>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <div class="row">
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Course" formControlName="course">
@@ -115,7 +141,7 @@
             <input matInput placeholder="Principal Email Id" formControlName="principalEmail">
           </mat-form-field>
         </div>
-                
+
       </div>
       <div class="align-center">
         <input type="button" class="btn btn-primary" value="Edit">&nbsp;&nbsp;

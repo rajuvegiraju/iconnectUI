@@ -119,3 +119,22 @@ body{
   .mat-progress-spinner circle, .mat-spinner circle {
     stroke: #1976d2;
   }
+  div.error_message{
+    color:#f44336;
+    font-size: 14px;
+  }
+  .btn-primary:disabled {
+    color: #fff;
+    background-color: #99abb4;
+    border-color: #99abb4;
+    cursor: default;
+  }
+  legend{
+    color: gray;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 15px;
+  }
+  .deptTable{
+    left:15px;
+  }
