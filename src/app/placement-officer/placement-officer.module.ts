@@ -14,6 +14,7 @@ import { ViewStudentsComponent } from './view-students/view-students.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule, ReactiveFormsModule
   ],
-  declarations: [StudentListComponent, TemplateComponent, AddStudentComponent, PendingApprovalComponent, IntenshipComponent, AvailablejobsComponent, TrainingsComponent, InterviewSchedulesComponent, ViewStudentsComponent, ProfileComponent]
+  declarations: [StudentListComponent, TemplateComponent, AddStudentComponent, PendingApprovalComponent, IntenshipComponent, AvailablejobsComponent, TrainingsComponent, InterviewSchedulesComponent, ViewStudentsComponent, ProfileComponent, AddStudentBulkComponent]
 })
 export class PlacementOfficerModule { }

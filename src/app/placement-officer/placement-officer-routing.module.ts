@@ -9,6 +9,7 @@ import { InterviewSchedulesComponent } from './interview-schedules/interview-sch
 import { AvailablejobsComponent } from './availablejobs/availablejobs.component';
 import { TrainingsComponent } from './trainings/trainings.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.component';
 
 const routes: Routes = [
 	{
@@ -22,7 +23,9 @@ const routes: Routes = [
       {path: 'interviewSchedule', component: InterviewSchedulesComponent},
       {path: 'availableJobs', component: AvailablejobsComponent},
       {path: 'trainings', component: TrainingsComponent},
-      {path: 'poProfile', component: ProfileComponent}
+      {path: 'poProfile', component: ProfileComponent},
+      {path: 'bulk-upload', component: AddStudentBulkComponent},
+      
 		]
 	}
 	 

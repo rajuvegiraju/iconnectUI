@@ -21,6 +21,7 @@ export const environment = {
     add_college: "/api/college",
     add_corporate: "/api/corporate",
     changePassword: "/api/changePassword",
+    pendingApprovalForStudentReg: "/api/placementofficer/pafsReg",
     
   }
 };
