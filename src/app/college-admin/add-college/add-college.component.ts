@@ -66,6 +66,7 @@ export class AddCollegeComponent implements OnInit {
   }
 
   onSubmit() {
+  debugger
     if (this.paramId) {
       this._iconnectService.updateNewCollege(this.addCollegeForm.value).subscribe(response => {
         if (response.resCode == "1") {

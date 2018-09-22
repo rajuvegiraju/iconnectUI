@@ -15,6 +15,7 @@ export const environment = {
     loginService: "/api/login",
     signUpService: "/api/signUP",
     forgotPasswordService: "/api/forgetpassword",
+    getAllColleges: "/api/collegeList",
     pendingApprovalByIdService: "/api/iconnect/pendingapproval",
     university_list: "/api/iconnect/universityList",
     add_college: "/api/college",

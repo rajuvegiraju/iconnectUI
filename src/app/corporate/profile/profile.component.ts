@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
       'country': ['', Validators.required],
       'state': ['', Validators.required],
       'location': ['', Validators.required],
+      'addessOne':  ['', Validators.required],
       'name': ['', Validators.required],
       'email': ['', Validators.required],
       'mobile': ['', Validators.required],

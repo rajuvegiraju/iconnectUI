@@ -10,7 +10,7 @@ const routes: Routes = [
 		component: TemplateComponent,
 		children: [
 		  {path: 'addCollege', component: AddCollegeComponent},
-      {path: 'updateCollege/:id', component: AddCollegeComponent},
+      {path: 'addCollege/:id', component: AddCollegeComponent},
       {path: 'collegeList', component: CollegeListComponent}
 		]
 	},

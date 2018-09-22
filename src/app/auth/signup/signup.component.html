@@ -28,23 +28,20 @@
 						<input class="input100" type="email" id="email" [(ngModel)]="email" name="email" placeholder="email">
 						<span class="focus-input100"></span>
 					</div>
-					<!-- <div class="wrap-input100 validate-input m-b-20" data-validate="name">
+					<div class="wrap-input100 validate-input m-b-20" data-validate="name">
 						<input class="input100" type="text" id="collegeName" [(ngModel)]="collegeName" name="collegeName" placeholder="college/corporate name">
 						<span class="focus-input100"></span>
-					</div> -->
-					
+					</div>
 
 					<div class="wrap-input100 validate-input m-b-20" data-validate="Type user name" id="college" *ngIf="signuprole=='student'">
-
 						<select id="collegeid" name="collegeid" [(ngModel)]="collegeid" class="input100" style="height:55px;">
-						  <option value="" class="input100" selected>Select College Name</option>
-						  <option value="rvcollege">RV College</option>
-						  <option value="college">RV College</option>
-						</select>
+              <option value="" class="input100" selected>Select College Name</option>
+						  <option [value]="college.id" *ngFor="let college of collegeList">{{college.name}}</option>
+            </select>
 						<span class="focus-input100"></span>
 					</div>
-					
-					<div class="container-login100-form-btn">
+
+          <div class="container-login100-form-btn">
 						<input class="login100-form-btn" type="button" class="login100-form-btn" (click)="signUP();" name="Sign UP" value="Sign UP">
 					</div>
 
