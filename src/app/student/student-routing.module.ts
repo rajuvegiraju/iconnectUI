@@ -8,6 +8,7 @@ import { ScheduledInterviewsComponent } from './scheduled-interviews/scheduled-i
 import { TrainingComponent } from './training/training.component';
 import { ViewCompaniesComponent } from './view-companies/view-companies.component';
 import { ProfileComponent } from './profile/profile.component';
+import { InternshipComponent } from './internship/internship.component';
 
 
 const routes: Routes = [
@@ -15,20 +16,21 @@ const routes: Routes = [
 		path: 'student',
 		component: TemplateComponent,
 		children: [
-		  {path: 'dashboard', component: DashboardComponent},
-		  {path: 'joboffers', component: JobOffersComponent},
-      {path: 'onlinetest', component: OnlineTestComponent},
-		  {path: 'scheduled-interview', component: ScheduledInterviewsComponent},
-		  {path: 'training', component: TrainingComponent},
-		  {path: 'view-companies', component: ViewCompaniesComponent},
-      {path: 'profile', component: ProfileComponent}
+			{ path: 'dashboard', component: DashboardComponent },
+			{ path: 'joboffers', component: JobOffersComponent },
+			{ path: 'onlinetest', component: OnlineTestComponent },
+			{ path: 'scheduled-interview', component: ScheduledInterviewsComponent },
+			{ path: 'training', component: TrainingComponent },
+			{ path: 'view-companies', component: ViewCompaniesComponent },
+			{ path: 'profile', component: ProfileComponent },
+			{ path: 'internship', component: InternshipComponent }
 		]
 	}
-	 
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
 export class StudentRoutingModule { }
