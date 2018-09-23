@@ -60,8 +60,8 @@
             <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <mat-icon (click)="editRow(element);">border_color</mat-icon>&nbsp;
-                    <mat-icon (click)="deleteRow(element)">delete</mat-icon>
+                    <mat-icon class="green" (click)="editRow(element);">done</mat-icon>&nbsp;
+                    <mat-icon class="red" (click)="deleteRow(element)">clear</mat-icon>
                 </mat-cell>
             </ng-container>
 
