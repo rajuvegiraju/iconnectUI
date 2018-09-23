@@ -209,4 +209,11 @@ export class IconnectService {
     changePassword(data): Observable<any> {
         return this._httpService.get(environment.path.changePassword + '/' + data);
     }
+
+    /**
+     * To get the corporate list by id
+     */
+    getPendingApprovalForStudentReg(data): Observable<any> {
+        return this._httpService.get(environment.path.pendingApprovalForStudentReg + '/' + data);
+    }
 }

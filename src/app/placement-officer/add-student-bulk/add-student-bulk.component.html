@@ -1,0 +1,10 @@
+<div>
+    <div class="card add-college-content">
+      <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+      <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" 
+        [disabled]="!uploader.getNotUploadedItems().length" >
+            Upload an Image
+      </button>
+    </div>
+</div>

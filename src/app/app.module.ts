@@ -21,16 +21,22 @@ import { HttpServiceInterceptor } from './http.service';
 import { MaterialModule } from './material.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FileUploader, FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    FileSelectDirective,
+    FileUploader,
 	
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    FileUploadModule,
     AppRoutingModule,
 	  CollegeAdminModule,
     CorporateAdminModule,
