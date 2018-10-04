@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FileUploader, FileSelectDirective } from 'ng2-file-upload';
+import {  FileUploader } from 'ng2-file-upload';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IconnectService } from '../../iconnect.service';
 import { DataService } from '../../datachange.service';

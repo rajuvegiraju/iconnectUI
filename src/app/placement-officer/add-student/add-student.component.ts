@@ -12,50 +12,44 @@ import { SnackbarService } from '../../snackbar.service';
 })
 export class AddStudentComponent implements OnInit {
 
-   createCollegeForm: FormGroup;
+  addStudentForm: FormGroup;
   countryList: any;
   stateList: any;
   dashMessage: String;
   selectedData: any;
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
-    this.createCollegeForm = this._formBuilder.group({
-      'id': [''],
+    this.addStudentForm = this._formBuilder.group({
+      'registerNo': ['', Validators.required],
       'name': ['', Validators.required],
-      'contactPerName': ['', Validators.required],
-      'mobileNumber': ['', Validators.required],
+      'dob': [''],
+      'gender': [''],
+      'mobileNo': ['', Validators.required],
       'email': ['', Validators.required],
-      'address1': ['', Validators.required],
-      'address2': ['', Validators.required],
-      'country': ['', Validators.required],
-      'state': ['', Validators.required]
+      'course': ['', Validators.required],
+      'stream': [''],
+      'yearOfPass': ['', Validators.required]
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }
 
   ngOnInit() {
-    if (this.paramId) {
-      this._iconnectService.collegeListById(this.paramId).subscribe(response => {
-        this.selectedData = response.payload.college;
-        this.createCollegeForm.setValue({
-          id:this.selectedData.id,
-          name: this.selectedData.name,
-          contactPerName:this.selectedData.contactPerName,
-          mobileNumber:this.selectedData.mobileNumber,
-          email:this.selectedData.email,
-          address1:this.selectedData.address1,
-          address2:this.selectedData.address2,
-          country:this.selectedData.country,
-          state:this.selectedData.state
-        });
-      })
-    }
-    this._iconnectService.getCountryDetails().subscribe(response => {
-      this.countryList = response.payload.countries;
-    })
-    this._iconnectService.getStateDetails().subscribe(response => {
-      this.stateList = response.payload.states;
-    })
+    // if (this.paramId) {
+    //   this._iconnectService.collegeListById(this.paramId).subscribe(response => {
+    //     this.selectedData = response.payload.college;
+    //     this.addStudentForm.setValue({
+    //       id:this.selectedData.id,
+    //       name: this.selectedData.name,
+    //       contactPerName:this.selectedData.contactPerName,
+    //       mobileNumber:this.selectedData.mobileNumber,
+    //       email:this.selectedData.email,
+    //       address1:this.selectedData.address1,
+    //       address2:this.selectedData.address2,
+    //       country:this.selectedData.country,
+    //       state:this.selectedData.state
+    //     });
+    //   })
+    // }
     this.dataService.navMessage.subscribe(message => {
       this.dashMessage = message;
     })
@@ -63,7 +57,7 @@ export class AddStudentComponent implements OnInit {
 
   onSubmit() {
     if (this.paramId) {
-      this._iconnectService.updateCollege(this.createCollegeForm.value).subscribe(response => {
+      this._iconnectService.updateCollege(this.addStudentForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
           this.router.navigateByUrl('/superAdmin/collegeList');
@@ -73,7 +67,7 @@ export class AddStudentComponent implements OnInit {
         }
       })
     } else {
-      this._iconnectService.createCollege(this.createCollegeForm.value).subscribe(response => {
+      this._iconnectService.createCollege(this.addStudentForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Registered");
           this.router.navigateByUrl('/superAdmin/collegeList');

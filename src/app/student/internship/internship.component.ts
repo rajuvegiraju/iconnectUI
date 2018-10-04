@@ -10,13 +10,13 @@ export interface Filter {
   }
 
 @Component({
-    selector: 'app-intenship-list',
-    templateUrl: './intenship.component.html',
-    styleUrls: ['./intenship.component.css']
+    selector: 'app-internship-list',
+    templateUrl: './internship.component.html',
+    styleUrls: ['./internship.component.css']
 })
-export class IntenshipComponent implements OnInit {
+export class InternshipComponent implements OnInit {
 
-    displayedColumns: string[] = ['internId', 'status', 'companyName', 'projectTitle', 'skill', 'percentage', 'duration', 'stipend', 'location', 'industry', 'eligibleStudents'];
+    displayedColumns: string[] = ['internId', 'status', 'companyName', 'projectTitle', 'skill', 'percentage', 'duration', 'stipend', 'location', 'industry', 'action'];
     dataSource: any = [];
     editData: any;
     dashMessage: String;
@@ -45,7 +45,9 @@ export class IntenshipComponent implements OnInit {
         });
 
     }
-    
+    // createOrg() {
+    //     this.createCollege = true;
+    // }
     deleteRow(row) {
         this.dataSource.data.splice(row.position - 1, 1);
         this.dataSource = new MatTableDataSource<any>(this.dataSource.data);
@@ -61,5 +63,8 @@ export class IntenshipComponent implements OnInit {
             })
         }*/
     }
-   
+
+    // editRow(row) {
+    //     this.router.navigate(['superAdmin/collegeReg', { id: row.id }])
+    // }
 }

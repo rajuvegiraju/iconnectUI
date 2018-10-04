@@ -10,6 +10,7 @@ import { AvailablejobsComponent } from './availablejobs/availablejobs.component'
 import { TrainingsComponent } from './trainings/trainings.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.component';
+import { InternshipStatusComponent } from './internship-status/internship-status.component';
 
 const routes: Routes = [
 	{
@@ -25,6 +26,7 @@ const routes: Routes = [
       {path: 'trainings', component: TrainingsComponent},
       {path: 'poProfile', component: ProfileComponent},
       {path: 'bulk-upload', component: AddStudentBulkComponent},
+      {path: 'intern-status', component: InternshipStatusComponent},
       
 		]
 	}

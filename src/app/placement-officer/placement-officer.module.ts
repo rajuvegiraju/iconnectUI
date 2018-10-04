@@ -15,14 +15,25 @@ import { ProfileComponent } from './profile/profile.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.component';
+import { FileSelectDirective, FileDropDirective, FileUploadModule } from 'ng2-file-upload';
+import { InternshipStatusComponent } from './internship-status/internship-status.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     PlacementOfficerRoutingModule,
     MaterialModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    FileUploadModule
   ],
-  declarations: [StudentListComponent, TemplateComponent, AddStudentComponent, PendingApprovalComponent, IntenshipComponent, AvailablejobsComponent, TrainingsComponent, InterviewSchedulesComponent, ViewStudentsComponent, ProfileComponent, AddStudentBulkComponent]
+  declarations: [
+    InternshipStatusComponent, 
+    StudentListComponent, TemplateComponent, 
+    AddStudentComponent, PendingApprovalComponent, 
+    IntenshipComponent, AvailablejobsComponent, 
+    TrainingsComponent, InterviewSchedulesComponent, 
+    ViewStudentsComponent, ProfileComponent, 
+    AddStudentBulkComponent]
 })
 export class PlacementOfficerModule { }
