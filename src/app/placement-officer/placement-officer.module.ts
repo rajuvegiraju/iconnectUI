@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.component';
 import { FileSelectDirective, FileDropDirective, FileUploadModule } from 'ng2-file-upload';
 import { InternshipStatusComponent } from './internship-status/internship-status.component';
+import { InviteCorporateComponent } from './invite-corporate/invite-corporate.component';
 
 
 @NgModule({
@@ -34,6 +35,6 @@ import { InternshipStatusComponent } from './internship-status/internship-status
     IntenshipComponent, AvailablejobsComponent, 
     TrainingsComponent, InterviewSchedulesComponent, 
     ViewStudentsComponent, ProfileComponent, 
-    AddStudentBulkComponent]
+    AddStudentBulkComponent, InviteCorporateComponent]
 })
 export class PlacementOfficerModule { }
