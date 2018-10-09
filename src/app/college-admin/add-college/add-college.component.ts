@@ -37,6 +37,7 @@ export class AddCollegeComponent implements OnInit {
   ngOnInit() {
     if (this.paramId) {
       this._iconnectService.getNewcollegeById(this.paramId).subscribe(response => {
+      debugger;
         this.selectedData = response.payload.college;
         this.addCollegeForm.setValue({
           name: this.selectedData.name,

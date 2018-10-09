@@ -20,63 +20,56 @@ export class AddStudentComponent implements OnInit {
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.addStudentForm = this._formBuilder.group({
-      'registerNo': ['', Validators.required],
+      'id': [''],
+      'registerNo': [''],
       'name': ['', Validators.required],
       'dob': [''],
       'gender': [''],
-      'mobileNo': ['', Validators.required],
+      'mobile': ['', Validators.required],
       'email': ['', Validators.required],
-      'course': ['', Validators.required],
+      'course': [''],
       'stream': [''],
-      'yearOfPass': ['', Validators.required]
+      'yearOfPass': ['']
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }
 
   ngOnInit() {
-    // if (this.paramId) {
-    //   this._iconnectService.collegeListById(this.paramId).subscribe(response => {
-    //     this.selectedData = response.payload.college;
-    //     this.addStudentForm.setValue({
-    //       id:this.selectedData.id,
-    //       name: this.selectedData.name,
-    //       contactPerName:this.selectedData.contactPerName,
-    //       mobileNumber:this.selectedData.mobileNumber,
-    //       email:this.selectedData.email,
-    //       address1:this.selectedData.address1,
-    //       address2:this.selectedData.address2,
-    //       country:this.selectedData.country,
-    //       state:this.selectedData.state
-    //     });
-    //   })
-    // }
+     if (this.paramId) {
+     debugger;
+       this._iconnectService.getPendingApprovalForStudentRegById(this.paramId).subscribe(response => {
+         this.selectedData = response.payload.student;
+         this.addStudentForm.setValue({
+           id:this.selectedData.id,
+           name: this.selectedData.name,
+           mobile:this.selectedData.mobile,
+           email:this.selectedData.email ,
+           registerNo:null,
+           dob:null,
+           gender:null,
+           course:null,
+           stream:null,
+           yearOfPass:null
+         });
+       })
+     }
     this.dataService.navMessage.subscribe(message => {
       this.dashMessage = message;
     })
   }
 
   onSubmit() {
-    if (this.paramId) {
-      this._iconnectService.updateCollege(this.addStudentForm.value).subscribe(response => {
+   
+      this._iconnectService.addNewStudent(this.addStudentForm.value).subscribe(response => {
         if (response.resCode == "1") {
-          this._snackBar.success("Successfully Updated");
-          this.router.navigateByUrl('/superAdmin/collegeList');
-          this.dataService.navData("College");
-        } else {
-          this._snackBar.error("Error in Updation");
-        }
-      })
-    } else {
-      this._iconnectService.createCollege(this.addStudentForm.value).subscribe(response => {
-        if (response.resCode == "1") {
-          this._snackBar.success("Successfully Registered");
-          this.router.navigateByUrl('/superAdmin/collegeList');
+          this._snackBar.success("Successfully Created");
+          this.router.navigateByUrl('/po/studentList');
           this.dataService.navData("College");
         } else {
           this._snackBar.error("Registration Unsuccessful");
         }
       })
-    }
+    
   }
 
 

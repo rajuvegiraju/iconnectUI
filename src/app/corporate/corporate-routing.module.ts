@@ -14,10 +14,12 @@ const routes: Routes = [
 		component: TemplateComponent,
 		children: [
 		  {path: 'addjd', component: AddjdComponent},
+      {path: 'addjd/:id', component: AddjdComponent},
       {path: 'all-jobs', component: AllJobsComponent},
       {path: 'internship', component: InternshipComponent},
       {path: 'interview-schedules', component: InterviewSchedulesComponent},
       {path: 'add-internship', component: AddInternshipComponent},
+      {path: 'add-internship/:id', component: AddInternshipComponent},
       {path: 'profile', component: ProfileComponent}
 		]
 	}

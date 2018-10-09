@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURI: "http://172.104.175.74:8180/iconnect",
-  // baseURI: "http://localhost:8080/iconnect",
+  baseURI: "http://localhost:8080/iconnect",
   path: {
     corporate_api: "/api/registration/corporate",
     college_api: "/api/registration/college",
@@ -22,6 +21,11 @@ export const environment = {
     add_corporate: "/api/corporate",
     changePassword: "/api/changePassword",
     pendingApprovalForStudentReg: "/api/placementofficer/pafsReg",
+    pendingApprovalForStudentRegById: "/api/placementofficer/pafsRegById",
+    student_api:"/api/student",
+    job:"/api/hr/job",
+    internship:"/api/hr/internship"
+    
     
   }
 };

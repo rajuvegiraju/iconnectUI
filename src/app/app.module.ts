@@ -24,11 +24,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploader,FileUploadModule, FileSelectDirective } from 'ng2-file-upload';
 import {FormsModule} from "@angular/forms";
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PagenotfoundComponent,
-    // FileSelectDirective,
+    //FileSelectDirective,
     // FileUploader,
 	
   ],

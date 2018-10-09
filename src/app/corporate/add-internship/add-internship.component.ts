@@ -20,7 +20,7 @@ export class AddInternshipComponent implements OnInit {
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.newInternshipForm = this._formBuilder.group({
-      'id': [''],
+      'internshipId': [''],
       'projectTitle': ['', Validators.required],
       'duration': ['', Validators.required],
       'description': ['', Validators.required],
@@ -41,7 +41,7 @@ export class AddInternshipComponent implements OnInit {
       this._iconnectService.collegeListById(this.paramId).subscribe(response => {
         this.selectedData = response.payload.college;
         this.newInternshipForm.setValue({
-          id:this.selectedData.id,
+          internshipId:this.selectedData.internshipId,
           projectTitle: this.selectedData.projectTitle,
           duration:this.selectedData.duration,
           description:this.selectedData.description,
@@ -69,20 +69,20 @@ export class AddInternshipComponent implements OnInit {
 
   onSubmit() {
     if (this.paramId) {
-      this._iconnectService.updateCollege(this.newInternshipForm.value).subscribe(response => {
+      this._iconnectService.updateNewInternship(this.newInternshipForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
-          this.router.navigateByUrl('/superAdmin/collegeList');
+          this.router.navigateByUrl('/hr/internship');
           this.dataService.navData("College");
         } else {
           this._snackBar.error("Error in Updation");
         }
       })
     } else {
-      this._iconnectService.createCollege(this.newInternshipForm.value).subscribe(response => {
+      this._iconnectService.createNewInternship(this.newInternshipForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Registered");
-          this.router.navigateByUrl('/superAdmin/collegeList');
+          this.router.navigateByUrl('/hr/internship');
           this.dataService.navData("College");
         } else {
           this._snackBar.error("Registration Unsuccessful");

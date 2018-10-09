@@ -216,4 +216,56 @@ export class IconnectService {
     getPendingApprovalForStudentReg(data): Observable<any> {
         return this._httpService.get(environment.path.pendingApprovalForStudentReg + '/' + data);
     }
+
+    /**
+     * To get the corporate list by id
+     */
+    getPendingApprovalForStudentRegById(data): Observable<any> {
+        return this._httpService.get(environment.path.pendingApprovalForStudentRegById + '/' + data);
+    }
+
+    addNewStudent(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.student_api, requestBody);
+    }
+
+    updateStudent(requestBody): Observable<any> {
+        return this._httpService.put(environment.path.student_api, requestBody);
+    }
+
+    getStudentDetailsById(data): Observable<any> {
+        return this._httpService.get(environment.path.student_api+ '/' + data);
+    }
+
+    getStudentsByCollegeId(): Observable<any> {
+        return this._httpService.get(environment.path.student_api+ '/college');
+    }
+
+    createNewJob(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.job, requestBody);
+    }
+
+    updateNewJob(requestBody): Observable<any> {
+        return this._httpService.put(environment.path.job, requestBody);
+    }
+
+    getAllJobs(): Observable<any> {
+        return this._httpService.get(environment.path.job);
+    }
+
+    createNewInternship(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.internship, requestBody);
+    }
+
+    updateNewInternship(requestBody): Observable<any> {
+        return this._httpService.put(environment.path.internship, requestBody);
+    }
+
+    getAllInternship(): Observable<any> {
+        return this._httpService.get(environment.path.internship);
+    }
+
+    updateHrProfile(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.internship, requestBody);
+    }
+    
 }

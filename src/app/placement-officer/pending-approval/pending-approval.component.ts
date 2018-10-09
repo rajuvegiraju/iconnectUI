@@ -22,7 +22,7 @@ export class PendingApprovalComponent implements OnInit {
         this.dataService.navMessage.subscribe(message => {
             this.dashMessage = "Student";
             this.createCollege = false;
-
+            debugger;
             this._iService.getPendingApprovalForStudentReg("1").subscribe(response => {
                 let ELEMENT_DATA = response.payload.studentList;
                 this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)

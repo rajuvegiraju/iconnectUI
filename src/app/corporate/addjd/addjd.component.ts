@@ -71,23 +71,23 @@ export class AddjdComponent implements OnInit {
 
   onSubmit() {
     if (this.paramId) {
-      this._iconnectService.updateCollege(this.createJDForm.value).subscribe(response => {
+      this._iconnectService.updateNewJob(this.createJDForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
-          this.router.navigateByUrl('/superAdmin/collegeList');
+          this.router.navigateByUrl('/hr/all-jobs');
           this.dataService.navData("College");
         } else {
           this._snackBar.error("Error in Updation");
         }
       })
     } else {
-      this._iconnectService.createCollege(this.createJDForm.value).subscribe(response => {
+      this._iconnectService.createNewJob(this.createJDForm.value).subscribe(response => {
         if (response.resCode == "1") {
-          this._snackBar.success("Successfully Registered");
-          this.router.navigateByUrl('/superAdmin/collegeList');
+          this._snackBar.success("Successfully Created");
+          this.router.navigateByUrl('/hr/all-jobs');
           this.dataService.navData("College");
         } else {
-          this._snackBar.error("Registration Unsuccessful");
+          this._snackBar.error("Error in Updation");
         }
       })
     }

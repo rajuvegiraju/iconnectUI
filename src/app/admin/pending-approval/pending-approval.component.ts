@@ -60,7 +60,7 @@ export class PendingApprovalComponent implements OnInit {
 
     editRow(row) {
         let editData = row;
-        if(editData.type === 'volvo' ){
+        if(editData.type === 'college' ){
           this.router.navigate(['superAdmin/approveCollege', editData.id]);
         }else{
           this.router.navigate(['superAdmin/approveCorporate', editData.id])

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {  FileUploader } from 'ng2-file-upload';
+/*import {  FileUploader } from 'ng2-file-upload'; */
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IconnectService } from '../../iconnect.service';
 import { DataService } from '../../datachange.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SnackbarService } from '../../snackbar.service';
+
 
 
 @Component({
@@ -14,10 +16,10 @@ import { SnackbarService } from '../../snackbar.service';
 })
 export class AddStudentBulkComponent implements OnInit {
 
-  URL:string = 'http://localhost:3000/api/upload';
+  URL:string = 'http://localhost:8080/iconnect/api/upload';
   title:string = 'app';
 
-  uploader: FileUploader = new FileUploader({url: 'http://localhost:3000/api/upload', itemAlias: 'photo'});
+  uploader: FileUploader = new FileUploader({url: 'http://localhost:8080/iconnect/api/upload', itemAlias: 'photo'});
 
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
   }

@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
     this.studentForm = this._formBuilder.group({
       'name': ['', Validators.required],
       'about': ['', Validators.required],
-      'mobileNumber': ['', Validators.required],
+      'mobile': ['', Validators.required],
       'keySkill': ['', Validators.required],
       'course': ['', Validators.required],
       'stream': ['', Validators.required],
@@ -31,7 +31,9 @@ export class ProfileComponent implements OnInit {
       'prevcity': ['', Validators.required],
       'prevyearOfPass': ['', Validators.required],
       'dob': ['', Validators.required],
-      'emailId': ['', Validators.required],
+      'email': ['', Validators.required],
+      'languages': ['', Validators.required]
+      
       });
   }
 

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class StudentListComponent implements OnInit {
 
  
-    displayedColumns: string[] = ['name', 'mobileno', 'email', 'address', 'state', 'country', 'action'];
+    displayedColumns: string[] = ['name', 'mobile', 'email', 'address', 'state', 'country', 'action'];
     dataSource: any = [];
     editData: any;
     dashMessage: String;
@@ -25,8 +25,8 @@ export class StudentListComponent implements OnInit {
             this.dashMessage = "Student";
             this.createCollege = false;
 
-            this._iService.corporateList().subscribe(response => {
-                let ELEMENT_DATA = response.payload.corporate;
+            this._iService.getStudentsByCollegeId().subscribe(response => {
+                let ELEMENT_DATA = response.payload.studentList;
                 this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
             })
             /*

@@ -118,9 +118,9 @@
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/5.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a routerLink="profile" <i class="ti-user" [ngClass]="{'sidenav-active':navMessage === 'Profile'}" aria-hidden="true"> Profile</a></li>
+                                    <li><a routerLink="#"><i class="ti-user"></i> Profile</a></li>
                                     <li><a routerLink="#"><i class="ti-settings"></i> ChangePassword</a></li>
-                                    <li><a routerLink="/login"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a routerLink="../login"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -139,11 +139,10 @@
                         <li class="nav-devider"></li>
 						<li class="nav-label">Home</li>
                         <li> <a class="nav-label" routerLink="#" (click)="navBar('Dashboard')" [ngClass]="{'sidenav-active':navMessage === 'Dashboard'}" aria-expanded="false"><i class="fa fa-tachometer" [ngClass]="{'sidenav-active':navMessage === 'Dashboard'}"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="nav-label" routerLink="addjd"  (click)="navBar('Add JD')" [ngClass]="{'sidenav-active':navMessage === 'Add JD'}" aria-expanded="false"><i class="fa fa-plus" [ngClass]="{'sidenav-active':navMessage === 'Add JD'}" aria-hidden="true"></i><span class="hide-menu">Add JD</span></a>
-                        <li> <a class="nav-label" routerLink="all-jobs"  (click)="navBar('All Jobs')" [ngClass]="{'sidenav-active':navMessage === 'All Jobs'}" aria-expanded="false"><i class="fa fa-list" [ngClass]="{'sidenav-active':navMessage === 'All Jobs'}" aria-hidden="true"></i><span class="hide-menu">All Jobs</span></a>
-                        <li> <a class="nav-label" routerLink="internship"  (click)="navBar('Internship')" [ngClass]="{'sidenav-active':navMessage === 'Internship'}" aria-expanded="false"><i class="fa fa-industry" [ngClass]="{'sidenav-active':navMessage === 'Internship'}" aria-hidden="true"></i><span class="hide-menu">Internship</span></a>
-                        <li> <a class="nav-label" routerLink="interview-schedules"  (click)="navBar('Interview Schedules')" [ngClass]="{'sidenav-active':navMessage === 'Interview Schedules'}" aria-expanded="false"><i class="fa fa-clock-o" [ngClass]="{'sidenav-active':navMessage === 'Interview Schedules'}" aria-hidden="true"></i><span class="hide-menu">Interview Schedules</span></a>
-                        
+                        <li> <a class="nav-label" routerLink="addjd"  (click)="navBar('Add JD')" [ngClass]="{'sidenav-active':navMessage === 'Add JD'}" aria-expanded="false"><i class="fa fa-plus" [ngClass]="{'sidenav-active':navMessage === 'Add JD'}" aria-hidden="true"></i><span class="hide-menu">Add JD</span></a></li>
+                        <li> <a class="nav-label" routerLink="all-jobs"  (click)="navBar('All Jobs')" [ngClass]="{'sidenav-active':navMessage === 'All Jobs'}" aria-expanded="false"><i class="fa fa-list" [ngClass]="{'sidenav-active':navMessage === 'All Jobs'}" aria-hidden="true"></i><span class="hide-menu">All Jobs</span></a></li>
+                        <li> <a class="nav-label" routerLink="internship"  (click)="navBar('Internship')" [ngClass]="{'sidenav-active':navMessage === 'Internship'}" aria-expanded="false"><i class="fa fa-industry" [ngClass]="{'sidenav-active':navMessage === 'Internship'}" aria-hidden="true"></i><span class="hide-menu">Internship</span></a></li>
+                        <li> <a class="nav-label" routerLink="interview-schedules"  (click)="navBar('Interview Schedules')" [ngClass]="{'sidenav-active':navMessage === 'Interview Schedules'}" aria-expanded="false"><i class="fa fa-clock-o" [ngClass]="{'sidenav-active':navMessage === 'Interview Schedules'}" aria-hidden="true"></i><span class="hide-menu">Interview Schedules</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

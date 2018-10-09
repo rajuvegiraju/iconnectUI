@@ -25,10 +25,10 @@ export class AllJobsComponent implements OnInit {
             this.dashMessage = "College";
             this.createJD = true;
             
-               /* this._iService.collegeList().subscribe(response => {
-                    let ELEMENT_DATA = response.payload.college;
+               this._iService.getAllJobs().subscribe(response => {
+                    let ELEMENT_DATA = response.payload.joblist;
                     this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
-                }) */
+                })
         });
         
     }
@@ -46,7 +46,7 @@ export class AllJobsComponent implements OnInit {
     }
 
     editRow(row) {
-        this.router.navigate(['superAdmin/collegeReg', {id:row.id}])
+        this.router.navigate(['hr/addjd', {id:row.id}])
     }
 
 }
