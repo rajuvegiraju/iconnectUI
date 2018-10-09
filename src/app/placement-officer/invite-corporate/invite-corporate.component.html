@@ -1,0 +1,44 @@
+<div>
+  <div class="row">
+    <div class="btn-add form-group col-md-6" style="padding-left:40px;">
+      <button (click)="notifyAdmin=true" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
+        Notify Admin</button>
+    </div>
+    <div *ngIf="notifyAdmin" class="form-group col-md-6">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Company Name" [(ngModel)]="companyName">
+          <mat-option *ngFor="let companyName of companyNames" [value]="companyName">
+            {{companyName.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <mat-card class="example-card margin-adjust">
+    <mat-card-content>
+      <div class="row">
+        <div class="form-group col-md-6">
+          Location : Chennai
+        </div>
+        <div class="form-group col-md-6">
+          HR Name : Kusala
+        </div>
+        <div class="form-group col-md-6">
+          Contact Number : 99983983838
+        </div>
+        <div class="form-group col-md-6">
+          Email ID : chennai321@gmail.com
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Description"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-12 align-center">
+          <button type="button" class="btn btn-primary"><i class="fa fa-newspaper-o"></i> Send</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
