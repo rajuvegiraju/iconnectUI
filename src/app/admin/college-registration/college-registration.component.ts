@@ -72,7 +72,9 @@ export class CollegeRegistrationComponent implements OnInit {
           address1: this.selectedData.address1,
           address2: this.selectedData.address2,
           country: this.selectedData.country,
-          state: this.selectedData.state
+          state: this.selectedData.state,
+          valid:true,
+          submitted:true
         });
       })
     }

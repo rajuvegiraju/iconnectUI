@@ -6,31 +6,31 @@
                     <mat-form-field class="example-full-width">
                         <input matInput maxlength="20" placeholder="College Name" formControlName="name">
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('name').invalid && (createCollegeForm.submitted || createCollegeForm.get('name').dirty)">This field is required</div>
+                    <!--<div class="error_message" *ngIf="createCollegeForm.get('name').invalid && (createCollegeForm.submitted || createCollegeForm.get('name').dirty)">This field is required</div> -->
                 </div>
                 <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
                         <input matInput maxlength="20" placeholder="Contact Person" formControlName="contactPerName">
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('contactPerName').invalid && (createCollegeForm.submitted || createCollegeForm.get('contactPerName').dirty)">Please provide contact person name</div>
+                    <!--<div class="error_message" *ngIf="createCollegeForm.get('contactPerName').invalid && (createCollegeForm.submitted || createCollegeForm.get('contactPerName').dirty)">Please provide contact person name</div> -->
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <input matInput maxlength="10" pattern="^(0|[1-9][0-9]*)$" placeholder="Mobile Number" formControlName="mobileNumber">
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('mobileNumber').invalid && (createCollegeForm.submitted || createCollegeForm.get('mobileNumber').dirty)">Please enter valid contact number</div>                        
+                    <!--<div class="error_message" *ngIf="createCollegeForm.get('mobileNumber').invalid && (createCollegeForm.submitted || createCollegeForm.get('mobileNumber').dirty)">Please enter valid contact number</div>             -->           
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" formControlName="email">
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('email').invalid && (createCollegeForm.submitted || createCollegeForm.get('email').dirty)">Please Enter valid email</div>
+                    <!--<div class="error_message" *ngIf="createCollegeForm.get('email').invalid && (createCollegeForm.submitted || createCollegeForm.get('email').dirty)">Please Enter valid email</div> -->
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="Address 1" formControlName="address1">
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('address1').invalid && (createCollegeForm.submitted || createCollegeForm.get('address1').dirty)">This field is required</div>
+                   <!--<div class="error_message" *ngIf="createCollegeForm.get('address1').invalid && (createCollegeForm.submitted || createCollegeForm.get('address1').dirty)">This field is required</div> -->
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
@@ -45,7 +45,7 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('country').invalid && (createCollegeForm.submitted || createCollegeForm.get('country').dirty)">Please select the country</div>
+                    <!--<div class="error_message" *ngIf="createCollegeForm.get('country').invalid && (createCollegeForm.submitted || createCollegeForm.get('country').dirty)">Please select the country</div>-->
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
@@ -55,7 +55,7 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <div class="error_message" *ngIf="createCollegeForm.get('state').invalid && (createCollegeForm.submitted || createCollegeForm.get('state').dirty)">Please select state</div>
+                    <!--<div class="error_message" *ngIf="createCollegeForm.get('state').invalid && (createCollegeForm.submitted || createCollegeForm.get('state').dirty)">Please select state</div> -->
                 </div>
                 <!-- <div class="form-group col-md-6">
                 <mat-form-field class="example-full-width">

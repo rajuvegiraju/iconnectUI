@@ -44,33 +44,33 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.paramId) {
-      this._iconnectService.collegeListById(this.paramId).subscribe(response => {
-        this.selectedData = response.payload.profile;
+    
+    this._iconnectService.getHrProfileDetails().subscribe(response => {
+      this.selectedData = response.payload.profile;
 
-        this.hrForm.setValue({
-          id:this.selectedData.id,
-          corporateName: this.selectedData.corporateName,
-          industry:this.selectedData.industry,
-          corporateWebsite:this.selectedData.corporateWebsite,
-          country:this.selectedData.country,
-          state:this.selectedData.state,
-          location:this.selectedData.location,
-          addessOne:  this.selectedData.addessOne,
-          name: this.selectedData.name,
-          email: this.selectedData.email,
-          mobile: this.selectedData.mobile,
-          designation: this.selectedData.designation,
-          officeNumber: this.selectedData.officeNumber,
-          extension: this.selectedData.extension,
-          persionalEmail: this.selectedData.persionalEmail,
-          secoundPCPName: this.selectedData.secoundPCPName,
-          secoundPCPEmail: this.selectedData.secoundPCPEmail,
-          secoundPCPMobile: this.selectedData.secoundPCPMobile,
-          secoundPCPDesignation: this.selectedData.secoundPCPDesignation
-        });
-      })
-    }
+      this.hrForm.setValue({
+        id:this.selectedData.id,
+        corporateName: this.selectedData.corporateName,
+        industry:this.selectedData.industry,
+        corporateWebsite:this.selectedData.corporateWebsite,
+        country:this.selectedData.country,
+        state:this.selectedData.state,
+        location:this.selectedData.location,
+        addessOne:  this.selectedData.addessOne,
+        name: this.selectedData.name,
+        email: this.selectedData.email,
+        mobile: this.selectedData.mobile,
+        designation: this.selectedData.designation,
+        officeNumber: this.selectedData.officeNumber,
+        extension: this.selectedData.extension,
+        persionalEmail: this.selectedData.persionalEmail,
+        secoundPCPName: this.selectedData.secoundPCPName,
+        secoundPCPEmail: this.selectedData.secoundPCPEmail,
+        secoundPCPMobile: this.selectedData.secoundPCPMobile,
+        secoundPCPDesignation: this.selectedData.secoundPCPDesignation
+      });
+    })
+    
     this._iconnectService.getCountryDetails().subscribe(response => {
       this.countryList = response.payload.countries;
     })

@@ -9,12 +9,12 @@
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Description " formControlName="description ">
+                        <input matInput placeholder="Description " formControlName="description">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Location " formControlName="location ">
+                        <input matInput placeholder="Location " formControlName="location">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
@@ -27,7 +27,7 @@
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="Course" formControlName="cource">
                             <mat-option *ngFor="let cource of courceList" [value]="cource">
-                                {{cource.name}}
+                                {{cource}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Stipend " formControlName="stipend ">
+                        <input matInput placeholder="Stipend " formControlName="stipend">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
@@ -61,7 +61,7 @@
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="Modes of Interview" formControlName="modeOfInterview">
                             <mat-option *ngFor="let modeOfInterview of modeOfInterviewList" [value]="modeOfInterview">
-                                {{modeOfInterview.name}}
+                                {{modeOfInterview}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>

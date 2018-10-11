@@ -20,6 +20,7 @@ export class IntenshipComponent implements OnInit {
     dataSource: any = [];
     editData: any;
     dashMessage: String;
+    search: any;
     filters: Filter[] = [
         { value: 'all', viewValue: 'All' },
         { value: 'open', viewValue: 'Open' },

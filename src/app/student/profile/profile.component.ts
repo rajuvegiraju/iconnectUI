@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   studentForm: FormGroup;
+  modeOfInterviewList:any = [];
+  courceList:any = [];
+
   constructor(private _formBuilder:FormBuilder) {
     this.studentForm = this._formBuilder.group({
       'name': ['', Validators.required],
@@ -38,6 +41,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+  
   }
 
 }

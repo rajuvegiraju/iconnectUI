@@ -265,7 +265,11 @@ export class IconnectService {
     }
 
     updateHrProfile(requestBody): Observable<any> {
-        return this._httpService.post(environment.path.internship, requestBody);
+        return this._httpService.put(environment.path.hr_profile, requestBody);
+    }
+
+    getHrProfileDetails(): Observable<any> {
+        return this._httpService.get(environment.path.hr_profile);
     }
     
 }

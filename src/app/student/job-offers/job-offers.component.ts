@@ -19,6 +19,7 @@ export class JobOffersComponent implements OnInit {
   displayedColumns: string[] = ['jobId', 'status', 'companyName', 'role', 'noofPositions', 'skill', 'percentage', 'salary', 'location', 'industry', 'action'];
   dataSource: any = [];
   editData: any;
+  search:any;
   dashMessage: String;
   filters: Filter[] = [
     { value: 'all', viewValue: 'All' },

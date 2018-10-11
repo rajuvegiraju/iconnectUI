@@ -20,6 +20,7 @@ export const environment = {
     pendingApprovalForStudentRegById: "/api/placementofficer/pafsRegById",
     student_api:"/api/student",
     job:"/api/hr/job",
-    internship:"/api/hr/internship"
+    internship:"/api/hr/internship",
+    hr_profile:"/api/hr/profile"
   }
 };

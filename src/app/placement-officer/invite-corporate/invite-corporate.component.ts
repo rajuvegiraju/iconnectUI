@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InviteCorporateComponent implements OnInit {
   companyName:any;
+  notifyAdmin:any;
   companyNames:any = [{
     name:'Mahindra', value:'mahi'
   }]

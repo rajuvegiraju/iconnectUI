@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['po']);
           }else if("student" === response.payload.template){
             this.router.navigate(['student']);
+          }else if("HR" === response.payload.template){
+            this.router.navigate(['hr']);
           }else{
             this.router.navigate(['superAdmin']);
           }

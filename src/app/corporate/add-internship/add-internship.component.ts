@@ -14,7 +14,9 @@ export class AddInternshipComponent implements OnInit {
 
   newInternshipForm: FormGroup;
   countryList: any;
+  courceList:any = ["B.Tech", "B.SC"];
   stateList: any;
+  modeOfInterviewList: any =["Telephone", "F2F"];
   dashMessage: String;
   selectedData: any;
   paramId: any;

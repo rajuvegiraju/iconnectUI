@@ -21,12 +21,12 @@ export class AddCorporateComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route:ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.createCorporateForm = this._formBuilder.group({
       'id': [''],
+      'corporateName': ['', Validators.required],
       'name': ['', Validators.required],
-      'hrName': ['', Validators.required],
-      'hrMobile': ['', Validators.required],
-      'hrEmail': ['', Validators.required],
+      'mobile': ['', Validators.required],
+      'email': ['', Validators.required],
       'location': ['', Validators.required],
-      'address1': ['', Validators.required],
+      'addessOne': ['', Validators.required],
       'country': ['', Validators.required],
       'state': ['', Validators.required]
     });
@@ -42,12 +42,12 @@ export class AddCorporateComponent implements OnInit {
         debugger;
         this.createCorporateForm.setValue({
           id:this.selectedData.id,
-          name: this.selectedData.name,
-          hrName:this.selectedData.hrName,
-          hrMobile:this.selectedData.hrMobile,
-          hrEmail:this.selectedData.hrEmail,
+          corporateName: this.selectedData.name,
+          name:this.selectedData.name,
+          mobile:this.selectedData.mobile,
+          email:this.selectedData.email,
           location:this.selectedData.location,
-          address1:this.selectedData.address1,
+          addessOne:this.selectedData.addessOne,
           country:this.selectedData.country,
           state:this.selectedData.state
         });

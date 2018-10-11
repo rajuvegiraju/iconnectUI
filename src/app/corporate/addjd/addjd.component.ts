@@ -18,6 +18,10 @@ export class AddjdComponent implements OnInit {
   stateList: any;
   dashMessage: String;
   selectedData: any;
+  modeOfInterviewList: any =["Telephone", "F2F"];
+  courceList:any = ["B.Tech", "B.SC"];
+  jobTypeList:any = ["Perminent", "Contract"];
+  jobPositionList:any =["Sr Software", "Freshers"];
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.createJDForm = this._formBuilder.group({

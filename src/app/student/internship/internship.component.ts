@@ -18,7 +18,10 @@ export class InternshipComponent implements OnInit {
 
     displayedColumns: string[] = ['internId', 'status', 'companyName', 'projectTitle', 'skill', 'percentage', 'duration', 'stipend', 'location', 'industry', 'action'];
     dataSource: any = [];
+    courceList :any = [];
+    modeOfInterviewList:any = [];
     editData: any;
+    search:any;
     dashMessage: String;
     filters: Filter[] = [
         { value: 'all', viewValue: 'All' },

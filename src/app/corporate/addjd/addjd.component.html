@@ -4,18 +4,34 @@
             <div class="row">
                 <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Job Position" formControlName="jobPosition">
+                        <mat-select placeholder="Job Position" formControlName="jobPosition">
+                            <mat-option *ngFor="let jobPosition of jobPositionList" [value]="jobPosition">
+                                {{jobPosition}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
-                <div class="form-group col-md-6">
+                
+                <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Job Type" formControlName="jobType">
+                        <mat-select placeholder="Job Type" formControlName="jobType">
+                            <mat-option *ngFor="let jobType of jobTypeList" [value]="jobType">
+                                {{jobType}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </div>
-                <div class="form-group col-md-6">
+
+                <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Cource" formControlName="cource">
+                        <mat-select placeholder="Cource" formControlName="cource">
+                            <mat-option *ngFor="let cource of courceList" [value]="cource">
+                                {{cource}}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
+
+
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
@@ -50,7 +66,7 @@
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="Country" formControlName="country">
-                            <mat-option *ngFor="let country of countryList" [value]="country">
+                            <mat-option *ngFor="let country of countryList" [value]="country.countryId">
                                 {{country.name}}
                             </mat-option>
                         </mat-select>
@@ -59,7 +75,7 @@
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="State" formControlName="state">
-                            <mat-option *ngFor="let state of stateList" [value]="state">
+                            <mat-option *ngFor="let state of stateList" [value]="state.stateId">
                                 {{state.name}}
                             </mat-option>
                         </mat-select>
