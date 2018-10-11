@@ -17,7 +17,9 @@ export interface Filter {
 export class InternshipComponent implements OnInit {
 
     displayedColumns: string[] = ['internId', 'status', 'companyName', 'projectTitle', 'skill', 'percentage', 'duration', 'stipend', 'location', 'industry', 'action'];
-    dataSource: any = [];
+    // dataSource: any = [];
+    dataSource: any = [{internId:"5347843", status:"active", companyName:"dell", projectTitle:"AASAAN Process", skill:"java", percentage:"50%",duration:"3 months",stipend:"10000",location:"bangalore",industry:"Software"},
+    {internId:"74327243", status:"active", companyName:"HP", projectTitle:"FFPPPP", skill:"JSP", percentage:"60%",duration:"4months",stipend:"38800",location:"Bengalore",industry:"Software"}]
     courceList :any = [];
     modeOfInterviewList:any = [];
     editData: any;

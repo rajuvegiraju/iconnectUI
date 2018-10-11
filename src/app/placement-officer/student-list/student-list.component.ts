@@ -13,7 +13,8 @@ export class StudentListComponent implements OnInit {
 
  
     displayedColumns: string[] = ['name', 'mobile', 'email', 'address', 'state', 'country', 'action'];
-    dataSource: any = [];
+    dataSource: any = [{name:"Kumar Deva", mobile:"9938339383", email:"djsksajj@gmail.com", address:"sr peta, Tallapadu", state:"Andhra", country:"India"},
+    {name:"Dev Jai", mobile:"8938839338", email:"devjai@gmail.com", address:"mg road, ulsoor", state:"Karnataka", country:"India"}];
     editData: any;
     dashMessage: String;
     createCollege: Boolean = false;
