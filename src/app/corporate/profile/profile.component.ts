@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.hrForm = this._formBuilder.group({
+    'id':[''],
       'corporateName': [''],
       'industry': [''],
       'corporateWebsite': [''],

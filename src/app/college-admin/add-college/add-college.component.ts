@@ -22,9 +22,9 @@ export class AddCollegeComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.addCollegeForm = this._formBuilder.group({
       'name': ['', Validators.required],
-      'placementOfficer': ['', Validators.required],
-      'poMobile': ['', Validators.required],
-      'poEmail': ['', Validators.required],
+      'collegeName':['', Validators.required],
+      'mobile': ['', Validators.required],
+      'email': ['', Validators.required],
       'address1': ['', Validators.required],
       'location': ['', Validators.required],
       'country': ['', Validators.required],
@@ -41,9 +41,9 @@ export class AddCollegeComponent implements OnInit {
         this.selectedData = response.payload.college;
         this.addCollegeForm.setValue({
           name: this.selectedData.name,
-          placementOfficer:this.selectedData.placementOfficer,
-          poMobile:this.selectedData.poMobile,
-          poEmail:this.selectedData.poEmail,
+          collegeName:this.selectedData.collegeName,
+          mobile:this.selectedData.mobile,
+          email:this.selectedData.email,
           address1:this.selectedData.address1,
           location:this.selectedData.location,
           country:this.selectedData.country,

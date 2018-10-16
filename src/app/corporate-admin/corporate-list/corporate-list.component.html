@@ -10,30 +10,30 @@
             </ng-container>
 
             <ng-container matColumnDef="contactperson">
-                <mat-header-cell *matHeaderCellDef> Contact Person </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.hrName}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> Corporate Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.corporateName}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="mobileno">
                 <mat-header-cell *matHeaderCellDef> Mobile No </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.hrMobile}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.mobile}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="email">
                 <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.hrEmail}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="address">
                 <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.location}}, {{element.address1}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.location}}, {{element.addessOne}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="state">
                 <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.state.name}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.state}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="country">
                 <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.country.name}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>

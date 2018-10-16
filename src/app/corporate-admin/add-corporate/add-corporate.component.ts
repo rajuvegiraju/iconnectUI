@@ -71,7 +71,7 @@ export class AddCorporateComponent implements OnInit {
       this._iconnectService.updateNewCorporate(this.createCorporateForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
-          this.router.navigateByUrl('/superAdmin/corporateList');
+          this.router.navigateByUrl('/corporateAdmin/corporateList');
           this.dataService.navData("Corporate");
         } else {
           this._snackBar.error("Error in Updation");

@@ -20,15 +20,14 @@ export class ProfileComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder, private _snackBar: SnackbarService) {
     this.placementForm = this._formBuilder.group({
       'name': ['', Validators.required],
-      'mobileNumber': ['', Validators.required],
+      'mobile': ['', Validators.required],
       'email': ['', Validators.required],
       'university': ['', Validators.required],
       'collegeName': ['', Validators.required],
       'country': ['', Validators.required],
       'state': ['', Validators.required],
       'city': ['', Validators.required],
-      'area': ['', Validators.required],
-      'departmentName': ['', Validators.required],
+      'address1': ['', Validators.required],
       'schemeType': ['', Validators.required],
       'course': ['', Validators.required],
       'stream': ['', Validators.required],

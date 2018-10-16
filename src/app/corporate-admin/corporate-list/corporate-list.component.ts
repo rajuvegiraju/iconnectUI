@@ -40,7 +40,7 @@ export class CorporateListComponent implements OnInit {
         this.dataSource.data.splice(row.position - 1, 1);
         this.dataSource = new MatTableDataSource<any>(this.dataSource.data);
 
-        this._iService.deleteCollege(row).subscribe(response => {
+        this._iService.deleteNewCorporate(row.id).subscribe(response => {
             console.log(response);
         })
     }
