@@ -35,7 +35,8 @@ export class ProfileComponent implements OnInit {
       'prevyearOfPass': ['', Validators.required],
       'dob': ['', Validators.required],
       'email': ['', Validators.required],
-      'languages': ['', Validators.required]
+      'languages': ['', Validators.required],
+      'emailId': ['', Validators.required]
       
       });
   }

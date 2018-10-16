@@ -12,7 +12,13 @@ import { Router } from '@angular/router';
 })
 export class ViewCompaniesComponent implements OnInit {
   displayedColumns: string[] = ['name', 'website', 'industry', 'location'];
-  dataSource: any = [];
+  dataSource: any = [{
+    name:"Google", website:"www.google.com", industry:"Software", location:'California'
+  },{
+    name:"Microsoft", website:"www.microsoft.com", industry:"Software & Hardware", location:'Washington'
+  },{
+    name:"Amazon", website:"https://www.amazon.in", industry:"Ecommerce", location:'Seattle, Washington'
+  }];
 
   constructor(private _iService: IconnectService, private dataService: DataService, private router: Router) { }
 

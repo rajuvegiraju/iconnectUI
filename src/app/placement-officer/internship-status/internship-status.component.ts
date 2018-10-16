@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 export class InternshipStatusComponent implements OnInit {
 
     displayedColumns: string[] = ['studentName', 'email', 'course', 'stream', 'aggregate', 'status'];
-    dataSource: any = [];
+    dataSource: any = [{studentName:"Nildubabu",email:"Nildubabu3829@gmail.com", course:"BE", stream:"ECE",aggregate:"72",status:"Inactive"},
+    {studentName:"Joseph",email:"josepf3782@gmail.com", course:"Btech", stream:"CSE",aggregate:"65",status:"Active"}];
 
     constructor(private _iService: IconnectService, private dataService: DataService, private router: Router) { }
 
