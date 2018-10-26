@@ -1081,7 +1081,7 @@ h6.h1 {
   position: relative;
   z-index: 50;
   background: #fff;
-  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 20px #d7dadc;
 }
 .header .top-navbar {
   min-height: 50px;

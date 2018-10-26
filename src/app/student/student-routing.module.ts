@@ -9,7 +9,7 @@ import { TrainingComponent } from './training/training.component';
 import { ViewCompaniesComponent } from './view-companies/view-companies.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InternshipComponent } from './internship/internship.component';
-
+import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
 
 const routes: Routes = [
 	{
@@ -23,7 +23,8 @@ const routes: Routes = [
 			{ path: 'training', component: TrainingComponent },
 			{ path: 'view-companies', component: ViewCompaniesComponent },
 			{ path: 'profile', component: ProfileComponent },
-			{ path: 'internship', component: InternshipComponent }
+			{ path: 'internship', component: InternshipComponent },
+      { path: 'changePassword', component: ChaangepasswordComponent }
 		]
 	}
 

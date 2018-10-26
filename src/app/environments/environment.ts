@@ -25,7 +25,8 @@ export const environment = {
     student_api:"/api/student",
     job:"/api/hr/job",
     internship:"/api/hr/internship",
-    hr_profile:"/api/hr/profile"
+    hr_profile:"/api/hr/profile",
+    placementOfficer:"/api/placementofficer"
     
     
   }

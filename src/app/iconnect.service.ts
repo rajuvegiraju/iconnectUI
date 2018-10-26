@@ -271,5 +271,15 @@ export class IconnectService {
     getHrProfileDetails(): Observable<any> {
         return this._httpService.get(environment.path.hr_profile);
     }
+
+    getPOProfileDetails(): Observable<any> {
+        return this._httpService.get(environment.path.placementOfficer+"/profile");
+    }
+
+    updatePOProfileDetails(requestBody): Observable<any> {
+        return this._httpService.put(environment.path.placementOfficer, requestBody);
+    }
+
+    
     
 }

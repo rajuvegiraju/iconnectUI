@@ -20,7 +20,8 @@
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="University" formControlName="university">
-              <mat-option value="university">
+              <mat-option *ngFor="let university of universityList" [value]="university">
+                  {{university.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -32,11 +33,16 @@
         </div>
       </div>
       <div class="row">
-        <legend>College Location:</legend>
+        <div class="col-sm-12 panel-body">
+			      <div class="heading-block">
+				      <h3>College Location</h3>
+			      </div>
+        </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="Country" formControlName="country">
-              <mat-option value="country">
+              <mat-option *ngFor="let country of countryList" [value]="country">
+                  {{country.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -44,7 +50,8 @@
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="State" formControlName="state">
-              <mat-option value="state">
+              <mat-option *ngFor="let state of stateList" [value]="state">
+                  {{state.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -62,26 +69,30 @@
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="schemeType" formControlName="schemeType">
-              <mat-option value="schemeType">
-
+              <mat-option *ngFor="let state of stateList" [value]="state">
+                  {{state.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
       </div>
-   <!--    <div class="row">
-        <legend>Department:</legend>
-        <hr>
+      <div class="row">
+        <div class="col-sm-12 panel-body">
+			      <div class="heading-block">
+				      <h3>Department</h3>
+			      </div>
+        </div>
+        
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Department Name" [(ngModel)]="department" formControlName="departmentName">
+            <input matInput placeholder="Department Name" [ngModel]="department">
           </mat-form-field>
         </div>
         <div class="form-group col-sm-6 col-md-6">
           <input type="button" class="btn btn-primary" value="Add" (click)="addDept(department)">
         </div>
       </div>
-     <div class="row" *ngIf="dataSource.length!=0">
+      <div class="row" *ngIf="dataSource.length!=0">
         <table mat-table [dataSource]="dataSource" class="deptTable mat-elevation-z8 col-sm-6 col-md-6">
         
           <ng-container matColumnDef="number">
@@ -104,8 +115,13 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-      </div> -->
+      </div>
       <div class="row">
+         <div class="col-sm-12 panel-body">
+			      <div class="heading-block">
+				      <h3>Details</h3>
+			      </div>
+        </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Course" formControlName="course">
@@ -144,8 +160,7 @@
 
       </div>
       <div class="align-center">
-        <input type="button" class="btn btn-primary" value="Edit">&nbsp;&nbsp;
-        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Save">
+        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Update">
       </div>
     </form>
   </div>
