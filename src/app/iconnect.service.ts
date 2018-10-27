@@ -279,6 +279,9 @@ export class IconnectService {
     updatePOProfileDetails(requestBody): Observable<any> {
         return this._httpService.put(environment.path.placementOfficer, requestBody);
     }
+    sendNotification(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.placementOfficer, requestBody);
+    }
 
     
     
