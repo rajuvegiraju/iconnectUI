@@ -12,7 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.component';
 import { InternshipStatusComponent } from './internship-status/internship-status.component';
 import { InviteCorporateComponent } from './invite-corporate/invite-corporate.component';
-
+import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
 
 const routes: Routes = [
 	{
@@ -26,10 +26,11 @@ const routes: Routes = [
       {path: 'interviewSchedule', component: InterviewSchedulesComponent},
       {path: 'availableJobs', component: AvailablejobsComponent},
       {path: 'trainings', component: TrainingsComponent},
-      {path: 'poProfile', component: ProfileComponent},
+      {path: 'profile', component: ProfileComponent},
       {path: 'bulk-upload', component: AddStudentBulkComponent},
       {path: 'intern-status', component: InternshipStatusComponent},
       {path: 'invite-corporate', component: InviteCorporateComponent},
+      {path: 'changePassword', component: ChaangepasswordComponent}
       
 		]
 	}

@@ -16,6 +16,8 @@ export class AddjdComponent implements OnInit {
   createJDForm: FormGroup;
   countryList: any;
   stateList: any;
+  locationList : any;
+  percentageList: any;
   dashMessage: String;
   selectedData: any;
   modeOfInterviewList: any =["Telephone", "F2F"];

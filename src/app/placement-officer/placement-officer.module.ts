@@ -18,6 +18,7 @@ import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.com
 import { FileSelectDirective, FileDropDirective, FileUploadModule } from 'ng2-file-upload';
 import { InternshipStatusComponent } from './internship-status/internship-status.component';
 import { InviteCorporateComponent } from './invite-corporate/invite-corporate.component';
+import { StatusOfCandidatesComponent } from './status-of-candidates/status-of-candidates.component';
 
 
 @NgModule({
@@ -35,6 +36,6 @@ import { InviteCorporateComponent } from './invite-corporate/invite-corporate.co
     IntenshipComponent, AvailablejobsComponent, 
     TrainingsComponent, InterviewSchedulesComponent, 
     ViewStudentsComponent, ProfileComponent, 
-    AddStudentBulkComponent, InviteCorporateComponent]
+    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent]
 })
 export class PlacementOfficerModule { }

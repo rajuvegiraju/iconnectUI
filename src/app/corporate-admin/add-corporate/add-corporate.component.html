@@ -35,7 +35,7 @@
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="Country" formControlName="country">
-                            <mat-option *ngFor="let country of countryList" [value]="country">
+                            <mat-option *ngFor="let country of countryList" [value]="country.countryId">
                                 {{country.name}}
                             </mat-option>
                         </mat-select>
@@ -44,7 +44,7 @@
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="State" formControlName="state">
-                            <mat-option *ngFor="let state of stateList" [value]="state">
+                            <mat-option *ngFor="let state of stateList" [value]="state.stateId">
                                 {{state.name}}
                             </mat-option>
                         </mat-select>

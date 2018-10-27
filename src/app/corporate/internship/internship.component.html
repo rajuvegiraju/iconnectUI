@@ -9,7 +9,7 @@
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="title">
                 <mat-header-cell *matHeaderCellDef> Project Title </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.projectTitle}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="duration">

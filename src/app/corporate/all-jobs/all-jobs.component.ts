@@ -46,7 +46,7 @@ export class AllJobsComponent implements OnInit {
     }
 
     editRow(row) {
-        this.router.navigate(['hr/addjd', {id:row.id}])
+        this.router.navigate(['hr/addjd', {id:row.jobId}])
     }
 
 }

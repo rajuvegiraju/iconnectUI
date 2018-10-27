@@ -6,7 +6,8 @@ import { IconnectService } from '../../iconnect.service';
 import { DataService } from '../../datachange.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SnackbarService } from '../../snackbar.service';
-
+import { UploadFileService } from '../../upload-file.service';
+import { HttpResponse, HttpEventType } from '@angular/common/http';
 
 
 @Component({
@@ -16,20 +17,33 @@ import { SnackbarService } from '../../snackbar.service';
 })
 export class AddStudentBulkComponent implements OnInit {
 
-  URL:string = 'http://localhost:8080/iconnect/api/upload';
-  title:string = 'app';
+  selectedFiles: FileList;
+  currentFileUpload: File;
+  progress: { percentage: number } = { percentage: 0 };
 
-  uploader: FileUploader = new FileUploader({url: 'http://localhost:8080/iconnect/api/upload', itemAlias: 'photo'});
+  constructor(private uploadService: UploadFileService, private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
+  }
 
-  constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
   }
 
   ngOnInit() {
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-         console.log('ImageUpload:uploaded:', item, status, response);
-         alert('File uploaded successfully');
-     };
+  }
+
+  upload() {
+    this.progress.percentage = 0;
+ 
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+      if (event.type === HttpEventType.UploadProgress) {
+        this.progress.percentage = Math.round(100 * event.loaded / event.total);
+      } else if (event instanceof HttpResponse) {
+        console.log('File is completely uploaded!');
+      }
+    });
+ 
+    this.selectedFiles = undefined;
   }
 
 }

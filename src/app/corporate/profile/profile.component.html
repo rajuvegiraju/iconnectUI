@@ -82,22 +82,27 @@
 				      <h3>Corporate Location</h3>
 			      </div>
           </div>
-          <div class="form-group col-md-6 col-sm-6">
-            <mat-form-field class="example-full-width">
-              <mat-select placeholder="Country" formControlName="country">
-                <mat-option value="country">
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+          
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Country" formControlName="country">
+                      <mat-option *ngFor="let country of countryList" [value]="country.countryId">
+                          {{country.name}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
           </div>
-          <div class="form-group col-md-6 col-sm-6">
-            <mat-form-field class="example-full-width">
-              <mat-select placeholder="State" formControlName="state">
-                <mat-option value="state">
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+
+          <div class="form-group col-md-6">
+              <mat-form-field class="example-full-width">
+                  <mat-select placeholder="State" formControlName="state">
+                      <mat-option *ngFor="let state of stateList" [value]="state.stateId">
+                          {{state.name}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
           </div>
+
           <div class="form-group col-md-6 col-sm-6">
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Location" formControlName="location">
@@ -111,8 +116,7 @@
         
     </div>
       <div class="align-center">
-        <input type="button" class="btn btn-primary" value="Edit">&nbsp;&nbsp;
-        <input type="button" class="btn btn-primary"  value="Save">
+        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Update">
       </div>
     </form>
   </div>

@@ -5,28 +5,28 @@
     <div class="data-table" *ngIf="!createCollege">
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> College Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.collegeName}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="contactperson">
-                <mat-header-cell *matHeaderCellDef> Contact Person </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.placementOfficer}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> Placement Officer Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="mobileno">
                 <mat-header-cell *matHeaderCellDef> Mobile No </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.poMobile}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.mobile}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="university">
                 <mat-header-cell *matHeaderCellDef> University </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.address1}}, {{element.address2}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.university}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="address">
                 <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.address1}}, {{element.address2}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.location}}, {{element.address1}} </mat-cell>
             </ng-container>
            
             <ng-container matColumnDef="action">
