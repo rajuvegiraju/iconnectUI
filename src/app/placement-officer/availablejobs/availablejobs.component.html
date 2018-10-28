@@ -1,16 +1,16 @@
 <div>
-    <div class="col-md-12 col-sm-12">
+    <mat-card class="margin25">
         <mat-form-field class="col-md-6 col-sm-6 example-full-width">
             <input matInput placeholder="Search" [(ngModel)]="search">
         </mat-form-field>
         <mat-form-field class="col-md-6 col-sm-6">
-            <mat-select placeholder="Filters">
+            <mat-select placeholder="Status">
                 <mat-option *ngFor="let filter of filters" [value]="filter.value">
                     {{filter.viewValue}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-    </div>
+    </mat-card>
         
     <div class="data-table" *ngIf="dataSource.length!=0">
         <div class="align-center" *ngIf="dataSource.length==0">
@@ -20,8 +20,7 @@
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="internId">
                 <mat-header-cell *matHeaderCellDef> Job ID </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.internId}} &nbsp;
-                    <mat-icon>add</mat-icon>
+                <mat-cell *matCellDef="let element"><mat-icon>add</mat-icon>&nbsp; {{element.internId}}
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="status">
