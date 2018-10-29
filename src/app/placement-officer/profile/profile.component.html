@@ -85,14 +85,14 @@
         
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Department Name" [ngModel]="department">
+            <input matInput placeholder="Department Name" [(ngModel)]="department" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
         </div>
         <div class="form-group col-sm-6 col-md-6">
           <input type="button" class="btn btn-primary" value="Add" (click)="addDept(department)">
         </div>
       </div>
-      <div class="row" *ngIf="dataSource.length!=0">
+      <div class="row margin_bottom" *ngIf="dataSource.length!=0">
         <table mat-table [dataSource]="dataSource" class="deptTable mat-elevation-z8 col-sm-6 col-md-6">
         
           <ng-container matColumnDef="number">
@@ -108,7 +108,7 @@
             <th mat-header-cell *matHeaderCellDef> Actions </th>
             <td mat-cell *matCellDef="let element">
               <mat-icon>border_color</mat-icon>&nbsp;
-              <mat-icon>delete</mat-icon>
+              <mat-icon (click)="deleteData(element)">delete</mat-icon>
             </td>
           </ng-container>
         

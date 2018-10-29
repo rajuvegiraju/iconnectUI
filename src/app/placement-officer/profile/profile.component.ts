@@ -46,30 +46,30 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
 
-  this._iconnectService.getPOProfileDetails().subscribe(response => {
-  
-    this.selectedData = response.payload.profile;
-    this.placementForm.setValue({
-      name: this.selectedData.name,
-      mobile:this.selectedData.mobile,
-      email:this.selectedData.email,
-      university:this.selectedData.university,
-      collegeName:this.selectedData.collegeName,
-      country:this.selectedData.country,
-      state:this.selectedData.state,
-      address1:this.selectedData.address1,
-      city:this.selectedData.city,
-      schemeType:this.selectedData.schemeType,
-      course:this.selectedData.course,
-      stream:this.selectedData.stream,
-      collegeAddress:this.selectedData.collegeAddress ,
-      collegeContact: this.selectedData.collegeContact,
-      principalName:this.selectedData.principalName,
-      principalContact:this.selectedData.principalContact,
-      principalEmail: this.selectedData.principalEmail
-      
-    });
-  })
+    this._iconnectService.getPOProfileDetails().subscribe(response => {
+
+      this.selectedData = response.payload.profile;
+      this.placementForm.setValue({
+        name: this.selectedData.name,
+        mobile: this.selectedData.mobile,
+        email: this.selectedData.email,
+        university: this.selectedData.university,
+        collegeName: this.selectedData.collegeName,
+        country: this.selectedData.country,
+        state: this.selectedData.state,
+        address1: this.selectedData.address1,
+        city: this.selectedData.city,
+        schemeType: this.selectedData.schemeType,
+        course: this.selectedData.course,
+        stream: this.selectedData.stream,
+        collegeAddress: this.selectedData.collegeAddress,
+        collegeContact: this.selectedData.collegeContact,
+        principalName: this.selectedData.principalName,
+        principalContact: this.selectedData.principalContact,
+        principalEmail: this.selectedData.principalEmail
+
+      });
+    })
 
     this._iconnectService.getCountryDetails().subscribe(response => {
       this.countryList = response.payload.countries;
@@ -83,29 +83,45 @@ export class ProfileComponent implements OnInit {
 
   }
   addDept(data) {
-  debugger;
     if (data) {
       let dataObj = {
         departmentName: this.department,
-        number:1
+        number: 1
       };
-      
+      // this._iconnectService.addRow(dataObj).subscribe(response => {
+      //   if (response.resCode == "1") {
+      //     this._snackBar.success("Successfully Updated");
+      //     //this.router.navigateByUrl('/po');
+      //   } else {
+      //     this._snackBar.error("Error in Updation");
+      //   }
+      // })      
       this.dataSource.push(dataObj);
     } else {
       this._snackBar.error("Department name should not be empty");
     }
   }
+  deleteData(data) {
+    // this._iconnectService.deleteData(data).subscribe(response => {
+    //   if (response.resCode == "1") {
+    //     this._snackBar.success("Successfully Updated");
+    //     this.dataSource = response.data;
+    //   } else {
+    //     this._snackBar.error("Error in Updation");
+    //   }
+    // })
+  }
 
-  onSubmit(){
+  onSubmit() {
     this._iconnectService.updatePOProfileDetails(this.placementForm.value).subscribe(response => {
-        if (response.resCode == "1") {
-          this._snackBar.success("Successfully Updated");
-          this.router.navigateByUrl('/po');
-          this.dataService.navData("College");
-        } else {
-          this._snackBar.error("Error in Updation");
-        }
-      })
+      if (response.resCode == "1") {
+        this._snackBar.success("Successfully Updated");
+        this.router.navigateByUrl('/po');
+        this.dataService.navData("College");
+      } else {
+        this._snackBar.error("Error in Updation");
+      }
+    })
   }
 
 }

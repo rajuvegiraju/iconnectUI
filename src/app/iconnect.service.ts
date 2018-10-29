@@ -282,7 +282,12 @@ export class IconnectService {
     sendNotification(requestBody): Observable<any> {
         return this._httpService.post(environment.path.placementOfficer, requestBody);
     }
+    addRow(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.placementOfficer, requestBody);
+    }
+    
+    deleteData(requestBody): Observable<any> {
+        return this._httpService.delete(environment.path.placementOfficer, requestBody);
+    }
 
-    
-    
 }
