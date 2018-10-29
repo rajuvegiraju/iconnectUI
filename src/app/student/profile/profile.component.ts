@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   studentForm: FormGroup;
   modeOfInterviewList:any = [];
   courceList:any = [];
+  keySkills: string[] = ['Java', 'Angular js', 'Javascript', 'Html5', 'Css3', 'Reactjs'];
 
   constructor(private _formBuilder:FormBuilder) {
     this.studentForm = this._formBuilder.group({
