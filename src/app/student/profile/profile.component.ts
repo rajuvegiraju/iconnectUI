@@ -12,11 +12,14 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   studentForm: FormGroup;
+  displayedColumns: string[] = ['prevcourse', 'prevcollege', 'prevuniversity', 'prevcity','prevyearOfPass','actions'];
+  dataSource: any = [];
   modeOfInterviewList:any = [];
   courceList:any = [];
   keySkills: string[] = ['Java', 'Angular js', 'Javascript', 'Html5', 'Css3', 'Reactjs'];
+  prevEducationDetails:any = {}
 
-  constructor(private _formBuilder:FormBuilder) {
+  constructor(private _formBuilder:FormBuilder, private _snackBar:SnackbarService, private router: Router, private _iconnectService: IconnectService, private dataService: DataService) {
     this.studentForm = this._formBuilder.group({
       'name': ['', Validators.required],
       'about': ['', Validators.required],
@@ -48,5 +51,32 @@ export class ProfileComponent implements OnInit {
   onSubmit(){
   
   }
+  addDept(data) {
+    if (data) {
+      //let dataObj = this.prevEducationDetails
+      // this._iconnectService.addRow(dataObj).subscribe(response => {
+      //   if (response.resCode == "1") {
+      //     this._snackBar.success("Successfully Updated");
+      //     //this.router.navigateByUrl('/po');
+      //   } else {
+      //     this._snackBar.error("Error in Updation");
+      //   }
+      // })      
+      this.dataSource.push(this.prevEducationDetails);
+    } else {
+      this._snackBar.error("Department name should not be empty");
+    }
+  }
+  deleteData(row) {
+    this.dataSource.data.splice(row.position - 1, 1);
 
+    // this._iconnectService.deleteData(data).subscribe(response => {
+    //   if (response.resCode == "1") {
+    //     this._snackBar.success("Successfully Updated");
+    //     this.dataSource = response.data;
+    //   } else {
+    //     this._snackBar.error("Error in Updation");
+    //   }
+    // })
+  }
 }
