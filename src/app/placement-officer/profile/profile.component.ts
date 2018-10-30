@@ -47,7 +47,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     this._iconnectService.getPOProfileDetails().subscribe(response => {
-
       this.selectedData = response.payload.profile;
       this.placementForm.setValue({
         name: this.selectedData.name,
