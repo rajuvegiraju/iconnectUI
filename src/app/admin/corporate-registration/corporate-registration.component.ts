@@ -22,11 +22,11 @@ export class CorporateRegistrationComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route:ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.createCorporateForm = this._formBuilder.group({
       'id': [''],
-      'name': ['', Validators.required],
+      'name': ['', Validators.compose([Validators.required, Validators.maxLength(20)])],
       'contactPerName': ['', Validators.required],
       'mobileNumber': ['', Validators.required],
       'email': ['', Validators.required],
-      'address1': ['', Validators.required],
+      'address1': ['', Validators.compose([Validators.required, Validators.maxLength(30)])],
       'address2': ['', Validators.required],
       'country': ['', Validators.required],
       'state': ['', Validators.required]

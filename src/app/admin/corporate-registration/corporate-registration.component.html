@@ -14,12 +14,12 @@
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Mobile Number" formControlName="mobileNumber">
+                        <input matInput maxlength="10" pattern="^(0|[1-9][0-9]*)$" placeholder="Mobile Number" formControlName="mobileNumber">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Email" formControlName="email">
+                        <input matInput placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" formControlName="email">
                     </mat-form-field>
                 </div>
                 <div class="form-group col-md-6">
@@ -57,7 +57,7 @@
             </div> -->
             </div>
             <div class="align-center">
-                <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Submit">
+                <input type="button" class="btn btn-primary" (click)="onSubmit(createCollegeForm.valid)" [disabled]="!createCorporateForm.valid" value="Submit">
             </div>
         </form>
     </div>
