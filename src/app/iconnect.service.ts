@@ -280,6 +280,10 @@ export class IconnectService {
         return this._httpService.put(environment.path.placementOfficer, requestBody);
     }
 
+    uploadFile(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.uploadFile, requestBody);
+    }
+
     
     
 }

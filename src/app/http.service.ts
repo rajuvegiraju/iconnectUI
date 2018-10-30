@@ -17,7 +17,7 @@ let cloneChanges: any = {};
 //Add Base Url for all requests
 cloneChanges.url = environment.baseURI + req.url;
 
-cloneChanges.headers = req.headers.set('Content-Type', 'application/json');
+//cloneChanges.headers = req.headers.set('Content-Type', 'application/json');
 //Modify Request
 const dupReq = req.clone(cloneChanges)
 return next.handle(dupReq).pipe(

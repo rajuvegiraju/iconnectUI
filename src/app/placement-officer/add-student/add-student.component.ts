@@ -62,11 +62,11 @@ export class AddStudentComponent implements OnInit {
    
       this._iconnectService.addNewStudent(this.addStudentForm.value).subscribe(response => {
         if (response.resCode == "1") {
-          this._snackBar.success("Successfully Created");
+          this._snackBar.success("Successfully Uploaded..");
           this.router.navigateByUrl('/po/studentList');
           this.dataService.navData("College");
         } else {
-          this._snackBar.error("Registration Unsuccessful");
+          this._snackBar.error(response.mesgStr);
         }
       })
     
