@@ -10,6 +10,9 @@ import { ViewCompaniesComponent } from './view-companies/view-companies.componen
 import { ProfileComponent } from './profile/profile.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { AssessmentComponent } from './assessment/AssessmentComponent.component';
+import { ElearningComponent } from './elearning/ElearningComponent.component';
+import { SdpComponent } from './sdp/SdpComponent.component';
 
 const routes: Routes = [
 	{
@@ -24,7 +27,10 @@ const routes: Routes = [
 			{ path: 'view-companies', component: ViewCompaniesComponent },
 			{ path: 'profile', component: ProfileComponent },
 			{ path: 'internship', component: InternshipComponent },
-      { path: 'changePassword', component: ChaangepasswordComponent }
+      { path: 'changePassword', component: ChaangepasswordComponent },
+      { path: 'assessment', component: AssessmentComponent },
+      { path: 'elearning', component: ElearningComponent },
+      { path: 'sdp', component: SdpComponent }
 		]
 	}
 

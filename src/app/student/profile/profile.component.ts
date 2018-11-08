@@ -63,6 +63,7 @@ export class ProfileComponent implements OnInit {
       //   }
       // })      
       this.dataSource.push(this.prevEducationDetails);
+      this.prevEducationDetails = {};
     } else {
       this._snackBar.error("Department name should not be empty");
     }

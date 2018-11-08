@@ -9,12 +9,17 @@
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="About Me" formControlName="about"></textarea>
+            <input matInput placeholder="About Me" formControlName="about">
           </mat-form-field>
         </div>
       </div>
       <div class="row">
-        <h6 class="form-group col-md-12 col-sm-12">Current Education Details</h6>
+        <div class="col-sm-12 panel-body">
+			      <div class="heading-block">
+				      <h3>Current Education Details</h3>
+			      </div>
+        </div>
+
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Current Course" formControlName="course">
@@ -47,7 +52,11 @@
         </div>
       </div>
       <div class="row">
-        <h6 class="form-group col-md-12 col-sm-12">Previous Education Details</h6>
+        <div class="col-sm-12 panel-body">
+			      <div class="heading-block">
+				      <h3>Previous Education Details</h3>
+			      </div>
+        </div>
         <div class="form-group col-md-2 col-sm-2">
           <mat-form-field class="example-full-width ">
             <input matInput placeholder="Previous Course" [ngModelOptions]="{standalone: true}" [(ngModel)]="prevEducationDetails.prevcourse">
@@ -113,24 +122,26 @@
         </div>
       </div>
       <div class="row">
-        <h6 class="form-group col-md-12 col-sm-12">Personal Information Details</h6>
-        <div class="form-group col-md-4 col-sm-4">
+        <div class="col-sm-12 panel-body">
+			      <div class="heading-block">
+				      <h3>Personal Information Details</h3>
+			      </div>
+        </div>
+        <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Date of Birth" formControlName="dob">
           </mat-form-field>
         </div>
-        <div class="form-group col-md-4 col-sm-4">
+        <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Email ID" formControlName="emailId">
           </mat-form-field>
         </div>
-        <div class="form-group col-md-4 col-sm-4">
+        <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Mobile Number" formControlName="mobile">
           </mat-form-field>
         </div>
-      </div>
-      <div class="row">
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Current Course Aggregate %" formControlName="mobile">
@@ -151,15 +162,12 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <!-- <mat-form-field class="example-full-width"> -->
-          <input disabled="true" type="button" class="btn btn-primary" value="Download">
-          <!-- </mat-form-field> -->
-        </div>
+        
       </div>
       <div class="align-center">
-        <input type="button" class="btn btn-primary" value="Edit">&nbsp;&nbsp;
-        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Save">
+        
+        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Update">&nbsp;&nbsp;
+        <input disabled="true" type="button" class="btn btn-primary" value="Download">
       </div>
     </form>
   </div>
