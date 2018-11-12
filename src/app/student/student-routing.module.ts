@@ -10,9 +10,9 @@ import { ViewCompaniesComponent } from './view-companies/view-companies.componen
 import { ProfileComponent } from './profile/profile.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
-import { AssessmentComponent } from './assessment/AssessmentComponent.component';
-import { ElearningComponent } from './elearning/ElearningComponent.component';
-import { SdpComponent } from './sdp/SdpComponent.component';
+import { AssessmentComponent } from './assessment/assessment.component';
+import { ElearningComponent } from './elearning/elearning.component';
+import { SdpComponent } from './sdp/sdp.component';
 
 const routes: Routes = [
 	{
