@@ -13,6 +13,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { InternshipComponent } from './internship/internship.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ElearningComponent } from './elearning/elearning.component';
+import { AssessmentComponent } from './assessment/assessment.component';
+import { SdpComponent } from './sdp/sdp.component';
 
 @NgModule({
   imports: [
@@ -22,6 +25,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 	  FormsModule,
 	  ReactiveFormsModule
   ],
-  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent]
+  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent]
 })
 export class StudentModule { }

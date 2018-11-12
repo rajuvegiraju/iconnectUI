@@ -83,6 +83,7 @@ export class ProfileComponent implements OnInit {
   }
   addDept(data) {
     if (data) {
+    debugger;
       let dataObj = {
         departmentName: this.department,
         number: 1

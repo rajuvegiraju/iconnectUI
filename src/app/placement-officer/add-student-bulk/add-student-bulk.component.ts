@@ -21,7 +21,7 @@ export class AddStudentBulkComponent implements OnInit {
   currentFileUpload: File;
   progress: { percentage: number } = { percentage: 0 };
 
-  constructor(private uploadService: UploadFileService, private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
+  constructor(private uploadService: UploadFileService, private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private dataService: DataService, private _iService: IconnectService,) {
   }
 
   selectFile(event) {
@@ -35,15 +35,35 @@ export class AddStudentBulkComponent implements OnInit {
     this.progress.percentage = 0;
  
     this.currentFileUpload = this.selectedFiles.item(0);
+
+    const formdata: FormData = new FormData();
+    formdata.append('file', this.selectedFiles.item(0));
+
+    this._iService.uploadFile(formdata).subscribe(response => {
+    debugger;
+        if (response.resCode == "1") {
+          this._snackBar.success("Successfully Created");
+          this.dataService.navData("College");
+        } else {
+          this._snackBar.error(response.mesgStr);
+        }
+        this.selectedFiles = null;
+    });
+
+
+
+/*
     this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+    debugger;
       if (event.type === HttpEventType.UploadProgress) {
         this.progress.percentage = Math.round(100 * event.loaded / event.total);
       } else if (event instanceof HttpResponse) {
         console.log('File is completely uploaded!');
       }
+
     });
- 
-    this.selectedFiles = undefined;
+ */
+    
   }
 
 }
