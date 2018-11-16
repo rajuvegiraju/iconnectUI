@@ -27,7 +27,8 @@ export const environment = {
     internship:"/api/hr/internship",
     hr_profile:"/api/hr/profile",
     placementOfficer:"/api/placementofficer",
-    uploadFile:"/api/upload"
+    uploadFile:"/api/upload",
+    locations:"/api/iconnect/location"
     
     
   }

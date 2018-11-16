@@ -297,4 +297,8 @@ export class IconnectService {
         return this._httpService.delete(environment.path.placementOfficer, requestBody);
     }
 
+    getLocationDetails(): Observable<any> {
+        return this._httpService.get(environment.path.locations);
+    }
+
 }
