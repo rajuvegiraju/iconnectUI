@@ -21,7 +21,7 @@
         <div *ngIf="!notifyAdmin" class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="Location" [(ngModel)]="location">
-              <mat-option *ngFor="let location of locations" [value]="location">
+              <mat-option *ngFor="let location of locationList" [value]="location">
                 {{location.name}}
               </mat-option>
             </mat-select>
@@ -30,8 +30,8 @@
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="Company Name" [(ngModel)]="companyName">
-              <mat-option *ngFor="let location of locations" [value]="location">
-                {{companyName.name}}
+              <mat-option *ngFor="let company of companyList" [value]="location">
+                {{company.corporateName}}
               </mat-option>
             </mat-select>
           </mat-form-field>
