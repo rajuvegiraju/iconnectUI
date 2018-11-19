@@ -24,7 +24,9 @@ body{
     height:4vh;
     color: #a3a7b3;
   }
-  
+  .displayFlex{
+    display: flex;
+  }
   .space-between{
     display:flex;
     justify-content: space-between;

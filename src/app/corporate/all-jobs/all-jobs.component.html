@@ -1,15 +1,19 @@
 <div>
-    
-  <!--  <div class="align-center" *ngIf="dataSource.length==0">
+
+    <!--  <div class="align-center" *ngIf="dataSource.length==0">
         <mat-spinner></mat-spinner>
     </div> -->
-    <div class="row">
-      <div class="btn-add" style="padding-left:40px;">
-          <button routerLink="../addjd" (click)="createOrg()" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i> Add Job</button>
-      </div>
-    </div>
+    <mat-card class="margin25 row">
+        <mat-form-field class="col-md-6 col-sm-6 example-full-width">
+            <input matInput placeholder="Search" [(ngModel)]="search">
+        </mat-form-field>
+        <div class="col-md-6 col-sm-6 example-full-width">
+            <button routerLink="../addjd" (click)="createOrg()" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
+                Add Job</button>
+        </div>
+    </mat-card>
     <div class="data-table">
-        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="jobPosition">
                 <mat-header-cell *matHeaderCellDef> Job Position </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.jobPosition}} </mat-cell>
@@ -47,9 +51,68 @@
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table> -->
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="checkbox">
+                <mat-header-cell *matHeaderCellDef>
+                    <mat-form-field>
+                        <mat-checkbox></mat-checkbox>
+                    </mat-form-field>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-form-field [(ngModel)]="element.checkbox">
+                        <mat-checkbox></mat-checkbox>
+                    </mat-form-field>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="studentName">
+                <mat-header-cell *matHeaderCellDef> Student Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.studentName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="mobileNumber">
+                <mat-header-cell *matHeaderCellDef> Mobile Number </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.mobileNumber}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="emailId">
+                <mat-header-cell *matHeaderCellDef> Email ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.vacancies}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="collegeName">
+                <mat-header-cell *matHeaderCellDef> College Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.collegeName}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="course">
+                <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.course}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="stream">
+                <mat-header-cell *matHeaderCellDef> Stream </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.stream}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="aggregate">
+                <mat-header-cell *matHeaderCellDef> Aggregate </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.aggregate}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="yearOfPass">
+                <mat-header-cell *matHeaderCellDef> Year of Passing </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.yearOfPass}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="profile">
+                <mat-header-cell *matHeaderCellDef> Student Profile </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button (click)="createOrg()" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
+                        View Profile</button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
     </div>
-   <!-- <div *ngIf="createCollege">
+    <!-- <div *ngIf="createCollege">
         <router-outlet></router-outlet>
     </div> -->
 </div>
