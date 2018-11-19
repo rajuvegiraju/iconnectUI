@@ -7,10 +7,9 @@
         <mat-form-field class="col-md-6 col-sm-6 example-full-width">
             <input matInput placeholder="Search" [(ngModel)]="search">
         </mat-form-field>
-        <div class="col-md-6 col-sm-6 example-full-width">
-            <button routerLink="../addjd" (click)="createOrg()" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
-                Add Job</button>
-        </div>
+        <button style="width:auto;" routerLink="../addjd" (click)="createOrg()" type="button" class="btn btn-primary col-md-6 col-sm-6"><i
+                class="fa fa-newspaper-o"></i>
+            Add Job</button>
     </mat-card>
     <div class="data-table">
         <!-- <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -55,9 +54,7 @@
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="checkbox">
                 <mat-header-cell *matHeaderCellDef>
-                    <mat-form-field>
-                        <mat-checkbox></mat-checkbox>
-                    </mat-form-field>
+                    <mat-checkbox></mat-checkbox>
                 </mat-header-cell>
                 <mat-cell *matCellDef="let element">
                     <mat-form-field [(ngModel)]="element.checkbox">
