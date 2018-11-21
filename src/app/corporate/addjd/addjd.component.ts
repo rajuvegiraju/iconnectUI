@@ -24,6 +24,9 @@ export class AddjdComponent implements OnInit {
   courceList:any = ["B.Tech", "B.SC"];
   jobTypeList:any = ["Perminent", "Contract"];
   jobPositionList:any =["Sr Software", "Freshers"];
+  jobLocList:any = ["Bengalore","Hyderabad", "Mumbai"];
+  streamList:any = ["CSE","ECE","CIVIL"];
+  percentList:any = ["70%","65%","55%"];
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.createJDForm = this._formBuilder.group({
@@ -37,9 +40,10 @@ export class AddjdComponent implements OnInit {
       'skill': ['', Validators.required],
       'roundsOfInterview':['', Validators.required],
       'description': ['', Validators.required],
-      'location': ['', Validators.required],
-      'country': ['', Validators.required],
-      'state': ['', Validators.required]
+      'stream': ['', Validators.required],
+      'jobLocation': ['', Validators.required],
+      'percentCriteria': ['', Validators.required],
+      'jobRole': ['', Validators.required]
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }

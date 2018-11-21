@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {
     MatButtonModule, MatIconModule, MatListModule, MatSidenavModule,
     MatInputModule, MatSlideToggleModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
-    MatTableModule,MatNativeDateModule, MatDatepickerModule, MatSnackBarModule, MatCardModule, MatDialogModule, MatFormFieldModule,MatSelectModule
+    MatTableModule,MatCheckboxModule, MatNativeDateModule, MatDatepickerModule, MatSnackBarModule, MatCardModule, MatDialogModule, MatFormFieldModule,MatSelectModule
 } from '@angular/material';
 //import { MatFileUploadModule } from 'angular-material-fileupload';
 
@@ -12,12 +12,12 @@ import {
     imports: [
         CommonModule, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule,
         MatInputModule, MatSlideToggleModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
-        MatTableModule,MatDatepickerModule, MatNativeDateModule,MatSnackBarModule, MatCardModule, MatDialogModule,MatFormFieldModule,MatSelectModule
+        MatTableModule,MatCheckboxModule, MatDatepickerModule, MatNativeDateModule,MatSnackBarModule, MatCardModule, MatDialogModule,MatFormFieldModule,MatSelectModule
     ],
     exports: [
         CommonModule, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule,
         MatInputModule, MatSlideToggleModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
-        MatTableModule,MatDatepickerModule, MatSnackBarModule, MatCardModule, MatDialogModule,MatFormFieldModule,MatSelectModule
+        MatTableModule,MatCheckboxModule, MatDatepickerModule, MatSnackBarModule, MatCardModule, MatDialogModule,MatFormFieldModule,MatSelectModule
     ],
     providers: [MatDatepickerModule]
 })
