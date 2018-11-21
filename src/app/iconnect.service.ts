@@ -301,4 +301,10 @@ export class IconnectService {
         return this._httpService.get(environment.path.locations);
     }
 
+    getCompineDetails(id): Observable<any> {
+        return this._httpService.get(environment.path.companies+"/"+id);
+    }
+
+    
+
 }

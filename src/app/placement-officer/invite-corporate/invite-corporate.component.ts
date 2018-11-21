@@ -29,6 +29,14 @@ export class InviteCorporateComponent implements OnInit {
        })
   }
 
+
+  changLocation(location){
+     this._iconnectService.getCompineDetails(location).subscribe(response => {
+      this.companyList = response.payload.company;
+    })
+  }
+
+
   sendNotification(status) {
     let payload = {
       compId: this.compId,
@@ -42,6 +50,9 @@ export class InviteCorporateComponent implements OnInit {
 
       }
     })
+  }
+
+  inviteCorporate() {
   }
 
 
