@@ -20,6 +20,7 @@ export class AddInternshipComponent implements OnInit {
   locationList: any =["Bengalore", "Hyd"];
   dashMessage: String;
   selectedData: any;
+  locationList : any;
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.newInternshipForm = this._formBuilder.group({

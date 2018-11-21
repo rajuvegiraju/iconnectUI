@@ -21,7 +21,7 @@
         <div *ngIf="!notifyAdmin" class="form-group col-md-6">
           <mat-form-field class="example-full-width">
             <mat-select placeholder="Location" [(ngModel)]="location">
-              <mat-option *ngFor="let location of locationList" [value]="location">
+              <mat-option *ngFor="let location of locationList" [value]="location" (click)="changLocation(location);">
                 {{location.name}}
               </mat-option>
             </mat-select>

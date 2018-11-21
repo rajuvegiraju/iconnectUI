@@ -28,7 +28,8 @@ export const environment = {
     hr_profile:"/api/hr/profile",
     placementOfficer:"/api/placementofficer",
     uploadFile:"/api/upload",
-    locations:"/api/iconnect/location"
+    locations:"/api/iconnect/location",
+    companies:"/api/hr/companies",
     
     
   }
