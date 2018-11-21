@@ -81,7 +81,7 @@ export class CorporateRegistrationComponent implements OnInit {
 
   }
 
-  onSubmit() {
+  onSubmit(valid) {
     if (this.paramId) {
       this._iconnectService.updateCorporate(this.createCorporateForm.value).subscribe(response => {
         if (response.resCode == "1") {

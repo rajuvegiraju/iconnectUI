@@ -17,6 +17,7 @@ export class AllJobsComponent implements OnInit {
     editData: any;
     dashMessage: String;
     createJD: Boolean = false;
+    search:any;
 	
   constructor(private _iService: IconnectService, private dataService: DataService, private router:Router) { }
 

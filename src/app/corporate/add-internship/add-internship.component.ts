@@ -17,6 +17,7 @@ export class AddInternshipComponent implements OnInit {
   courceList:any = ["B.Tech", "B.SC"];
   stateList: any;
   modeOfInterviewList: any =["Telephone", "F2F"];
+  locationList: any =["Bengalore", "Hyd"];
   dashMessage: String;
   selectedData: any;
   paramId: any;
