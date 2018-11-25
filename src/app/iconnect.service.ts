@@ -305,6 +305,14 @@ export class IconnectService {
         return this._httpService.get(environment.path.companies+"/"+id);
     }
 
-    
+    addDepartment(requestBody): Observable<any>{
+        return this._httpService.post(environment.path.department, requestBody)
+    }
 
+    getCources(): Observable<any>{
+        return this._httpService.get(environment.path.cources);
+    }        
+    getStreams(id): Observable<any>{
+        return this._httpService.get(environment.path.streams +"/"+ id);
+    }        
 }

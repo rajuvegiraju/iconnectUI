@@ -23,15 +23,14 @@ export class InviteCorporateComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private _iconnectService: IconnectService, private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
-
     this._iconnectService.getLocationDetails().subscribe(response => {
-         this.locationList = response.payload.locations;
-       })
+      this.locationList = response.payload.locations;
+    })
   }
 
 
-  changLocation(location){
-     this._iconnectService.getCompineDetails(location).subscribe(response => {
+  changLocation(location) {
+    this._iconnectService.getCompineDetails(location.stateId).subscribe(response => {
       this.companyList = response.payload.company;
     })
   }
@@ -41,11 +40,13 @@ export class InviteCorporateComponent implements OnInit {
     let payload = {
       compId: this.compId,
       description: this.description
+      //       companyName: this
+
     }
     this._iconnectService.sendNotification(payload).subscribe(response => {
-      if(response){
+      if (response) {
         this._snackBar.success("Successfully sent notification");
-      }else{
+      } else {
         this._snackBar.error("Notification unsuccessful");
 
       }
@@ -54,7 +55,5 @@ export class InviteCorporateComponent implements OnInit {
 
   inviteCorporate() {
   }
-
-
 
 }

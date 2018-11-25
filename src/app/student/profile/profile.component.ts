@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   dataSource: any = [];
   modeOfInterviewList:any = [];
   courceList:any = [];
+  streamList:any = [];
   keySkills: string[] = ['Java', 'Angular js', 'Javascript', 'Html5', 'Css3', 'Reactjs'];
   prevEducationDetails:any = {}
 
@@ -46,10 +47,22 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._iconnectService.getCources().subscribe(response => {
+      console.log(response);
+      this.courceList = response;
+    })
   }
 
   onSubmit(){
   
+  }
+  onChangeCource(){
+    // let data = this.studentForm.value.course;
+    let data = "";
+    this._iconnectService.getStreams(data).subscribe(response => {
+      console.log(response);
+      this.streamList = response;
+    })
   }
   addDept(data) {
     if (data) {
@@ -79,5 +92,15 @@ export class ProfileComponent implements OnInit {
     //     this._snackBar.error("Error in Updation");
     //   }
     // })
+  }
+  updateProfile(){
+    this._iconnectService.updateStudent(this.studentForm.value).subscribe(response => {
+      if (response.resCode == "1") {
+        this._snackBar.success("Successfully Updated");
+        this.dataSource = response.data;
+      } else {
+        this._snackBar.error("Error in Updation");
+      }
+    })
   }
 }
