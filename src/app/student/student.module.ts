@@ -16,6 +16,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ElearningComponent } from './elearning/elearning.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { SdpComponent } from './sdp/sdp.component';
+import { StudentInterviewComponent } from './student-interview/student-interview.component';
+import { ProgressInterviewComponent } from './progress-interview/progress-interview.component';
+import { InterviewOffersComponent } from './interview-offers/interview-offers.component';
+import { StudentTrainingComponent } from './student-training/student-training.component';
 
 @NgModule({
   imports: [
@@ -25,6 +29,6 @@ import { SdpComponent } from './sdp/sdp.component';
 	  FormsModule,
 	  ReactiveFormsModule
   ],
-  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent]
+  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent, StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent]
 })
 export class StudentModule { }

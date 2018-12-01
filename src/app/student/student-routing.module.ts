@@ -13,6 +13,10 @@ import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepasswor
 import { AssessmentComponent } from './assessment/assessment.component';
 import { ElearningComponent } from './elearning/elearning.component';
 import { SdpComponent } from './sdp/sdp.component';
+import { StudentInterviewComponent } from './student-interview/student-interview.component';
+import { StudentTrainingComponent } from './student-training/student-training.component';
+import { ProgressInterviewComponent } from './progress-interview/progress-interview.component';
+import { InterviewOffersComponent } from './interview-offers/interview-offers.component';
 
 const routes: Routes = [
 	{
@@ -27,10 +31,14 @@ const routes: Routes = [
 			{ path: 'view-companies', component: ViewCompaniesComponent },
 			{ path: 'profile', component: ProfileComponent },
 			{ path: 'internship', component: InternshipComponent },
-      { path: 'changePassword', component: ChaangepasswordComponent },
-      { path: 'assessment', component: AssessmentComponent },
-      { path: 'elearning', component: ElearningComponent },
-      { path: 'sdp', component: SdpComponent }
+			{ path: 'changePassword', component: ChaangepasswordComponent },
+			{ path: 'assessment', component: AssessmentComponent },
+			{ path: 'elearning', component: ElearningComponent },
+			{ path: 'sdp', component: SdpComponent },
+			{ path: 'student-interview', component: StudentInterviewComponent },
+			{ path: 'student-training', component: StudentTrainingComponent },
+			{ path: 'student-progress', component: ProgressInterviewComponent },
+			{ path: 'student-offers', component: InterviewOffersComponent }
 		]
 	}
 
