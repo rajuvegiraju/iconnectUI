@@ -315,4 +315,10 @@ export class IconnectService {
     getStreams(id): Observable<any>{
         return this._httpService.get(environment.path.streams +"/"+ id);
     }        
+    getStdInterviews(): Observable<any>{
+        return this._httpService.get(environment.path.stdInterviews);
+    }        
+    getAllOffers(): Observable<any>{
+        return this._httpService.get(environment.path.offers);
+    }        
 }

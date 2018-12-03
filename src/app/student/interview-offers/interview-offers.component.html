@@ -1,3 +1,41 @@
-<p>
-  interview-offers works!
-</p>
+<div>
+  <!-- <mat-card class="margin25">
+    <mat-form-field class="col-md-6 col-sm-6 example-full-width">
+      <input matInput placeholder="Date" [(ngModel)]="date">
+    </mat-form-field>
+  </mat-card> -->
+  <div class="align-center" *ngIf="dataSource.length==0">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="data-table" *ngIf="dataSource.length!=0">
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"><a href="#">{{element.name}}</a></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef> Role/Designation </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="salary">
+        <mat-header-cell *matHeaderCellDef> Salary Offered </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.salary}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="offer">
+        <mat-header-cell *matHeaderCellDef> Offer Letter Received </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.offer}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="doj">
+        <mat-header-cell *matHeaderCellDef> Date of Joining </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.doj}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

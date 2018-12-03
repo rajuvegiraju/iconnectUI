@@ -35,6 +35,8 @@ export const environment = {
     department: "/api/placementofficer/addDepartment",
     cources: "/api/iconnect/cources",
     streams: "/api/iconnect/stream/",
+    offers: "",
+    stdInterviews: ""
   }
 };
 
