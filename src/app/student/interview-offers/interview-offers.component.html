@@ -11,7 +11,7 @@
     <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"><a href="#">{{element.name}}</a></mat-cell>
+        <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="role">
         <mat-header-cell *matHeaderCellDef> Role/Designation </mat-header-cell>
