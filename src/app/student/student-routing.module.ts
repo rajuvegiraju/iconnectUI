@@ -38,7 +38,8 @@ const routes: Routes = [
 			{ path: 'student-interview', component: StudentInterviewComponent },
 			{ path: 'student-training', component: StudentTrainingComponent },
 			{ path: 'student-progress', component: ProgressInterviewComponent },
-			{ path: 'student-offers', component: InterviewOffersComponent }
+			{ path: 'student-offers', component: InterviewOffersComponent },
+			{ path: 'test-schedule-result', component: InterviewOffersComponent },
 		]
 	}
 

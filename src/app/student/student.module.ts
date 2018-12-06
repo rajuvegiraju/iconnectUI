@@ -20,6 +20,7 @@ import { StudentInterviewComponent } from './student-interview/student-interview
 import { ProgressInterviewComponent } from './progress-interview/progress-interview.component';
 import { InterviewOffersComponent } from './interview-offers/interview-offers.component';
 import { StudentTrainingComponent } from './student-training/student-training.component';
+import { TestScheduleResultComponent } from './test-schedule-result/test-schedule-result.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,6 @@ import { StudentTrainingComponent } from './student-training/student-training.co
 	  FormsModule,
 	  ReactiveFormsModule
   ],
-  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent, StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent]
+  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent, StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent, TestScheduleResultComponent]
 })
 export class StudentModule { }

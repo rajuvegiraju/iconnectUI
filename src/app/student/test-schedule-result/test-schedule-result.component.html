@@ -1,0 +1,80 @@
+<div>
+  <mat-card class="margin25">
+    <mat-form-field class="col-md-6 col-sm-6 example-full-width">
+      <mat-select placeholder="Filters" [(ngModel)]="status">
+        <mat-option *ngFor="let status of dropdownList" [value]="status">
+          {{status}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+  <div class="align-center" *ngIf="dataSource.length==0">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="data-table" *ngIf="dataSource.length!=0">
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="assignedBy">
+        <mat-header-cell *matHeaderCellDef> Assigned By </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.assignedBy}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="testName">
+        <mat-header-cell *matHeaderCellDef> Test set name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.testName}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="testType">
+        <mat-header-cell *matHeaderCellDef> Test Type </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.testType}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="noofQuestions">
+        <mat-header-cell *matHeaderCellDef> No Of Questions </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.noofQuestions}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="startDate">
+        <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.startDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="endDate">
+        <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.endDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="negMark">
+        <mat-header-cell *matHeaderCellDef> Negative Marking </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.negMark}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-button class="btn bt-primary" matTooltip="start URL">start</mat-button>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="instruction">
+        <mat-header-cell *matHeaderCellDef> Instructions </mat-header-cell>
+          <mat-button class="btn bt-primary" matTooltip="View Instructions">View</mat-button>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="completeDate">
+        <mat-header-cell *matHeaderCellDef> Completed Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.completeDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="result">
+        <mat-header-cell *matHeaderCellDef> Result </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.result}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
