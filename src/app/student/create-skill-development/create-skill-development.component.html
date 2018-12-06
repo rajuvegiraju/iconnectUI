@@ -1,0 +1,49 @@
+<div>
+  <div class="card add-college-content">
+    <form [formGroup]="createSkillDevForm">
+      <div class="row">
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Industry" formControlName="industry">
+              <mat-option *ngFor="let country of countryList" [value]="country">
+                {{country.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Skill Development Program" formControlName="skillDevelopment">
+              <mat-option *ngFor="let skill of countryList" [value]="skill">
+                {{skill.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Lessons" formControlName="lesson" multiple>
+              <mat-option *ngFor="let lesson of countryList" [value]="lesson">
+                {{lesson.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Number of Units" formControlName="noOfUnits">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Duration" formControlName="duration">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="align-center">
+        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-warning">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

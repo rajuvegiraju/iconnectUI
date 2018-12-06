@@ -21,6 +21,8 @@ import { ProgressInterviewComponent } from './progress-interview/progress-interv
 import { InterviewOffersComponent } from './interview-offers/interview-offers.component';
 import { StudentTrainingComponent } from './student-training/student-training.component';
 import { TestScheduleResultComponent } from './test-schedule-result/test-schedule-result.component';
+import { CreateSkillDevelopmentComponent } from './create-skill-development/create-skill-development.component';
+import { ListSkillDevelopmentComponent } from './list-skill-development/list-skill-development.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,6 @@ import { TestScheduleResultComponent } from './test-schedule-result/test-schedul
 	  FormsModule,
 	  ReactiveFormsModule
   ],
-  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent, StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent, TestScheduleResultComponent]
+  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent, StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent, TestScheduleResultComponent, CreateSkillDevelopmentComponent, ListSkillDevelopmentComponent]
 })
 export class StudentModule { }

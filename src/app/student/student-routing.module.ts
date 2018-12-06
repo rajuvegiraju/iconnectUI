@@ -17,6 +17,9 @@ import { StudentInterviewComponent } from './student-interview/student-interview
 import { StudentTrainingComponent } from './student-training/student-training.component';
 import { ProgressInterviewComponent } from './progress-interview/progress-interview.component';
 import { InterviewOffersComponent } from './interview-offers/interview-offers.component';
+import { TestScheduleResultComponent } from './test-schedule-result/test-schedule-result.component';
+import { ListSkillDevelopmentComponent } from './list-skill-development/list-skill-development.component';
+import { CreateSkillDevelopmentComponent } from './create-skill-development/create-skill-development.component';
 
 const routes: Routes = [
 	{
@@ -39,7 +42,9 @@ const routes: Routes = [
 			{ path: 'student-training', component: StudentTrainingComponent },
 			{ path: 'student-progress', component: ProgressInterviewComponent },
 			{ path: 'student-offers', component: InterviewOffersComponent },
-			{ path: 'test-schedule-result', component: InterviewOffersComponent },
+			{ path: 'test-schedule-result', component: TestScheduleResultComponent },
+			{ path: 'list-skill-dev', component: ListSkillDevelopmentComponent },
+			{ path: 'create-skill-dev', component: CreateSkillDevelopmentComponent },
 		]
 	}
 
