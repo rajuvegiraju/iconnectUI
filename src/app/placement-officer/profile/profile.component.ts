@@ -126,7 +126,7 @@ export class ProfileComponent implements OnInit {
         }
       })
     }else{
-      this._snackBar.error("Please enter mandatory fields");
+      //this._snackBar.error("Please enter mandatory fields");
     }
   }
 

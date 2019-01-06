@@ -24,10 +24,10 @@ export class ViewCompaniesComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.navMessage.subscribe(message => {
-      this._iService.getCompanyList().subscribe(response => {
-        let ELEMENT_DATA = response.payload.companies;
-        this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
-      })
+      // this._iService.getCompanyList().subscribe(response => {
+      //   let ELEMENT_DATA = response.payload.companies;
+      //   this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
+      // })
     });
   }
 }

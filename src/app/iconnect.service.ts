@@ -320,5 +320,8 @@ export class IconnectService {
     }        
     getAllOffers(): Observable<any>{
         return this._httpService.get(environment.path.offers);
+    }
+    getStudentsProfile(): Observable<any>{
+        return this._httpService.get(environment.path.offers);
     }        
 }

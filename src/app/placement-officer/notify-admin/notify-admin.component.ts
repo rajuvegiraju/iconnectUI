@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class NotifyAdminComponent implements OnInit {
 
-  company: {};
+  company = {};
   
   description: any;
   
@@ -27,7 +27,7 @@ export class NotifyAdminComponent implements OnInit {
   
   sendNotification(status) {
     
-    this._iconnectService.sendNotification(company).subscribe(response => {
+    this._iconnectService.sendNotification(this.company).subscribe(response => {
       if (response) {
         this._snackBar.success("Successfully sent notification");
       } else {
