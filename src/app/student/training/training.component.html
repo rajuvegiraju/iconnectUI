@@ -1,3 +1,65 @@
-<p>
-  training works!
-</p>
+<div>
+  <mat-card class="margin25">
+    <mat-form-field class="col-md-6 col-sm-6 example-full-width">
+      <mat-select placeholder="Filters" [(ngModel)]="status">
+        <mat-option *ngFor="let status of dropdownList" [value]="status">
+          {{status}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+  <div class="align-center" *ngIf="dataSource.length==0">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="data-table" *ngIf="dataSource.length!=0">
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="institution">
+        <mat-header-cell *matHeaderCellDef> Institution/Organization </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.institution}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="trainer">
+        <mat-header-cell *matHeaderCellDef> Trainer Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.trainer}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="startDate">
+        <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.startDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="endDate">
+        <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.endDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-icon class="green" matTooltip="Partcipate">done</mat-icon>&nbsp;
+          <mat-icon class="red"  matTooltip="Do Not Partcipate">clear</mat-icon>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="reason">
+        <mat-header-cell *matHeaderCellDef> Reason </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.reason}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

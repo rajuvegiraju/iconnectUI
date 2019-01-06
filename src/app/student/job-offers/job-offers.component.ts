@@ -33,8 +33,8 @@ export class JobOffersComponent implements OnInit {
     this.dataService.navMessage.subscribe(message => {
       this.dashMessage = "jobOffers";
       this._iService.collegeList().subscribe(response => {
-        let ELEMENT_DATA = response.payload.college;
-        this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
+       // let ELEMENT_DATA = response.payload.college;
+       // this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
       })
     });
   }

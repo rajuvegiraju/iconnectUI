@@ -34,8 +34,8 @@ export class IntenshipComponent implements OnInit {
         this.dataService.navMessage.subscribe(message => {
             this.dashMessage = "Internship";
             this._iService.collegeList().subscribe(response => {
-                let ELEMENT_DATA = response.payload.college;
-                this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
+               // let ELEMENT_DATA = response.payload.college;
+               // this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
             })
             /*
             if (this.dashMessage === 'Corporate') {

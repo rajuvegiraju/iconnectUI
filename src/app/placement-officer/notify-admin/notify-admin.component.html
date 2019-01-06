@@ -1,0 +1,49 @@
+ <div>
+
+  <mat-card class="example-card margin-adjust">
+    <mat-card-content>
+      <div class="row">
+       
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Corporate Name" [(ngModel)]="company.corporateName">
+          </mat-form-field>
+        </div>
+        
+        <div class="form-group col-md-4">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="HR Name" formControlName="hrName">
+            <input matInput placeholder="Corporate Name" [(ngModel)]="company.name">
+          </mat-form-field>
+          
+        </div>
+        <div class="form-group col-md-4">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Corporate Name" [(ngModel)]="company.mobile">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-4">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Corporate Name" [(ngModel)]="company.email">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Description" [(ngModel)]="company.description"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-12 align-center">
+          <button type="button" (click)="sendNotification(notifyAdmin)" class="btn btn-primary"><i class="fa fa-newspaper-o"></i> Send</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!--
+<div *ngFor="let buttons of buttonList">
+  <button (click)="calculations(buttons)">{{buttons}}</button>
+</div>
+<button (click)="add()">Add</button>
+<button (click)="sub()">sub</button>
+-->

@@ -16,91 +16,109 @@ export class ProfileComponent implements OnInit {
   dataSource: any = [];
   modeOfInterviewList:any = [];
   courceList:any = [];
-  streamList:any = [];
   keySkills: string[] = ['Java', 'Angular js', 'Javascript', 'Html5', 'Css3', 'Reactjs'];
   prevEducationDetails:any = {}
+  selectedData: any;
 
   constructor(private _formBuilder:FormBuilder, private _snackBar:SnackbarService, private router: Router, private _iconnectService: IconnectService, private dataService: DataService) {
     this.studentForm = this._formBuilder.group({
-      'name': ['', Validators.required],
-      'about': ['', Validators.required],
-      'mobile': ['', Validators.required],
-      'keySkill': ['', Validators.required],
-      'course': ['', Validators.required],
-      'stream': ['', Validators.required],
-      'college': ['', Validators.required],
-      'university': ['', Validators.required],
-      'city': ['', Validators.required],
-      'yearOfPass': ['', Validators.required],
-      'area': ['', Validators.required],
-      'prevcourse': ['', Validators.required],
-      'prevcollege': ['', Validators.required],
-      'prevuniversity': ['', Validators.required],
-      'prevcity': ['', Validators.required],
-      'prevyearOfPass': ['', Validators.required],
-      'dob': ['', Validators.required],
-      'email': ['', Validators.required],
-      'languages': ['', Validators.required],
-      'emailId': ['', Validators.required]
+      'name': [''],
+      'aboutME': [''],
+      'mobile': [''],
+      'keySkill': [''],
+      'course': [''],
+      'stream': [''],
+      'college': [''],
+      'university': [''],
+      'city': [''],
+      'yearOfPass': [''],
+      'prevcourse': [''],
+      'prevcollege': [''],
+      'prevuniversity': [''],
+      'prevcity': [''],
+      'prevyearOfPass': [''],
+      'dob': [''],
+      'email': [''],
+      'languages': [''],
+      'emailId': ['']
       
       });
   }
 
   ngOnInit() {
+
     this._iconnectService.getCources().subscribe(response => {
       console.log(response);
       this.courceList = response;
     })
+  
+    this._iconnectService.getStudentsProfile().subscribe(response => {
+        this.selectedData = response.payload.profile;
+
+        this.studentForm.setValue({
+          id:this.selectedData.id,
+          name: this.selectedData.name,
+          aboutME: this.selectedData.aboutME,
+          mobile:this.selectedData.mobile,
+          keySkill:this.selectedData.keySkills,
+          course:this.selectedData.courseId,
+          stream:this.selectedData.streamId,
+          college:  this.selectedData.college,
+          university: this.selectedData.university,
+          city: this.selectedData.city,
+          yearOfPass: this.selectedData.yearOfPass,
+          dob: this.selectedData.dob,
+          email: this.selectedData.email,
+          languages: this.selectedData.languages
+        
+        });
+    });
   }
 
   onSubmit(){
   
   }
-  onChangeCource(){
-    // let data = this.studentForm.value.course;
-    let data = "";
-    this._iconnectService.getStreams(data).subscribe(response => {
-      console.log(response);
-      this.streamList = response;
-    })
-  }
-  addDept(data) {
-    if (data) {
-      //let dataObj = this.prevEducationDetails
-      // this._iconnectService.addRow(dataObj).subscribe(response => {
+  
+
+    addEducation(data) {
+      if (data) {
+        //let dataObj = this.prevEducationDetails
+        // this._iconnectService.addRow(dataObj).subscribe(response => {
+        //   if (response.resCode == "1") {
+        //     this._snackBar.success("Successfully Updated");
+        //     //this.router.navigateByUrl('/po');
+        //   } else {
+        //     this._snackBar.error("Error in Updation");
+        //   }
+        // })      
+        this.dataSource.push(this.prevEducationDetails);
+        this.prevEducationDetails = {};
+      } else {
+        this._snackBar.error("Department name should not be empty");
+      }
+    }
+
+    deleteEducation(row) {
+      this.dataSource.data.splice(row.position - 1, 1);
+
+      // this._iconnectService.deleteData(data).subscribe(response => {
       //   if (response.resCode == "1") {
       //     this._snackBar.success("Successfully Updated");
-      //     //this.router.navigateByUrl('/po');
+      //     this.dataSource = response.data;
       //   } else {
       //     this._snackBar.error("Error in Updation");
       //   }
-      // })      
-      this.dataSource.push(this.prevEducationDetails);
-      this.prevEducationDetails = {};
-    } else {
-      this._snackBar.error("Department name should not be empty");
+      // })
     }
-  }
-  deleteData(row) {
-    this.dataSource.data.splice(row.position - 1, 1);
+    updateProfile(){
+      this._iconnectService.updateStudent(this.studentForm.value).subscribe(response => {
+        if (response.resCode == "1") {
+          this._snackBar.success("Successfully Updated");
+          this.dataSource = response.data;
+        } else {
+          this._snackBar.error("Error in Updation");
+        }
+      })
+    }
 
-    // this._iconnectService.deleteData(data).subscribe(response => {
-    //   if (response.resCode == "1") {
-    //     this._snackBar.success("Successfully Updated");
-    //     this.dataSource = response.data;
-    //   } else {
-    //     this._snackBar.error("Error in Updation");
-    //   }
-    // })
-  }
-  updateProfile(){
-    this._iconnectService.updateStudent(this.studentForm.value).subscribe(response => {
-      if (response.resCode == "1") {
-        this._snackBar.success("Successfully Updated");
-        this.dataSource = response.data;
-      } else {
-        this._snackBar.error("Error in Updation");
-      }
-    })
-  }
 }

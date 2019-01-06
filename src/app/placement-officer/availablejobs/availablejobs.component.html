@@ -20,7 +20,9 @@
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="internId">
                 <mat-header-cell *matHeaderCellDef> Job ID </mat-header-cell>
-                <mat-cell *matCellDef="let element"><mat-icon>add</mat-icon>&nbsp; {{element.internId}}
+                <mat-cell *matCellDef="let element">
+                <!-- <mat-icon>add</mat-icon> -->
+                &nbsp; {{element.internId}}
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="status">

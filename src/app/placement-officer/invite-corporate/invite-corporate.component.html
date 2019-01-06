@@ -1,10 +1,11 @@
-<!-- <div>
+ <div>
+
   <div class="row">
     <div class="btn-add form-group col-md-6" style="padding-left:40px;">
-      <button (click)="notifyAdmin=true" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
+      <button routerLink="../notify-admin"   type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
         Notify Admin</button>
-    </div> -->
-    <!-- <div *ngIf="notifyAdmin" class="form-group col-md-6">
+    </div>
+    <div *ngIf="notifyAdmin" class="form-group col-md-6">
       <mat-form-field class="example-full-width">
         <mat-select placeholder="Company Name" [(ngModel)]="companyName">
           <mat-option *ngFor="let companyName of companyNames" [value]="companyName">
@@ -12,8 +13,8 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div> -->
-  <!-- </div>
+    </div> 
+ </div>
 
   <mat-card class="example-card margin-adjust">
     <mat-card-content>
@@ -29,8 +30,8 @@
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="Company Name" [(ngModel)]="companyName">
-              <mat-option *ngFor="let company of companyList" [value]="location">
+            <mat-select placeholder="Company Name" [(ngModel)]="company">
+              <mat-option *ngFor="let company of companyList" [value]="location" (click)="changCompany(company);">
                 {{company.corporateName}}
               </mat-option>
             </mat-select>
@@ -38,13 +39,13 @@
         </div>
         <div *ngIf="notifyAdmin" class="form-group col-md-6"></div>
         <div class="form-group col-md-4">
-          HR Name : Kusala
+          HR Name : {{hrName}}
         </div>
         <div class="form-group col-md-4">
-          Contact Number : 99983983838
+          Contact Number : {{hrMobile}}
         </div>
         <div class="form-group col-md-4">
-          Email ID : chennai321@gmail.com
+          Email ID : {{hrEmail}}
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
@@ -57,10 +58,12 @@
       </div>
     </mat-card-content>
   </mat-card>
-</div> -->
+</div>
 
+<!--
 <div *ngFor="let buttons of buttonList">
   <button (click)="calculations(buttons)">{{buttons}}</button>
 </div>
 <button (click)="add()">Add</button>
 <button (click)="sub()">sub</button>
+-->

@@ -32,6 +32,6 @@ import { ListSkillDevelopmentComponent } from './list-skill-development/list-ski
 	  FormsModule,
 	  ReactiveFormsModule
   ],
-  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent, StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent, TestScheduleResultComponent, CreateSkillDevelopmentComponent, ListSkillDevelopmentComponent]
+  declarations: [TemplateComponent, DashboardComponent, TrainingComponent, JobOffersComponent, ViewCompaniesComponent, ScheduledInterviewsComponent, OnlineTestComponent, ProfileComponent, InternshipComponent, ElearningComponent, AssessmentComponent, SdpComponent,StudentInterviewComponent, ProgressInterviewComponent, InterviewOffersComponent, StudentTrainingComponent, TestScheduleResultComponent, CreateSkillDevelopmentComponent, ListSkillDevelopmentComponent]
 })
 export class StudentModule { }

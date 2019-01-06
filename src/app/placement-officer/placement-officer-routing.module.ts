@@ -13,6 +13,10 @@ import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.com
 import { InternshipStatusComponent } from './internship-status/internship-status.component';
 import { InviteCorporateComponent } from './invite-corporate/invite-corporate.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { NotifyAdminComponent } from './notify-admin/notify-admin.component';
+
+
+
 
 const routes: Routes = [
 	{
@@ -30,8 +34,8 @@ const routes: Routes = [
       {path: 'bulk-upload', component: AddStudentBulkComponent},
       {path: 'intern-status', component: InternshipStatusComponent},
       {path: 'invite-corporate', component: InviteCorporateComponent},
-      {path: 'changePassword', component: ChaangepasswordComponent}
-      
+      {path: 'changePassword', component: ChaangepasswordComponent},
+      {path: 'notify-admin', component: NotifyAdminComponent}
 		]
 	}
 	 

@@ -1,7 +1,7 @@
 <div>
   <mat-card class="margin25">
-    <div class="btn-add" *ngIf="!createCollege">
-      <button routerLink="../collegeReg" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
+    <div class="btn-add">
+      <button routerLink="../create-skill-dev" type="button" class="btn btn-primary "><i class="fa fa-newspaper-o"></i>
         Add Skill</button>
     </div>
   </mat-card>
@@ -33,9 +33,9 @@
 
       <ng-container matColumnDef="status">
         <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
-        <mat-cell *matCellDef="let element"> 
-          <button class="btn btn-primary">Pending</button>  
-          <button class="btn btn-primary">Completed</button>  
+        <mat-cell *matCellDef="let element" style="font-size:x-large;"> 
+          <i class="fa fa-pencil" aria-hidden="true" title="Update"></i> &nbsp; <i class="fa fa-hourglass-end" aria-hidden="true" title="Pending"></i> 
+          &nbsp;<i class="fa fa-check-circle-o" aria-hidden="true" title="Completed"></i>
         </mat-cell>
       </ng-container>
       

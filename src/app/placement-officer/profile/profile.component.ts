@@ -112,8 +112,8 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  onSubmit(valid) {
-    if (valid) {
+  onSubmit() {
+    if (true) {
       console.log(this.placementForm.value);
       this._iconnectService.updatePOProfileDetails(this.placementForm.value).subscribe(response => {
         alert(response);

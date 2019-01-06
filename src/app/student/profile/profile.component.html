@@ -9,7 +9,7 @@
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="About Me" formControlName="about">
+            <input matInput placeholder="About Me" formControlName="aboutME">
           </mat-form-field>
         </div>
       </div>
@@ -22,16 +22,12 @@
 
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="Current Course" formControlName="course" (change)="onChangeCource()">
-              <mat-option *ngFor="let course of courceList" [value]="course">{{course}}</mat-option>
-            </mat-select>
+            <input matInput placeholder="Current Course" formControlName="course">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="Stream/Branch" formControlName="stream">
-              <mat-option *ngFor="let stream of streamList" [value]="stream">{{stream}}</mat-option>
-            </mat-select>
+            <input matInput placeholder="Stream/Branch" formControlName="stream">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6 col-sm-6">
