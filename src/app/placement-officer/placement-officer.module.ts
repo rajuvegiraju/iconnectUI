@@ -22,6 +22,10 @@ import { StatusOfCandidatesComponent } from './status-of-candidates/status-of-ca
 import { ViewCompaniesComponent } from './view-companies/view-companies.component';
 import { NotifyAdminComponent } from './notify-admin/notify-admin.component';
 import { InternalTrainingComponent } from './internal-training/internal-training.component';
+import { SkillDevProgramComponent } from './skill-dev-program/skill-dev-program.component';
+import { ViewSkillProgramComponent } from './view-skill-program/view-skill-program.component';
+import { SkillAssignmentComponent } from './skill-assignment/skill-assignment.component';
+import { SkillGapComponent } from './skill-gap/skill-gap.component';
 
 
 @NgModule({
@@ -39,6 +43,6 @@ import { InternalTrainingComponent } from './internal-training/internal-training
     IntenshipComponent, AvailablejobsComponent, 
     TrainingsComponent, InterviewSchedulesComponent, 
     ViewStudentsComponent, ProfileComponent, 
-    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent, ViewCompaniesComponent, NotifyAdminComponent, InternalTrainingComponent]
+    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent, ViewCompaniesComponent, NotifyAdminComponent, InternalTrainingComponent, SkillDevProgramComponent, ViewSkillProgramComponent, SkillAssignmentComponent, SkillGapComponent]
 })
 export class PlacementOfficerModule { }

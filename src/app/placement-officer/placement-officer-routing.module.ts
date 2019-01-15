@@ -15,6 +15,10 @@ import { InviteCorporateComponent } from './invite-corporate/invite-corporate.co
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
 import { NotifyAdminComponent } from './notify-admin/notify-admin.component';
 import { InternalTrainingComponent } from './internal-training/internal-training.component';
+import { SkillDevProgramComponent } from './skill-dev-program/skill-dev-program.component';
+import { ViewSkillProgramComponent } from './view-skill-program/view-skill-program.component';
+import { SkillAssignmentComponent } from './skill-assignment/skill-assignment.component';
+import { SkillGapComponent } from './skill-gap/skill-gap.component';
 
 
 const routes: Routes = [
@@ -35,7 +39,11 @@ const routes: Routes = [
       {path: 'invite-corporate', component: InviteCorporateComponent},
       {path: 'changePassword', component: ChaangepasswordComponent},
       {path: 'notify-admin', component: NotifyAdminComponent},
-      {path: 'internalTraining', component: InternalTrainingComponent}
+      {path: 'internalTraining', component: InternalTrainingComponent},
+      {path: 'skillDev', component: SkillDevProgramComponent},
+      {path: 'viewSkill', component: ViewSkillProgramComponent},
+      {path: 'skillAssign', component: SkillAssignmentComponent},
+      {path: 'skillGap', component: SkillGapComponent},
 		]
 	}
 	 
