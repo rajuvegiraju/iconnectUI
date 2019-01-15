@@ -1,3 +1,29 @@
-<p>
-  view-skill-program works!
-</p>
+<mat-card class="example-card margin-adjust">
+  <mat-card-content>
+    <div data-table class="col-md-12">
+      <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="industry">
+          <mat-header-cell *matHeaderCellDef> Industry </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.industry}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="skillDevProgram">
+          <mat-header-cell *matHeaderCellDef> Skill Dev Program </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.skillDevProgram}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lesson">
+          <mat-header-cell *matHeaderCellDef> Lesson </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.lesson}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="noOfStds">
+          <mat-header-cell *matHeaderCellDef> Number of Students </mat-header-cell>
+          <mat-cell *matCellDef="let element"> <a>{{element.noOfStds}}</a></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-card-content>
+</mat-card>

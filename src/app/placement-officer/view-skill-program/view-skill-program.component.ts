@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-skill-program.component.css']
 })
 export class ViewSkillProgramComponent implements OnInit {
+  displayedColumns: string[] = ['industry', 'skillDevProgram', 'lesson', 'noOfStds'];
+  dataSource: any = [{industry:"software", skillDevProgram:"Today", lesson:"java", noOfStds:"50"}];
 
   constructor() { }
 
