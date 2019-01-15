@@ -21,6 +21,7 @@ import { InviteCorporateComponent } from './invite-corporate/invite-corporate.co
 import { StatusOfCandidatesComponent } from './status-of-candidates/status-of-candidates.component';
 import { ViewCompaniesComponent } from './view-companies/view-companies.component';
 import { NotifyAdminComponent } from './notify-admin/notify-admin.component';
+import { InternalTrainingComponent } from './internal-training/internal-training.component';
 
 
 @NgModule({
@@ -38,6 +39,6 @@ import { NotifyAdminComponent } from './notify-admin/notify-admin.component';
     IntenshipComponent, AvailablejobsComponent, 
     TrainingsComponent, InterviewSchedulesComponent, 
     ViewStudentsComponent, ProfileComponent, 
-    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent, ViewCompaniesComponent, NotifyAdminComponent]
+    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent, ViewCompaniesComponent, NotifyAdminComponent, InternalTrainingComponent]
 })
 export class PlacementOfficerModule { }

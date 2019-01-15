@@ -1,3 +1,62 @@
-<p>
-  trainings works!
-</p>
+<div>
+  <div class="card add-college-content">
+    <form [formGroup]="addTraningForm">
+      <div class="row">
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Organization Name" formControlName="orgInstitute">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Trainer Name" formControlName="trainName">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email ID" formControlName="emailId">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mobile Number" formControlName="mobileNo">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Title" formControlName="title">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Description" formControlName="description">
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker1" placeholder="Start Date" formControlName="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker2" placeholder="End Date" formControlName="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Duration" formControlName="duration">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="align-center">
+        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Submit"> &nbsp;
+        <input type="button" class="btn btn-warning" value="Cancel">&nbsp;
+        <input type="button" class="btn btn-info" value="Reset">
+      </div>
+    </form>
+  </div>
+</div>

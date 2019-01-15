@@ -1,0 +1,75 @@
+<div>
+  <mat-card class="margin25">
+    <mat-form-field class="col-md-8 col-sm-8">
+      <mat-select placeholder="Status">
+        <mat-option *ngFor="let filter of filters" [value]="filter.value">
+          {{filter.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button routerLink="../addTraining" type="button" class="btn btn-primary col-md-2 col-sm-2"><i class="fa fa-newspaper-o"></i>
+      Add</button>
+    <mat-form-field class="col-md-2 col-sm-2 example-full-width">
+      <input matInput placeholder="Search" [(ngModel)]="search">
+    </mat-form-field>
+  </mat-card>
+  <div class="data-table" *ngIf="dataSource.length!=0">
+    <div class="align-center" *ngIf="dataSource.length==0">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="orgInstitute">
+        <mat-header-cell *matHeaderCellDef> Org. Institute </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.orgInstitute}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="trainName">
+        <mat-header-cell *matHeaderCellDef> Trainer Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.trainName}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="emailId">
+        <mat-header-cell *matHeaderCellDef> Email Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.emailId}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="mobileNo">
+        <mat-header-cell *matHeaderCellDef> Mobile No </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.mobileNo}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="startDate">
+        <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.startDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="endDate">
+        <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.endDate}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.action}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="noofStudents">
+        <mat-header-cell *matHeaderCellDef> No of Students </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.noofStudents}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.status}}</mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

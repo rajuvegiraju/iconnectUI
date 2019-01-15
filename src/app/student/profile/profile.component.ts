@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  studentForm: FormGroup;
+  // studentForm: FormGroup;
+  studentForm = {};
   displayedColumns: string[] = ['prevcourse', 'prevcollege', 'prevuniversity', 'prevcity','prevyearOfPass','actions'];
   dataSource: any = [];
   modeOfInterviewList:any = [];
@@ -21,28 +22,28 @@ export class ProfileComponent implements OnInit {
   selectedData: any;
 
   constructor(private _formBuilder:FormBuilder, private _snackBar:SnackbarService, private router: Router, private _iconnectService: IconnectService, private dataService: DataService) {
-    this.studentForm = this._formBuilder.group({
-      'name': [''],
-      'aboutME': [''],
-      'mobile': [''],
-      'keySkill': [''],
-      'course': [''],
-      'stream': [''],
-      'college': [''],
-      'university': [''],
-      'city': [''],
-      'yearOfPass': [''],
-      'prevcourse': [''],
-      'prevcollege': [''],
-      'prevuniversity': [''],
-      'prevcity': [''],
-      'prevyearOfPass': [''],
-      'dob': [''],
-      'email': [''],
-      'languages': [''],
-      'emailId': ['']
+    // this.studentForm = this._formBuilder.group({
+    //   'name': [''],
+    //   'aboutME': [''],
+    //   'mobile': [''],
+    //   'keySkill': [''],
+    //   'course': [''],
+    //   'stream': [''],
+    //   'college': [''],
+    //   'university': [''],
+    //   'city': [''],
+    //   'yearOfPass': [''],
+    //   'prevcourse': [''],
+    //   'prevcollege': [''],
+    //   'prevuniversity': [''],
+    //   'prevcity': [''],
+    //   'prevyearOfPass': [''],
+    //   'dob': [''],
+    //   'email': [''],
+    //   'languages': [''],
+    //   'emailId': ['']
       
-      });
+    //   });
   }
 
   ngOnInit() {
@@ -55,23 +56,23 @@ export class ProfileComponent implements OnInit {
     this._iconnectService.getStudentsProfile().subscribe(response => {
         this.selectedData = response.payload.profile;
 
-        this.studentForm.setValue({
-          id:this.selectedData.id,
-          name: this.selectedData.name,
-          aboutME: this.selectedData.aboutME,
-          mobile:this.selectedData.mobile,
-          keySkill:this.selectedData.keySkills,
-          course:this.selectedData.courseId,
-          stream:this.selectedData.streamId,
-          college:  this.selectedData.college,
-          university: this.selectedData.university,
-          city: this.selectedData.city,
-          yearOfPass: this.selectedData.yearOfPass,
-          dob: this.selectedData.dob,
-          email: this.selectedData.email,
-          languages: this.selectedData.languages
+        // this.studentForm.setValue({
+        //   id:this.selectedData.id,
+        //   name: this.selectedData.name,
+        //   aboutME: this.selectedData.aboutME,
+        //   mobile:this.selectedData.mobile,
+        //   keySkill:this.selectedData.keySkills,
+        //   course:this.selectedData.courseId,
+        //   stream:this.selectedData.streamId,
+        //   college:  this.selectedData.college,
+        //   university: this.selectedData.university,
+        //   city: this.selectedData.city,
+        //   yearOfPass: this.selectedData.yearOfPass,
+        //   dob: this.selectedData.dob,
+        //   email: this.selectedData.email,
+        //   languages: this.selectedData.languages
         
-        });
+        // });
     });
   }
 
@@ -111,7 +112,7 @@ export class ProfileComponent implements OnInit {
       // })
     }
     updateProfile(){
-      this._iconnectService.updateStudent(this.studentForm.value).subscribe(response => {
+      this._iconnectService.updateStudent(this.studentForm).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
           this.dataSource = response.data;
@@ -119,6 +120,21 @@ export class ProfileComponent implements OnInit {
           this._snackBar.error("Error in Updation");
         }
       })
+    }
+    prevEduDetails(data) {
+      if (data) {
+        // this._iconnectService.addDepartment(data).subscribe(response => {
+        //   if (response.resCode == "1") {
+        //     this._snackBar.success("Successfully Updated");
+        //     //this.router.navigateByUrl('/po');
+        //   } else {
+        //     this._snackBar.error("Error in Updation");
+        //   }
+        // })
+        this.dataSource.push(data);
+      } else {
+        this._snackBar.error("Department name should not be empty");
+      }
     }
 
 }
