@@ -18,17 +18,18 @@ export class TrainingsComponent implements OnInit {
   dashMessage: String;
   selectedData: any;
   paramId: any;
+  submitted: boolean = false;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.addTraningForm = this._formBuilder.group({
       'orgInstitute': [''],
       'trainName': [''],
-      'emailId': ['', Validators.required],
-      'mobileNo': [''],
+      'emailId': ['', [Validators.required, Validators.email]],
+      'mobileNo': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       'title': [''],
       'description': ['', Validators.required],
       'startDate': ['', Validators.required],
       'endDate': [''],
-      'duration': ['']
+      'duration': ['',Validators.required]
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }
@@ -55,19 +56,24 @@ export class TrainingsComponent implements OnInit {
       this.dashMessage = message;
     })
   }
+  // convenience getter for easy access to form fields
+  get f() { return this.addTraningForm.controls; }
 
-  onSubmit() {
-   
+  onSave() {
+    this.submitted = true;
+    if (this.addTraningForm.invalid) {
+      return;
+    } else {
       this._iconnectService.addNewStudent(this.addTraningForm.value).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Uploaded..");
           this.router.navigateByUrl('/po/studentList');
           this.dataService.navData("College");
         } else {
-          this._snackBar.error(response.mesgStr);
+          this._snackBar.error("Please add Mandatory fields");
         }
       })
-    
+    }
   }
 
 }

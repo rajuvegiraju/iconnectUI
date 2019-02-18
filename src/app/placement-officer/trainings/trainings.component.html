@@ -48,15 +48,24 @@
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Duration" formControlName="duration">
+            <input matInput placeholder="Duration" [ngClass]="{ 'is-invalid': submitted && f.duration.errors }"
+              formControlName="duration" required>
           </mat-form-field>
+          <div *ngIf="submitted && f.duration.errors" class="invalid-feedback">
+            <div *ngIf="f.duration.errors.required">duration is required</div>
+          </div>
         </div>
       </div>
-      <div class="align-center">
-        <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Submit"> &nbsp;
+      <div class="form-group align-center">
+        <button [disabled]="loading" class="btn btn-primary" (click)="onSave()">Submit</button>
+        <button [disabled]="loading" class="btn btn-warning">Cancel</button>
+        <button [disabled]="loading" class="btn btn-info">Reset</button>
+      </div>
+      <!-- <div class="align-center">
+        <input type="button" class="btn btn-primary" value="Submit"> &nbsp;
         <input type="button" class="btn btn-warning" value="Cancel">&nbsp;
         <input type="button" class="btn btn-info" value="Reset">
-      </div>
+      </div> -->
     </form>
   </div>
 </div>
