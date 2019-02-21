@@ -4,57 +4,75 @@
             <div class="row">
                 <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Register Number" formControlName="registerNo">
+                        <input matInput placeholder="Register Number" name="registerNo" formControlName="registerNo">
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['registerNo'].invalid && addStudentForm.controls['registerNo'].touched">Please
+                        enter valid Register Number</div>
+
                 </div>
                 <div class="form-group col-sm-6 col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Student Name" formControlName="name">
+                        <input matInput placeholder="Student Name" name ="name" formControlName="name">
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['name'].invalid && addStudentForm.controls['name'].touched">Please
+                        enter valid Student Name</div>
+
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Date of Birth" formControlName="dob">
+                        <input matInput placeholder="Date of Birth" formControlName="dob" name="dob">
                         <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker> -->
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['dob'].invalid && addStudentForm.controls['dob'].touched">Please
+                        enter valid Date of Birth</div>
+
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Gender" formControlName="gender">
+                        <input matInput placeholder="Gender" name="gender" formControlName="gender">
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['gender'].invalid && addStudentForm.controls['gender'].touched">Please
+                        enter valid Gender</div>
+
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Mobile Number" formControlName="mobile">
+                        <input matInput placeholder="Mobile Number" name="mobile" formControlName="mobile">
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['mobile'].invalid && addStudentForm.controls['mobile'].touched">Please enter valid Mobile Number</div>          
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Email Id" formControlName="email">
+                        <input matInput placeholder="Email Id" formControlName="email" name="email">
                     </mat-form-field>
+                  <div class="error_message" *ngIf="addStudentForm.controls['email'].invalid && addStudentForm.controls['email'].touched">Please enter valid email</div>          
+                    
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Course" formControlName="course">
+                        <input matInput placeholder="Course" formControlName="course" name="course">
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['course'].invalid && addStudentForm.controls['course'].touched">Please enter valid Course</div>          
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Stream" formControlName="stream">
+                        <input matInput placeholder="Stream" formControlName="stream" name="stream">
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['stream'].invalid && addStudentForm.controls['stream'].touched">Please enter valid stream</div>          
                 </div>
                 <div class="form-group col-md-6">
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Year Of Passing" formControlName="yearOfPass">
+                        <input matInput placeholder="Year Of Passing" formControlName="yearOfPass" name="yearOfPass">
                         <!-- <input matInput formControlName="yearOfPass" placeholder="Choose a date">
                           <mat-datepicker-toggle matSuffix [for]="yearOfPass"></mat-datepicker-toggle>
                           <mat-datepicker #yearOfPass></mat-datepicker>-->
                     </mat-form-field>
+                    <div class="error_message" *ngIf="addStudentForm.controls['yearOfPass'].invalid && addStudentForm.controls['yearOfPass'].touched">Please enter valid Year Of Passing</div>          
                 </div>
             </div>
             <div class="align-center">
-                <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Submit">
+                <input type="button" class="btn btn-primary" [disabled]="addStudentForm.invalid" (click)="onSubmit()" value="Submit">
             </div>
         </form>
     </div>

@@ -21,15 +21,15 @@ export class AddStudentComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.addStudentForm = this._formBuilder.group({
       'id': [''],
-      'registerNo': [''],
+      'registerNo': ['', Validators.required],
       'name': ['', Validators.required],
-      'dob': [''],
-      'gender': [''],
-      'mobile': ['', Validators.required],
-      'email': ['', Validators.required],
-      'course': [''],
-      'stream': [''],
-      'yearOfPass': ['']
+      'dob': ['', Validators.required],
+      'gender': ['', Validators.required],
+      'mobile': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      'email': ['', [Validators.required, Validators.email]],
+      'course': ['', Validators.required],
+      'stream': ['', Validators.required],
+      'yearOfPass': ['', Validators.required]
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }
