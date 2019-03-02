@@ -10,6 +10,8 @@ import { ApproveCollegeComponent } from './approve-college/approve-college.compo
 import { ApproveCorporateComponent } from './approve-corporate/approve-corporate.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
+import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { LoginComponent } from '../auth/login/login.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,8 @@ const routes: Routes = [
 		  {path: 'corporateList', component: CorporateListComponent},
 		  {path: 'pendingApproval', component: PendingApprovalComponent},
       {path: 'approveCollege/:id', component: ApproveCollegeComponent},
+      { path: 'changePassword', component: ChaangepasswordComponent },
+      {	path: 'login',	component: LoginComponent },
 	  {path: 'approveCorporate/:id', component: ApproveCorporateComponent},
 	  {path: 'studentList', component:StudentListComponent},
 	  {path: 'studentReg', component:StudentRegistrationComponent}

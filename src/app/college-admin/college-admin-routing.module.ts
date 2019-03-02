@@ -4,6 +4,7 @@ import { TemplateComponent } from './template/template.component';
 import { AddCollegeComponent } from './add-college/add-college.component';
 import { CollegeListComponent } from './college-list/college-list.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { LoginComponent } from '../auth/login/login.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +14,7 @@ const routes: Routes = [
 		  {path: 'addCollege', component: AddCollegeComponent},
       {path: 'addCollege/:id', component: AddCollegeComponent},
       {path: 'collegeList', component: CollegeListComponent},
+      {path: 'login',	component: LoginComponent },
       {path: 'changePassword', component: ChaangepasswordComponent}
 		]
 	},

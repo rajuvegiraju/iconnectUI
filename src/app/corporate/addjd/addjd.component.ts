@@ -20,52 +20,60 @@ export class AddjdComponent implements OnInit {
   percentageList: any;
   dashMessage: String;
   selectedData: any;
-  modeOfInterviewList: any =["Telephone", "F2F"];
-  courceList:any = ["B.Tech", "B.SC"];
-  jobTypeList:any = ["Perminent", "Contract"];
+  modeOfInterviewList: any ={};
+  courceList:any =[];
+  jobTypeList:any = {};
   jobPositionList:any =["Sr Software", "Freshers"];
-  jobLocList:any = ["Bengalore","Hyderabad", "Mumbai"];
-  streamList:any = ["CSE","ECE","CIVIL"];
-  percentList:any = ["70%","65%","55%"];
+  keySkills: string[] = ['Java', 'Angular js', 'Javascript', 'Html5', 'Css3', 'Reactjs'];
+
+  jd = {};
+
+
+
   paramId: any;
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
+
     this.createJDForm = this._formBuilder.group({
-      'id': [''],
-      'jobPosition': ['', Validators.required],
-      'jobType': ['', Validators.required],
-      'cource': ['', Validators.required],
-      'percentage': ['', Validators.required],
-      'vacancies': ['', Validators.required],
-      'salary': ['', Validators.required],
-      'skill': ['', Validators.required],
-      'roundsOfInterview':['', Validators.required],
-      'description': ['', Validators.required],
-      'stream': ['', Validators.required],
-      'jobLocation': ['', Validators.required],
-      'percentCriteria': ['', Validators.required],
-      'jobRole': ['', Validators.required]
+      'jobId': [''],
+      'jobPosition': [''],
+      'jobType': [''],
+      'courceId': [''],
+      'cource': [''],
+      'percentage':[''],
+      'vacancies': [''],
+      'salary': [''],
+      'keySkillsList': [''],
+      'description': [''],
+      'roundsOfInterview':[''],
+      'country': [''],
+      'countryName':[''],
+      'state': [''],
+      'stateName':[''],
+      'location': [''],
+      'locationId':['']
     });
+
     this.route.params.subscribe(params => this.paramId = params.id);
   }
 
   ngOnInit() {
     if (this.paramId) {
-      this._iconnectService.collegeListById(this.paramId).subscribe(response => {
-        this.selectedData = response.payload.college;
+      this._iconnectService.getJobDetails(this.paramId).subscribe(response => {
+        this.selectedData = response.payload.job;
         this.createJDForm.setValue({
-          id:this.selectedData.id,
+          jobId:this.selectedData.jobId,
           jobPosition: this.selectedData.jobPosition,
           jobType:this.selectedData.jobType,
           cource:this.selectedData.cource,
           percentage:this.selectedData.percentage,
           vacancies:this.selectedData.vacancies,
           salary:this.selectedData.salary,
-          skill:this.selectedData.skill,
-          description:this.selectedData.description,
-          location:this.selectedData.location,
-          country:this.selectedData.country,
-          state:this.selectedData.state
+          keySkillsList:this.selectedData.keySkillsList,
+          description:this.selectedData.description
+          
+          
         });
+        
       })
     }
     this._iconnectService.getCountryDetails().subscribe(response => {
@@ -74,6 +82,19 @@ export class AddjdComponent implements OnInit {
     this._iconnectService.getStateDetails().subscribe(response => {
       this.stateList = response.payload.states;
     })
+    this._iconnectService.getLocationDetails().subscribe(response => {
+      this.locationList = response.payload.location;
+    })
+    this._iconnectService.getJobType().subscribe(response => {
+      this.jobTypeList = response.payload.jobtype;
+    })
+    this._iconnectService.getCources().subscribe(response => {
+      this.courceList = response.payload.cources;
+    })
+    this._iconnectService.getPercentage().subscribe(response => {
+      this.percentageList = response.payload.percentage;
+    })
+
     this.dataService.navMessage.subscribe(message => {
       this.dashMessage = message;
     })
@@ -91,7 +112,15 @@ export class AddjdComponent implements OnInit {
         }
       })
     } else {
+   debugger;
+
+   var job = this.createJDForm.value;
+       
+
+
+
       this._iconnectService.createNewJob(this.createJDForm.value).subscribe(response => {
+      
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Created");
           this.router.navigateByUrl('/hr/all-jobs');
@@ -103,5 +132,10 @@ export class AddjdComponent implements OnInit {
     }
   }
 
+  changState(state) {
+    this._iconnectService.getLocationDetailsByState(state.stateId).subscribe(response => {
+      this.locationList = response.payload.location;
+    })
+  }
 
 }

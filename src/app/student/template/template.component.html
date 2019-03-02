@@ -118,8 +118,8 @@
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="./resources/assets/images/5.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a routerLink="profile"><i class="ti-user"></i> Profile</a></li>
-                                    <li><a routerLink="../changePassword"><i class="ti-settings"></i> ChangePassword</a></li>
+                                    <li><a routerLink="profile" (click)="navBar('Profile')" ><i class="ti-user"></i> Profile</a></li>
+                                    <li><a routerLink="changePassword" (click)="navBar('Change Password')" ><i class="ti-settings"></i> ChangePassword</a></li>
                                     <li><a routerLink="../login"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
@@ -138,17 +138,19 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
 						<li class="nav-label">Home</li>
-                        <li> <a class="nav-label" routerLink="dashboard" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
-                        </li>
-                        <li> <a class="nav-label" routerLink="view-companies" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">View Companies</span></a>
-                        <li> <a class="nav-label" routerLink="joboffers" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Job Offers</span></a>
-                        <li> <a class="nav-label" routerLink="scheduled-interview" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Scheduled Interviews</span></a>
-                        <li> <a class="nav-label" routerLink="internship" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Internship</span></a>
-                        <li> <a class="nav-label" routerLink="list-skill-dev" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Skill Development Programme</span></a>
-                        <li> <a class="nav-label" routerLink="onlinetest" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Online Test</span></a>
-                        <li> <a class="nav-label" routerLink="training" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Trainings</span></a>
-                        <li> <a class="nav-label" routerLink="elearning" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Elearning</span></a>
-                        <li> <a class="nav-label" routerLink="assessment" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Assessment</span></a>
+                        
+                        <li> <a class="nav-label" routerLink="dashboard" (click)="navBar('Dashboard')" [ngClass]="{'sidenav-active':navMessage === 'Dashboard'}" aria-expanded="false"><i class="fa fa-tachometer" [ngClass]="{'sidenav-active':navMessage === 'Dashboard'}"></i><span class="hide-menu">Dashboard</span></a></li>
+                        
+                        <li> <a class="nav-label" routerLink="view-companies" (click)="navBar('View Companies')" [ngClass]="{'sidenav-active':navMessage === 'View Companies'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true" [ngClass]="{'sidenav-active':navMessage === 'View Companies'}"></i><span class="hide-menu">View Companies</span></a>
+                       
+                        <li> <a class="nav-label" routerLink="joboffers" (click)="navBar('Job Offers')" [ngClass]="{'sidenav-active':navMessage === 'Job Offers'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true" [ngClass]="{'sidenav-active':navMessage === 'Job Offers'}"></i><span class="hide-menu">Job Offers</span></a>
+                        <li> <a class="nav-label" routerLink="scheduled-interview" (click)="navBar('Scheduled Interviews')" [ngClass]="{'sidenav-active':navMessage === 'Scheduled Interviews'}" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Scheduled Interviews</span></a>
+                        <li> <a class="nav-label" routerLink="internship" (click)="navBar('Internship')" [ngClass]="{'sidenav-active':navMessage === 'Internship'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Internship</span></a>
+                        <li> <a class="nav-label" routerLink="list-skill-dev" (click)="navBar('Skill Development Programme')" [ngClass]="{'sidenav-active':navMessage === 'Skill Development Programme'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Skill Development Programme</span></a>
+                        <li> <a class="nav-label" routerLink="onlinetest" (click)="navBar('Online Test')" [ngClass]="{'sidenav-active':navMessage === 'Online Test'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Online Test</span></a>
+                        <li> <a class="nav-label" routerLink="training"  (click)="navBar('Trainings')" [ngClass]="{'sidenav-active':navMessage === 'Trainings'}" aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Trainings</span></a>
+                        <li> <a class="nav-label" routerLink="elearning" (click)="navBar('Elearning')" [ngClass]="{'sidenav-active':navMessage === 'Elearning'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Elearning</span></a>
+                        <li> <a class="nav-label" routerLink="assessment" (click)="navBar('Assessment')" [ngClass]="{'sidenav-active':navMessage === 'Assessment'}"  aria-expanded="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Assessment</span></a>
                         </li>
                         
                     </ul>
@@ -163,11 +165,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                    <h3 class="text-primary">{{navMessage}}</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active">{{navMessage}}</li>
                     </ol>
                 </div>
             </div>

@@ -1,26 +1,26 @@
 <div>
   <div class="card add-college-content">
-    <form [formGroup]="placementForm">
+    <!--<form [formGroup]="placementForm"> -->
       <div class="row">
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Officer Name" formControlName="name">
+            <input matInput placeholder="Officer Name" [(ngModel)]="profile.name">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" formControlName="email">
+            <input matInput placeholder="Email" [(ngModel)]="profile.email">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Mobile Number" formControlName="mobile">
+            <input matInput placeholder="Mobile Number" [(ngModel)]="profile.mobile">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="University" formControlName="university">
-              <mat-option *ngFor="let university of universityList" [value]="university">
+            <mat-select placeholder="University" [(ngModel)]="profile.universityID">
+              <mat-option *ngFor="let university of universityList" [value]="university.universityId">
                   {{university.name}}
               </mat-option>
             </mat-select>
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="College Name" formControlName="collegeName">
+            <input matInput placeholder="College Name" [(ngModel)]="profile.collegeName">
           </mat-form-field>
         </div>
       </div>
@@ -40,37 +40,41 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="Country" formControlName="country">
-              <mat-option *ngFor="let country of countryList" [value]="country">
+            <mat-select placeholder="Country" [(ngModel)]="profile.countryId">
+              <mat-option *ngFor="let country of countryList" [value]="country.countryId">
                   {{country.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <mat-form-field class="example-full-width">
-            <mat-select placeholder="State" formControlName="state">
-              <mat-option *ngFor="let state of stateList" [value]="state">
-                  {{state.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+        <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="State" [(ngModel)]="profile.stateID">
+                    <mat-option *ngFor="let state of stateList" [value]="state.stateId" (click)="changState(state.stateId);">
+                        {{state.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Location" [(ngModel)]="profile.location">
+                    <mat-option *ngFor="let location of locationList" [value]="location.locationId">
+                        {{location.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="City" formControlName="city">
-          </mat-form-field>
-        </div>
-        <div class="form-group col-sm-6 col-md-6">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Area" formControlName="address1">
+            <input matInput placeholder="Area" [(ngModel)]="profile.address1">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <mat-select placeholder="schemeType" formControlName="schemeType">
-              <mat-option *ngFor="let state of stateList" [value]="state">
-                  {{state.name}}
+            <mat-select placeholder="schemeType" [(ngModel)]="profile.schemeType">
+              <mat-option *ngFor="let schema of schemaType" [value]="schema">
+                  {{schema}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -85,7 +89,7 @@
         
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Department Name" [(ngModel)]="department" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="Department Name" [(ngModel)]="profile.department" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
         </div>
         <div class="form-group col-sm-6 col-md-6">
@@ -122,39 +126,49 @@
 				      <h3>Details</h3>
 			      </div>
         </div>
+        
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Cource" [(ngModel)]="profile.courseId" >
+                    <mat-option *ngFor="let cource of courceList" [value]="cource.courseId" (click)="changCource(cource.courseId);">
+                        {{cource.courseName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Stream" [(ngModel)]="profile.streamId" >
+                    <mat-option *ngFor="let stream of streamList" [value]="stream.streamId">
+                        {{stream.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Course" formControlName="course">
+            <input matInput placeholder="College Address" [(ngModel)]="profile.collegeAddress">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Stream" formControlName="stream">
+            <input matInput placeholder="College Contact Number" [(ngModel)]="profile.collegeContact">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="College Address" formControlName="collegeAddress">
+            <input matInput placeholder="Principal Name" [(ngModel)]="profile.principalName">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="College Contact Number" formControlName="collegeContact">
+            <input matInput placeholder="Principal Contact Number" [(ngModel)]="profile.principalContact">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Principal Name" formControlName="principalName">
-          </mat-form-field>
-        </div>
-        <div class="form-group col-md-6">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Principal Contact Number" formControlName="principalContact">
-          </mat-form-field>
-        </div>
-        <div class="form-group col-md-6">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Principal Email Id" formControlName="principalEmail">
+            <input matInput placeholder="Principal Email Id" [(ngModel)]="profile.principalEmail">
           </mat-form-field>
         </div>
 
@@ -162,6 +176,6 @@
       <div class="align-center">
         <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Update">
       </div>
-    </form>
+   <!-- </form> -->
   </div>
 </div>

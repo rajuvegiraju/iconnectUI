@@ -18,24 +18,24 @@
         </div>
 
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="internId">
+            <ng-container matColumnDef="jobId">
                 <mat-header-cell *matHeaderCellDef> Job ID </mat-header-cell>
                 <mat-cell *matCellDef="let element">
                 <!-- <mat-icon>add</mat-icon> -->
-                &nbsp; {{element.internId}}
+                &nbsp; {{element.jobId}}
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="status">
                 <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="companyName">
+            <ng-container matColumnDef="corporateName">
                 <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.companyName}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.corporateName}} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="projectTitle">
+            <ng-container matColumnDef="jobPosition">
                 <mat-header-cell *matHeaderCellDef> Project Title </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.projectTitle}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.jobPosition}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="skill">
@@ -50,9 +50,9 @@
                 <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="stipend">
-                <mat-header-cell *matHeaderCellDef> Stipend </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.stipend}} </mat-cell>
+            <ng-container matColumnDef="salary">
+                <mat-header-cell *matHeaderCellDef> Salary </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.salary}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="location">
                 <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>

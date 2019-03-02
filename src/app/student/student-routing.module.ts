@@ -10,6 +10,7 @@ import { ViewCompaniesComponent } from './view-companies/view-companies.componen
 import { ProfileComponent } from './profile/profile.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { LoginComponent } from '../auth/login/login.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { ElearningComponent } from './elearning/elearning.component';
 import { SdpComponent } from './sdp/sdp.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
 			{ path: 'profile', component: ProfileComponent },
 			{ path: 'internship', component: InternshipComponent },
       { path: 'changePassword', component: ChaangepasswordComponent },
+      {path: 'login',	component: LoginComponent },
       { path: 'assessment', component: AssessmentComponent },
       { path: 'elearning', component: ElearningComponent },
       { path: 'sdp', component: SdpComponent },

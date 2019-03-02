@@ -46,7 +46,8 @@ export class InternshipComponent implements OnInit {
     }
 
     editRow(row) {
-        this.router.navigate(['hr/internship', {id:row.id}])
+    debugger;
+        this.router.navigate(['hr/add-internship', {id:row.internshipId}])
     }
 
 }

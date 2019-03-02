@@ -4,6 +4,7 @@ import { TemplateComponent } from './template/template.component';
 import { AddCorporateComponent } from './add-corporate/add-corporate.component';
 import { CorporateListComponent } from './corporate-list/corporate-list.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { LoginComponent } from '../auth/login/login.component';
 
 const routes: Routes = [
 	{
@@ -13,6 +14,7 @@ const routes: Routes = [
 		  {path: 'addCorporate', component: AddCorporateComponent},
       {path: 'updateCorporate/:id', component: AddCorporateComponent},
       {path: 'corporateList', component: CorporateListComponent},
+      {path: 'login',	component: LoginComponent },
       {path: 'changePassword', component: ChaangepasswordComponent}
 		]
 	},

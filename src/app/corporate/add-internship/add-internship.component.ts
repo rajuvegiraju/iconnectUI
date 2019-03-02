@@ -14,8 +14,9 @@ export class AddInternshipComponent implements OnInit {
 
   newInternshipForm: FormGroup;
   countryList: any;
-  courceList:any = ["B.Tech", "B.SC"];
   stateList: any;
+  percentageList: any;
+  courceList:any =[];
   modeOfInterviewList: any =["Telephone", "F2F"];
   dashMessage: String;
   selectedData: any;
@@ -24,25 +25,27 @@ export class AddInternshipComponent implements OnInit {
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.newInternshipForm = this._formBuilder.group({
       'internshipId': [''],
-      'projectTitle': ['', Validators.required],
-      'duration': ['', Validators.required],
-      'description': ['', Validators.required],
-      'location':['', Validators.required],
-      'cource': ['', Validators.required],
-      'percentage': ['', Validators.required],
-      'stipend': ['', Validators.required],
-      'skill': ['', Validators.required],
-      'vacancies':['', Validators.required],
-      'roundsOfInterview': ['', Validators.required],
-      'modeOfInterview': ['', Validators.required]
+      'projectTitle': [''],
+      'duration': [''],
+      'description': [''],
+      'location':[''],
+      'cource': [''],
+      'percentage': [''],
+      'stipend': [''],
+      'skill': [''],
+      'vacancies':[''],
+      'roundsOfInterview': [''],
+      'modeOfInterview': [''],
+      'country': [''],
+      'state': ['']
     });
     this.route.params.subscribe(params => this.paramId = params.id);
   }
 
   ngOnInit() {
     if (this.paramId) {
-      this._iconnectService.collegeListById(this.paramId).subscribe(response => {
-        this.selectedData = response.payload.college;
+      this._iconnectService.getInternshipById(this.paramId).subscribe(response => {
+        this.selectedData = response.payload.internship;
         this.newInternshipForm.setValue({
           internshipId:this.selectedData.internshipId,
           projectTitle: this.selectedData.projectTitle,
@@ -55,7 +58,9 @@ export class AddInternshipComponent implements OnInit {
           skill:this.selectedData.skill,
           vacancies:this.selectedData.vacancies,
           roundsOfInterview:this.selectedData.roundsOfInterview,
-          modeOfInterview:this.selectedData.modeOfInterview
+          modeOfInterview:this.selectedData.modeOfInterview,
+          country:this.selectedData.country,
+          state:this.selectedData.state,
         });
       })
     }
@@ -64,6 +69,12 @@ export class AddInternshipComponent implements OnInit {
     })
     this._iconnectService.getStateDetails().subscribe(response => {
       this.stateList = response.payload.states;
+    })
+    this._iconnectService.getPercentage().subscribe(response => {
+      this.percentageList = response.payload.percentage;
+    })
+    this._iconnectService.getCources().subscribe(response => {
+      this.courceList = response.payload.cources;
     })
     this.dataService.navMessage.subscribe(message => {
       this.dashMessage = message;
@@ -82,7 +93,19 @@ export class AddInternshipComponent implements OnInit {
         }
       })
     } else {
-      this._iconnectService.createNewInternship(this.newInternshipForm.value).subscribe(response => {
+
+       var internship = this.newInternshipForm.value;
+       internship.locationId = internship.location.locationId;
+       internship.location = internship.location.name;
+       internship.stateName =internship.state.name;
+       internship.state =internship.state.stateId;
+       internship.countryName =internship.country.name;
+       internship.country =internship.country.countryId;
+       internship.courceId =internship.cource.courseId;
+       internship.cource =internship.cource.courseName;
+
+
+      this._iconnectService.createNewInternship(internship).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Registered");
           this.router.navigateByUrl('/hr/internship');
@@ -93,5 +116,9 @@ export class AddInternshipComponent implements OnInit {
       })
     }
   }
-
+  changState(state) {
+    this._iconnectService.getLocationDetailsByState(state.stateId).subscribe(response => {
+      this.locationList = response.payload.location;
+    })
+  }
 }

@@ -8,6 +8,7 @@ import { InterviewSchedulesComponent } from './interview-schedules/interview-sch
 import { ProfileComponent } from './profile/profile.component';
 import { AddInternshipComponent } from './add-internship/add-internship.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { LoginComponent } from '../auth/login/login.component';
 
 const routes: Routes = [
 	{
@@ -22,6 +23,7 @@ const routes: Routes = [
       {path: 'add-internship', component: AddInternshipComponent},
       {path: 'add-internship/:id', component: AddInternshipComponent},
       {path: 'profile', component: ProfileComponent},
+      {path: 'login',	component: LoginComponent },
       {path: 'changePassword', component: ChaangepasswordComponent}
 		]
 	}
