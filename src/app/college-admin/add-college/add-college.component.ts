@@ -19,6 +19,7 @@ export class AddCollegeComponent implements OnInit {
   dashMessage: String;
   selectedData: any;
   paramId: any;
+  
   constructor(private _snackBar: SnackbarService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private _iconnectService: IconnectService, private dataService: DataService) {
     this.addCollegeForm = this._formBuilder.group({
       'name': ['', Validators.required],
@@ -46,9 +47,12 @@ export class AddCollegeComponent implements OnInit {
           email:this.selectedData.email,
           address1:this.selectedData.address1,
           location:this.selectedData.location,
-          country:this.selectedData.country,
-          state:this.selectedData.state,
-          university:this.selectedData.university,
+          country:this.selectedData.country.name,
+          state:this.selectedData.state.name,
+          university:this.selectedData.university.name,
+          countryID:this.selectedData.country.countryId,
+          stateID:this.selectedData.state.stateId,
+          universityID:this.selectedData.university.universityId,
         });
       })
     }
@@ -67,9 +71,24 @@ export class AddCollegeComponent implements OnInit {
   }
 
   onSubmit() {
+  let college = {
+      name: this.addCollegeForm.value.name,
+      collegeName:this.addCollegeForm.value.collegeName,
+      mobile:this.addCollegeForm.value.mobile,
+      email:this.addCollegeForm.value.email,
+      address1:this.addCollegeForm.value.address1,
+      location:this.addCollegeForm.value.location,
+      country:this.addCollegeForm.value.country.name,
+      state:this.addCollegeForm.value.state.name,
+      university:this.addCollegeForm.value.university.name,
+      countryID:this.addCollegeForm.value.country.countryId,
+      stateID:this.addCollegeForm.value.state.stateId,
+      universityID:this.addCollegeForm.value.university.universityId
+    }
+
   debugger
     if (this.paramId) {
-      this._iconnectService.updateNewCollege(this.addCollegeForm.value).subscribe(response => {
+      this._iconnectService.updateNewCollege(college).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Updated");
           this.router.navigateByUrl('/collegeAdmin/collegeList');
@@ -79,7 +98,7 @@ export class AddCollegeComponent implements OnInit {
         }
       })
     } else {
-      this._iconnectService.addNewCollege(this.addCollegeForm.value).subscribe(response => {
+      this._iconnectService.addNewCollege(college).subscribe(response => {
         if (response.resCode == "1") {
           this._snackBar.success("Successfully Created.");
           this.router.navigateByUrl('/collegeAdmin/collegeList');

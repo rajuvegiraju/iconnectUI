@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseURI: "http://localhost:8080/iconnect",
+  baseURI: "http://172.104.175.74:8180/iconnect",
   path: {
     corporate_api: "/api/registration/corporate",
     college_api: "/api/registration/college",
@@ -25,6 +25,18 @@ export const environment = {
     placementOfficer:"/api/placementofficer",
     uploadFile:"/api/upload",
     locations:"/api/iconnect/location",
+    locationByStateId: "/api/iconnect/location",
     companies:"/api/hr/companies",
+    inviteCorporate: "/api/placementofficer/inviteCorporate",
+    department: "/api/placementofficer/addDepartment",
+    cources: "/api/iconnect/cources",
+    streams: "/api/iconnect/stream/",
+    jobtype: "/api/iconnect/jobtype/",
+    percentage: "/api/iconnect/percentage/",
+    notifyAdmin:"/api/placementofficer/notifyAdmin/",
+    offers: "",
+    stdInterviews: "",
+    
+    
   }
 };

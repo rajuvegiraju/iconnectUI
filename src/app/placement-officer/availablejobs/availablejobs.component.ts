@@ -12,9 +12,8 @@ import { Router } from '@angular/router';
 })
 export class AvailablejobsComponent implements OnInit {
 
-  displayedColumns: string[] = ['internId', 'status', 'companyName', 'projectTitle', 'skill', 'percentage', 'duration', 'stipend', 'location', 'industry', 'eligibleStudents'];
-    dataSource: any = [{internId:"5347843", status:"active", companyName:"dell", projectTitle:"AASAAN Process", skill:"java", percentage:"50%",duration:"3 months",stipend:"10000",location:"bangalore",industry:"Software"},
-    {internId:"74327243", status:"active", companyName:"HP", projectTitle:"FFPPPP", skill:"JSP", percentage:"60%",duration:"4months",stipend:"38800",location:"Bengalore",industry:"Software"}]
+  displayedColumns: string[] = ['jobId', 'status', 'corporateName', 'jobPosition', 'skill', 'percentage', 'duration', 'salary', 'location', 'industry', 'eligibleStudents'];
+    dataSource: any; 
     editData: any;
     dashMessage: String;
     search: any;
@@ -29,9 +28,9 @@ export class AvailablejobsComponent implements OnInit {
     ngOnInit() {
         this.dataService.navMessage.subscribe(message => {
             this.dashMessage = "Available Jobs";
-            this._iService.collegeList().subscribe(response => {
-              //  let ELEMENT_DATA = response.payload.college;
-              //  this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
+            this._iService.getAllJobsPO().subscribe(response => {
+                let ELEMENT_DATA = response.payload.joblist;
+                this.dataSource = new MatTableDataSource<any>(ELEMENT_DATA)
             })
             /*
             if (this.dashMessage === 'Corporate') {

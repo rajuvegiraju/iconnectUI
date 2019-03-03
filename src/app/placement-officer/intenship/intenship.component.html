@@ -17,19 +17,19 @@
         </div>
 
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="internId">
+            <ng-container matColumnDef="internshipId">
                 <mat-header-cell *matHeaderCellDef> Internship ID </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <!--<mat-icon>add</mat-icon>--> &nbsp; {{element.internId}} 
+                    <!--<mat-icon>add</mat-icon>--> &nbsp; {{element.internshipId}} 
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="status">
                 <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="companyName">
+            <ng-container matColumnDef="corporateName">
                 <mat-header-cell *matHeaderCellDef> Company Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.companyName}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.corporateName}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="projectTitle">
                 <mat-header-cell *matHeaderCellDef> Project Title </mat-header-cell>

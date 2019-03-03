@@ -1,15 +1,15 @@
 <div>
   <div class="card add-college-content">
-    <form>
+   <form [formGroup]="studentForm">
       <div class="row">
         <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Student Name" [(ngModel)]="studentForm.name" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="Student Name" formControlName="name">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="About Me" [(ngModel)]="studentForm.aboutME" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="About Me" formControlName="aboutME">
           </mat-form-field>
         </div>
       </div>
@@ -20,35 +20,83 @@
 			      </div>
         </div>
 
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Cource" formControlName="courseId" >
+                    <mat-option *ngFor="let cource of courceList" [value]="cource.courseId" (click)="changCource(cource.courseId);">
+                        {{cource.courseName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group col-sm-6 col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Stream" formControlName="streamId" >
+                    <mat-option *ngFor="let stream of streamList" [value]="stream.streamId" (click) = "setStreamName(stream)">
+                        {{stream.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Current Course" [(ngModel)]="studentForm.course" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="collegeName" formControlName="collegeName">
           </mat-form-field>
         </div>
-        <div class="form-group col-md-6 col-sm-6">
+        <div class="form-group col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Stream/Branch" [(ngModel)]="studentForm.stream" [ngModelOptions]="{standalone: true}">
+            <mat-select placeholder="University" formControlName="universityId">
+              <mat-option *ngFor="let university of universityList" [value]="university.universityId">
+                  {{university.name}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
+
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="College" [(ngModel)]="studentForm.college" [ngModelOptions]="{standalone: true}">
+            <mat-select placeholder="Country" formControlName="country">
+              <mat-option *ngFor="let country of countryList" [value]="country.countryId">
+                  {{country.name}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
-        <div class="form-group col-md-6 col-sm-6">
+        <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="State" formControlName="state">
+                    <mat-option *ngFor="let state of stateList" [value]="state.stateId" (click)="changState(state.stateId);">
+                        {{state.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="City" formControlName="cityId">
+                    <mat-option *ngFor="let location of locationList" [value]="location.locationId">
+                        {{location.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-sm-6 col-md-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="University" [(ngModel)]="studentForm.university" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="Area" formControlName="address1">
           </mat-form-field>
         </div>
+
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="City" [(ngModel)]="studentForm.city" [ngModelOptions]="{standalone: true}">
+            <input matInput [matDatepicker]="yearOfPass" placeholder="Year of Passing" formControlName="yearOfPass">
+            <mat-datepicker-toggle matSuffix [for]="yearOfPass">
+            </mat-datepicker-toggle>
+            <mat-datepicker #yearOfPass></mat-datepicker>
           </mat-form-field>
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Year of Passing" [(ngModel)]="studentForm.yearOfPass" [ngModelOptions]="{standalone: true}">
-          </mat-form-field>
+
         </div>
       </div>
       <div class="row">
@@ -84,7 +132,7 @@
         </div>
         <div class="form-group col-md-2 col-sm-2">
           <!-- <mat-form-field class="example-full-width"> -->
-          <button matButton class="btn btn-primary" (click)="prevEduDetails(prevEducationDetails)">Add</button>
+          <button matButton class="btn btn-primary" (click)="addEducation(prevEducationDetails)">Add</button>
           <!-- </mat-form-field> -->
         </div>
         <div class="form-group col-md-12" *ngIf="dataSource.length!=0">
@@ -129,35 +177,40 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Date of Birth" [(ngModel)]="studentForm.dob" [ngModelOptions]="{standalone: true}">
+            <input matInput [matDatepicker]="dob" placeholder="Date of Birth" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="dob">
+              
+            </mat-datepicker-toggle>
+            <mat-datepicker #dob></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+        <div class="form-group col-md-6 col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email ID" formControlName="email">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email ID" [(ngModel)]="studentForm.emailId" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="Mobile Number" formControlName="mobile">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Mobile Number" [(ngModel)]="studentForm.mobile" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="Current Course Aggregate %" formControlName="percentage">
           </mat-form-field>
         </div>
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Current Course Aggregate %" [(ngModel)]="studentForm.mobile" [ngModelOptions]="{standalone: true}">
+            <mat-select placeholder="Languages" formControlName="languagesList" multiple>
+              <mat-option *ngFor="let language of languages" [value]="language">{{language}}</mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
+
         <div class="form-group col-md-6 col-sm-6">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Languages" [(ngModel)]="studentForm.languages" [ngModelOptions]="{standalone: true}">
-          </mat-form-field>
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <!-- <mat-form-field class="example-full-width">
-            <textarea matInput placeholder="Key Skills" formControlName="keySkill"></textarea>
-          </mat-form-field> -->
-          <mat-form-field class="example-full-width">
-            <mat-select placeholder="Key Skills" [(ngModel)]="studentForm.keySkill" multiple>
+            <mat-select placeholder="Key Skills" formControlName="keySkillsList" multiple>
               <mat-option *ngFor="let keyskill of keySkills" [value]="keyskill">{{keyskill}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -165,10 +218,9 @@
         
       </div>
       <div class="align-center">
-        
         <input type="button" class="btn btn-primary" (click)="onSubmit()" value="Update">&nbsp;&nbsp;
         <input disabled="true" type="button" class="btn btn-primary" value="Download">
       </div>
-    </form>
+  </form>
   </div>
 </div>

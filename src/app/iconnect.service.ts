@@ -207,7 +207,7 @@ export class IconnectService {
      * To get the corporate list by id
      */
     changePassword(data): Observable<any> {
-        return this._httpService.get(environment.path.changePassword + '/' + data);
+        return this._httpService.put(environment.path.changePassword, data);
     }
 
     /**
@@ -240,6 +240,10 @@ export class IconnectService {
         return this._httpService.get(environment.path.student_api+ '/college');
     }
 
+    getStudentsProfile(): Observable<any> {
+        return this._httpService.get(environment.path.student_api+ '/profile');
+    }
+
     createNewJob(requestBody): Observable<any> {
         return this._httpService.post(environment.path.job, requestBody);
     }
@@ -248,8 +252,16 @@ export class IconnectService {
         return this._httpService.put(environment.path.job, requestBody);
     }
 
+    getJobDetails(id): Observable<any> {
+        return this._httpService.get(environment.path.job+"/"+id);
+    }
+
     getAllJobs(): Observable<any> {
         return this._httpService.get(environment.path.job);
+    }
+
+    getAllJobsPO(): Observable<any> {
+        return this._httpService.get(environment.path.placementOfficer+"/job");
     }
 
     createNewInternship(requestBody): Observable<any> {
@@ -264,12 +276,24 @@ export class IconnectService {
         return this._httpService.get(environment.path.internship);
     }
 
+    getAllInternshipPO(): Observable<any> {
+        return this._httpService.get(environment.path.placementOfficer+"/internship");
+    }
+
+    getInternshipById(id): Observable<any> {
+        return this._httpService.get(environment.path.internship+"/"+id);
+    }
+
     updateHrProfile(requestBody): Observable<any> {
         return this._httpService.put(environment.path.hr_profile, requestBody);
     }
 
     getHrProfileDetails(): Observable<any> {
         return this._httpService.get(environment.path.hr_profile);
+    }
+
+    getCompanyList(): Observable<any> {
+        return this._httpService.get(environment.path.companies);
     }
 
     getPOProfileDetails(): Observable<any> {
@@ -285,10 +309,14 @@ export class IconnectService {
         return this._httpService.post(environment.path.uploadFile, requestBody);
     }
 
-    
     sendNotification(requestBody): Observable<any> {
-        return this._httpService.post(environment.path.placementOfficer, requestBody);
+        return this._httpService.post(environment.path.inviteCorporate, requestBody);
     }
+
+    sendNotifyAdmin(requestBody): Observable<any> {
+        return this._httpService.post(environment.path.notifyAdmin, requestBody);
+    }
+    
     addRow(requestBody): Observable<any> {
         return this._httpService.post(environment.path.placementOfficer, requestBody);
     }
@@ -299,6 +327,10 @@ export class IconnectService {
 
     getLocationDetails(): Observable<any> {
         return this._httpService.get(environment.path.locations);
+    }
+
+    getLocationDetailsByState(id): Observable<any> {
+        return this._httpService.get(environment.path.locationByStateId+"/"+id);
     }
 
     getCompineDetails(id): Observable<any> {
@@ -321,7 +353,16 @@ export class IconnectService {
     getAllOffers(): Observable<any>{
         return this._httpService.get(environment.path.offers);
     }
-    getStudentsProfile(): Observable<any>{
-        return this._httpService.get(environment.path.offers);
-    }        
+
+    getPercentage(): Observable<any>{
+        return this._httpService.get(environment.path.percentage);
+    }
+
+    getJobType(): Observable<any>{
+        return this._httpService.get(environment.path.jobtype);
+    }
+
+
+    
+
 }

@@ -12,12 +12,11 @@ import { Router } from '@angular/router';
 })
 export class AllJobsComponent implements OnInit {
 
-    displayedColumns: string[] = ['checkbox', 'studentName', 'mobileNumber', 'emailId', 'course', 'stream','aggregate', 'yearOfPass', 'profile'];
+    displayedColumns: string[] = ['jobPosition', 'jobType', 'cource', 'vacancies', 'status','date', 'action'];
     dataSource:any = [];
     editData: any;
     dashMessage: String;
     createJD: Boolean = false;
-    search:any;
 	
   constructor(private _iService: IconnectService, private dataService: DataService, private router:Router) { }
 

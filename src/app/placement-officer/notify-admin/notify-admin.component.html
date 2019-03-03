@@ -4,35 +4,35 @@
     <mat-card-content>
       <div class="row">
        
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Corporate Name" [(ngModel)]="company.corporateName">
+            <input matInput placeholder="Corporate Name" [(ngModel)]="company.companyName">
           </mat-form-field>
         </div>
         
         <div class="form-group col-md-4">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Corporate Name" [(ngModel)]="company.name">
+            <input matInput placeholder="HR Name" [(ngModel)]="company.hrName">
           </mat-form-field>
           
         </div>
         <div class="form-group col-md-4">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Corporate Name" [(ngModel)]="company.mobile">
+            <input matInput placeholder="HR Contact Number" [(ngModel)]="company.hrMobile">
           </mat-form-field>
         </div>
         <div class="form-group col-md-4">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Corporate Name" [(ngModel)]="company.email">
+            <input matInput placeholder="HR Email" [(ngModel)]="company.hrEmail">
           </mat-form-field>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
           <mat-form-field class="example-full-width">
             <textarea matInput placeholder="Description" [(ngModel)]="company.description"></textarea>
           </mat-form-field>
         </div>
         <div class="form-group col-md-12 align-center">
-          <button type="button" (click)="sendNotification(notifyAdmin)" class="btn btn-primary"><i class="fa fa-newspaper-o"></i> Send</button>
+          <button type="button" (click)="sendNotification()" class="btn btn-primary"><i class="fa fa-newspaper-o"></i> Send</button>
         </div>
       </div>
     </mat-card-content>

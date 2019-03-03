@@ -13,6 +13,7 @@ import { AddStudentBulkComponent } from './add-student-bulk/add-student-bulk.com
 import { InternshipStatusComponent } from './internship-status/internship-status.component';
 import { InviteCorporateComponent } from './invite-corporate/invite-corporate.component';
 import { ChaangepasswordComponent } from '../auth/chaangepassword/chaangepassword.component';
+import { LoginComponent } from '../auth/login/login.component';
 import { NotifyAdminComponent } from './notify-admin/notify-admin.component';
 import { InternalTrainingComponent } from './internal-training/internal-training.component';
 import { SkillDevProgramComponent } from './skill-dev-program/skill-dev-program.component';
@@ -40,12 +41,8 @@ const routes: Routes = [
       {path: 'intern-status', component: InternshipStatusComponent},
       {path: 'invite-corporate', component: InviteCorporateComponent},
       {path: 'changePassword', component: ChaangepasswordComponent},
-      {path: 'notify-admin', component: NotifyAdminComponent},
-      {path: 'internalTraining', component: InternalTrainingComponent},
-      {path: 'skillDev', component: SkillDevProgramComponent},
-      {path: 'viewSkill', component: ViewSkillProgramComponent},
-      {path: 'skillAssign', component: SkillAssignmentComponent},
-      {path: 'skillGap', component: SkillGapComponent},
+      {path: 'login',	component: LoginComponent },
+      {path: 'notify-admin', component: NotifyAdminComponent}
 		]
 	}
 	 

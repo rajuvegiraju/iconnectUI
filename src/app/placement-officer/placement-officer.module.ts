@@ -44,6 +44,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     IntenshipComponent, AvailablejobsComponent, 
     TrainingsComponent, InterviewSchedulesComponent, 
     ViewStudentsComponent, ProfileComponent, 
-    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent, ViewCompaniesComponent, NotifyAdminComponent, InternalTrainingComponent, SkillDevProgramComponent, ViewSkillProgramComponent, SkillAssignmentComponent, SkillGapComponent]
+    AddStudentBulkComponent, InviteCorporateComponent, StatusOfCandidatesComponent, ViewCompaniesComponent, NotifyAdminComponent]
 })
 export class PlacementOfficerModule { }
