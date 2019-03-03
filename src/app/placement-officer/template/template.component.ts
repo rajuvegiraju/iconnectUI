@@ -13,7 +13,7 @@ export class TemplateComponent implements OnInit {
 
   ngOnInit() {
     this.navMessage = "Dashboard";
-   /* this.router.navigate(['hr']); */
+    this.router.navigate(['dashboard']); 
   }
   navBar(data){
     this.navMessage = data;

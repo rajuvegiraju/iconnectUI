@@ -19,6 +19,7 @@ import { SkillDevProgramComponent } from './skill-dev-program/skill-dev-program.
 import { ViewSkillProgramComponent } from './view-skill-program/view-skill-program.component';
 import { SkillAssignmentComponent } from './skill-assignment/skill-assignment.component';
 import { SkillGapComponent } from './skill-gap/skill-gap.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
 		path: 'po',
 		component: TemplateComponent,
 		children: [
+			{ path: 'dashboard', component: DashboardComponent },
 		  {path: 'addStudent', component: AddStudentComponent},
       {path: 'studentList', component: StudentListComponent},
       {path: 'pendingApproval', component: PendingApprovalComponent},

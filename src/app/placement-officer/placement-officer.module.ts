@@ -26,6 +26,7 @@ import { SkillDevProgramComponent } from './skill-dev-program/skill-dev-program.
 import { ViewSkillProgramComponent } from './view-skill-program/view-skill-program.component';
 import { SkillAssignmentComponent } from './skill-assignment/skill-assignment.component';
 import { SkillGapComponent } from './skill-gap/skill-gap.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { SkillGapComponent } from './skill-gap/skill-gap.component';
     FileUploadModule
   ],
   declarations: [
-    InternshipStatusComponent, 
+    InternshipStatusComponent, DashboardComponent,
     StudentListComponent, TemplateComponent, 
     AddStudentComponent, PendingApprovalComponent, 
     IntenshipComponent, AvailablejobsComponent, 
